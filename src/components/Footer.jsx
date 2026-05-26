@@ -1,186 +1,200 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import Logo from './Logo';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 
 const Footer = ({ setActiveSection }) => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
-  const handleLinkClick = (sectionId) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const go = (id) => {
+    setActiveSection(id);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const socialLinks = [
-    { 
+    {
+      label: 'Facebook',
+      url: 'https://facebook.com/TelanganaJagruthi',
       icon: (
-        <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+        <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
           <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
         </svg>
-      ), 
-      url: "https://facebook.com/TelanganaJagruthi" 
+      )
     },
-    { 
+    {
+      label: 'Twitter / X',
+      url: 'https://twitter.com/TJagruthi',
       icon: (
-        <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+        <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
         </svg>
-      ), 
-      url: "https://twitter.com/TJagruthi" 
+      )
     },
-    { 
+    {
+      label: 'Instagram',
+      url: 'https://instagram.com/telanganajagruthi',
       icon: (
-        <svg className="h-4 w-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        <svg className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
         </svg>
-      ), 
-      url: "https://instagram.com/telanganajagruthi" 
+      )
     },
-    { 
+    {
+      label: 'YouTube',
+      url: 'https://youtube.com/user/TelanganaJagruthi',
       icon: (
-        <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+        <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
           <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.002 3.002 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
         </svg>
-      ), 
-      url: "https://youtube.com/user/TelanganaJagruthi" 
+      )
     }
   ];
 
-  return (
-    <footer className="relative bg-[#0b331c] text-[#f5f5f4] overflow-hidden border-t border-brand-gold-700/25">
-      
-      {/* Decorative Top Wave Vector */}
-      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-[0] transform rotate-180 opacity-10">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] fill-brand-gold-500">
-          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
-        </svg>
-      </div>
+  const navLinks = [
+    { id: 'hero',           label: t('nav.home') },
+    { id: 'about-founder',  label: t('nav.founder') },
+    { id: 'about-vision',   label: t('nav.vision') },
+    { id: 'about-history',  label: t('nav.history') },
+    { id: 'about-org',      label: t('nav.organization') },
+    { id: 'news',           label: t('nav.news') },
+    { id: 'downloads',      label: t('nav.downloads') },
+    { id: 'contact',        label: t('nav.contact') }
+  ];
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-          
-          {/* Left Block: Logo and Branding */}
-          <div className="md:col-span-5 space-y-4">
-            <Logo showText={true} className="h-12 w-12" lightBg={false} />
-            <p className="text-sm text-stone-200/70 max-w-sm leading-relaxed mt-4 font-telugu">
-              {t('hero.subtitle')}
+  return (
+    <footer className="bg-[#0a361e] text-white">
+      {/* Top golden party stripe */}
+      <div className="h-1 bg-gradient-to-r from-[#0f5132] via-[#a16207] to-[#0f5132]" />
+
+      {/* Main footer body */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+
+          {/* Brand column */}
+          <div className="sm:col-span-2 lg:col-span-1 space-y-5">
+            <div className="flex items-center gap-3 cursor-pointer" onClick={() => go('hero')}>
+              <Logo className="h-11 w-11 flex-shrink-0" lightBg={false} />
+              <div>
+                <p className="text-xs font-black tracking-[0.16em] uppercase text-white"
+                  style={{ fontFamily: 'Cinzel, serif' }}>
+                  Telangana Jagruthi
+                </p>
+                <p className="text-[9px] text-[#a16207] tracking-widest uppercase font-bold">Official Website</p>
+              </div>
+            </div>
+
+            <p className="text-xs text-white/60 leading-relaxed max-w-[220px]"
+              style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+              {language === 'en'
+                ? 'A registered political organisation dedicated to Telangana heritage, welfare, and people\'s rights since 2006.'
+                : '2006 నుండి తెలంగాణ వారసత్వం, సంక్షేమం మరియు ప్రజల హక్కులకు అంకితమైన నమోదిత రాజకీయ సంస్థ.'}
             </p>
-            
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-2">
-              {socialLinks.map((social, index) => (
+
+            {/* Social links */}
+            <div className="flex items-center gap-2 flex-wrap">
+              {socialLinks.map((s) => (
                 <a
-                  key={index}
-                  href={social.url}
+                  key={s.label}
+                  href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-9 w-9 rounded-full bg-[#082414] border border-emerald-500/20 flex items-center justify-center text-brand-gold-500 hover:text-emerald-950 hover:bg-brand-gold-500 hover:border-brand-gold-500 transition-all hover:scale-115 hover:-translate-y-0.5 shadow-sm cursor-pointer"
+                  aria-label={s.label}
+                  className="h-8 w-8 bg-white/8 hover:bg-[#a16207] text-white/70 hover:text-white flex items-center justify-center transition-all cursor-pointer border border-white/10 hover:border-[#a16207]"
+                  style={{ borderRadius: '2px' }}
                 >
-                  {social.icon}
+                  {s.icon}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Center Block: Quick Navigation */}
-          <div className="md:col-span-3 space-y-4">
-            <h3 className="text-[15px] font-extrabold text-brand-gold-500 tracking-wider uppercase border-l-2 border-brand-gold-500 pl-3 font-serif">
-              {t('nav.aboutUs')}
-            </h3>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <button
-                  onClick={() => handleLinkClick('about-founder')}
-                  className="hover:text-brand-gold-300 hover:translate-x-1.5 transition-all text-left text-stone-200/70 cursor-pointer"
-                >
-                  {t('nav.founder')}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('about-vision')}
-                  className="hover:text-brand-gold-300 hover:translate-x-1.5 transition-all text-left text-stone-200/70 cursor-pointer"
-                >
-                  {t('nav.vision')}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('about-history')}
-                  className="hover:text-brand-gold-300 hover:translate-x-1.5 transition-all text-left text-stone-200/70 cursor-pointer"
-                >
-                  {t('nav.history')}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('about-org')}
-                  className="hover:text-brand-gold-300 hover:translate-x-1.5 transition-all text-left text-stone-200/70 cursor-pointer"
-                >
-                  {t('nav.organization')}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('news')}
-                  className="hover:text-brand-gold-300 hover:translate-x-1.5 transition-all text-left text-stone-200/70 cursor-pointer"
-                >
-                  {t('nav.news')}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('downloads')}
-                  className="hover:text-brand-gold-300 hover:translate-x-1.5 transition-all text-left text-stone-200/70 cursor-pointer"
-                >
-                  {t('nav.downloads')}
-                </button>
-              </li>
+          {/* Navigation */}
+          <div>
+            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10"
+              style={{ fontFamily: 'Cinzel, serif' }}>
+              Quick Links
+            </h4>
+            <ul className="space-y-2.5">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <button
+                    onClick={() => go(link.id)}
+                    className="text-xs text-white/60 hover:text-white transition-colors cursor-pointer flex items-center gap-2 hover:gap-3 font-medium"
+                    style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}
+                  >
+                    <span className="h-px w-3 bg-[#a16207] flex-shrink-0" />
+                    {link.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Right Block: Address & Contacts */}
-          <div className="md:col-span-4 space-y-4">
-            <h3 className="text-[15px] font-extrabold text-brand-gold-500 tracking-wider uppercase border-l-2 border-brand-gold-500 pl-3 font-serif">
-              {t('contact.officeAddress')}
-            </h3>
-            <div className="space-y-3.5 text-sm">
-              <div className="flex gap-3">
-                <MapPin className="h-5 w-5 text-brand-gold-500 shrink-0 mt-0.5" />
-                <span className="leading-relaxed text-stone-200/70 font-telugu font-medium">
-                  {t('contact.addressVal')}
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-4.5 w-4.5 text-brand-gold-500 shrink-0" />
-                <a href="tel:04023511111" className="hover:text-brand-gold-300 transition-colors text-stone-200/70 font-medium">
-                  040 - 2351 1111
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-4.5 w-4.5 text-brand-gold-500 shrink-0" />
-                <a href="mailto:telanganajagruthi@gmail.com" className="hover:text-brand-gold-300 transition-colors text-stone-200/70 font-medium">
-                  telanganajagruthi@gmail.com
-                </a>
-              </div>
+          {/* Contact */}
+          <div>
+            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10"
+              style={{ fontFamily: 'Cinzel, serif' }}>
+              Contact
+            </h4>
+            <ul className="space-y-4">
+              {[
+                { icon: <MapPin className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#a16207]" />, val: t('contact.addressVal') },
+                { icon: <Phone className="h-3.5 w-3.5 flex-shrink-0 text-[#a16207]" />,         val: t('contact.phoneVal') },
+                { icon: <Mail className="h-3.5 w-3.5 flex-shrink-0 text-[#a16207]" />,          val: t('contact.emailVal') }
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2.5">
+                  {item.icon}
+                  <span className="text-xs text-white/60 leading-relaxed"
+                    style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                    {item.val}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Registration & Trust */}
+          <div>
+            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10"
+              style={{ fontFamily: 'Cinzel, serif' }}>
+              Official Registration
+            </h4>
+            <div className="space-y-3">
+              {[
+                { label: 'Reg. No', value: 'ECI/SN/23/2020' },
+                { label: 'Founded', value: '2006, Hyderabad' },
+                { label: 'Type',    value: 'State Political Party' },
+                { label: 'State',   value: 'Telangana, India' }
+              ].map((r, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <span className="text-[8px] text-[#a16207] font-black uppercase tracking-wider min-w-[52px] pt-0.5"
+                    style={{ fontFamily: 'Cinzel, serif' }}>
+                    {r.label}
+                  </span>
+                  <span className="text-[8px] text-white/50">—</span>
+                  <span className="text-[11px] text-white/70 font-semibold"
+                    style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                    {r.value}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-emerald-500/20 pt-8 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <p>© {new Date().getFullYear()} Telangana Jagruthi. All Rights Reserved.</p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-slate-200 transition-colors">Privacy Policy</a>
-            <span>•</span>
-            <a href="#" className="hover:text-slate-200 transition-colors">Terms of Service</a>
-          </div>
+      {/* Bottom bar */}
+      <div className="border-t border-white/8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[9px] text-white/40 font-medium text-center sm:text-left">
+            © {new Date().getFullYear()} Telangana Jagruthi. All Rights Reserved.
+          </p>
+          <p className="text-[9px] text-white/30 font-medium">
+            {language === 'en' ? 'Built for the People of Telangana' : 'తెలంగాణ ప్రజల కోసం నిర్మించబడింది'}
+          </p>
         </div>
       </div>
     </footer>

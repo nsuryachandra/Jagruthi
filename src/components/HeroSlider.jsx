@@ -2,192 +2,253 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import ThreeDHero from './ThreeDHero';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles, Award, Users, ShieldAlert } from 'lucide-react';
+import { ArrowRight, Sparkles, Award, Users, ShieldAlert, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HeroSlider = ({ setActiveSection }) => {
   const { language, t } = useLanguage();
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [current, setCurrent] = useState(0);
 
   const slides = [
     {
-      badge: <Sparkles className="h-3.5 w-3.5 text-brand-gold-600" />,
-      icon: <Award className="h-8 w-8 text-brand-gold-600" />,
-      title: {
-        en: "Preserving Cultural Identity",
-        te: "సాంస్కృతిక పునరుజ్జీవనం"
+      eyebrow: 'Cultural Heritage',
+      icon: <Award className="h-4 w-4 text-[#a16207]" />,
+      title:    { en: 'Preserving Cultural Identity', te: 'సాంస్కృతిక పునరుజ్జీవనం' },
+      subtitle: { en: 'Bathukamma Floral Festival — Elevated Globally', te: 'బతుకమ్మ పండుగ ప్రపంచవ్యాప్తం' },
+      desc:     {
+        en: 'Telangana Jagruthi successfully revitalized the ancient floral festival of Bathukamma, bringing Telangana\'s traditional heritage to international fame across 18 countries.',
+        te: 'తెలంగాణ సంస్కృతికి ప్రతీక అయిన బతుకమ్మ పూల పండుగను తెలంగాణ జాగృతి పునరుద్ధరించింది. 18 కంటే ఎక్కువ దేశాల్లో ఈ పండుగను ఘనంగా నిర్వహించి ప్రపంచవ్యాప్త ఖ్యాతిని చేకూర్చింది.'
       },
-      subtitle: {
-        en: "Bathukamma Floral Festival Elevated Globally",
-        te: "బతుకమ్మ పండుగ ప్రపంచవ్యాప్తం"
-      },
-      desc: {
-        en: "Telangana Jagruthi successfully revitalized the ancient floral festival of Bathukamma, bringing Telangana's traditional heritage to international fame across 18 countries.",
-        te: "తెలంగాణ సంస్కృతికి ప్రతీక అయిన బతుకమ్మ పూల పండుగను తెలంగాణ జాగృతి పునరుద్ధరించింది. 18 కంటే ఎక్కువ దేశాల్లో ఈ పండుగను ఘనంగా నిర్వహించి ప్రపంచవ్యాప్త ఖ్యాతిని చేకూర్చింది."
-      }
+      stat: { value: '18+', label: 'Countries' },
+      accent: '#a16207'
     },
     {
-      badge: <Users className="h-3.5 w-3.5 text-brand-green-700" />,
-      icon: <Users className="h-8 w-8 text-brand-green-700" />,
-      title: {
-        en: "Empowering Rural Communities",
-        te: "నైపుణ్యాభివృద్ధి & ఉపాధి"
+      eyebrow: 'Community Development',
+      icon: <Users className="h-4 w-4 text-[#0f5132]" />,
+      title:    { en: 'Empowering Rural Communities', te: 'నైపుణ్యాభివృద్ధి & ఉపాధి' },
+      subtitle: { en: '17+ Skill Development Centres Statewide', te: 'వేలాది మంది యువతకు ఉచిత శిక్షణ' },
+      desc:     {
+        en: 'Through vocational training, digital literacy, and women\'s empowerment cells, we are building a self-reliant and economically strong Telangana.',
+        te: 'రాష్ట్రవ్యాప్తంగా నైపుణ్యాభివృద్ధి కేంద్రాల ద్వారా వేలాది మంది యువతకు, మహిళలకు ఉపాధి శిక్షణ కల్పించి, వారిని స్వయం సమృద్ధులుగా తీర్చిదిద్దుతున్నాము.'
       },
-      subtitle: {
-        en: "17+ Skill Development Centers Statewide",
-        te: "వేలాది మంది యువతకు ఉచిత శిక్షణ"
-      },
-      desc: {
-        en: "Through vocational training, digital literacy, and women's empowerment cells, we are building a self-reliant and economically strong Samajika Telangana.",
-        te: "రాష్ట్రవ్యాప్తంగా నైపుణ్యాభివృద్ధి కేంద్రాల ద్వారా వేలాది మంది యువతకు, మహిళలకు ఉపాధి శిక్షణ కల్పించి, వారిని స్వయం సమృద్ధులుగా తీర్చిదిద్దుతున్నాము."
-      }
+      stat: { value: '17+', label: 'Training Centres' },
+      accent: '#0f5132'
     },
     {
-      badge: <ShieldAlert className="h-3.5 w-3.5 text-rose-600" />,
-      icon: <ShieldAlert className="h-8 w-8 text-rose-600" />,
-      title: {
-        en: "Agitational Social Leadership",
-        te: "నిరంతర ప్రజా ఉద్యమాలు"
+      eyebrow: 'Agitational Leadership',
+      icon: <ShieldAlert className="h-4 w-4 text-[#b91c1c]" />,
+      title:    { en: 'Advocating for Farmers & Workers', te: 'రైతులు మరియు విద్యార్థుల హక్కులు' },
+      subtitle: { en: 'People-First Movement Since 2006', te: 'ప్రజా ఉద్యమాలలో అగ్రగామి' },
+      desc:     {
+        en: 'Rooted in the separate statehood agitation, we lead peaceful movements for farmers\' procurement bonuses, crop insurance rights, and education fee regulations.',
+        te: 'ప్రత్యేక రాష్ట్ర ఉద్యమ స్ఫూర్తితో రైతులు, విద్యార్థులు మరియు నిరుద్యోగుల హక్కుల కోసం నిరంతరం పోరాడుతోంది.'
       },
-      subtitle: {
-        en: "Advocating for Farmers, Workers & Youth",
-        te: "రైతులు మరియు విద్యార్థుల హక్కుల రక్షణ"
-      },
-      desc: {
-        en: "Rooted in the separate statehood agitation, we lead peaceful movements for regulatory school fees, farmers' procurement bonuses, and crop insurance rights.",
-        te: "ప్రత్యేక రాష్ట్ర ఉద్యమ స్ఫూర్తితో రైతులు, వ్యవసాయ అనుబంధ రంగాలు, ప్రైవేటు పాఠశాలల ఫీజుల నియంత్రణ మరియు నిరుద్యోగుల హక్కుల కోసం నిరంతరం పోరాడుతోంది."
-      }
+      stat: { value: '2006', label: 'Founded' },
+      accent: '#b91c1c'
     }
   ];
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % slides.length);
-    }, 8500);
-    return () => clearInterval(timer);
+    const id = setInterval(() => setCurrent(p => (p + 1) % slides.length), 8500);
+    return () => clearInterval(id);
   }, [slides.length]);
 
-  const handleExplore = () => {
-    const element = document.getElementById('about-founder');
-    if (element) {
-      setActiveSection('about-founder');
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const prev = () => setCurrent(p => (p - 1 + slides.length) % slides.length);
+  const next = () => setCurrent(p => (p + 1) % slides.length);
+
+  const goTo = (id, section) => {
+    setActiveSection(section);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const handleRegister = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      setActiveSection('contact');
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+  const slide = slides[current];
 
   return (
-    <section id="hero" className="relative min-h-[95svh] flex items-center justify-center pt-28 pb-16 overflow-hidden bg-[#fafaf9]">
-      
-      {/* Premium Ambient Background Effects */}
-      <div className="absolute inset-0 z-0">
-        {/* Glow Spheres */}
-        <div className="absolute top-[15%] left-[8%] w-[35vw] h-[35vw] rounded-full bg-brand-green-900/[0.035] blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-[20%] right-[8%] w-[45vw] h-[45vw] rounded-full bg-brand-gold-500/[0.035] blur-[160px] pointer-events-none" />
-        
-        {/* Subtle grid lines background overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,78,59,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(6,78,59,0.015)_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
-      </div>
+    <section
+      id="hero"
+      className="relative min-h-[92svh] sm:min-h-[88svh] flex items-center overflow-hidden bg-[#f8f7f5]"
+    >
+      {/* ── Subtle official background pattern ── */}
+      <div
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
+        style={{
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 47px, #0a361e 47px, #0a361e 48px), repeating-linear-gradient(90deg, transparent, transparent 47px, #0a361e 47px, #0a361e 48px)',
+        }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        {/* Left Column: Text & Slider Content */}
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-7 text-left">
-          
-          {/* Animated Header Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-white border border-brand-green-900/10 shadow-sm w-fit">
-            {slides[currentSlide].badge}
-            <span className="text-[10px] sm:text-xs font-display font-black tracking-widest text-brand-green-900 uppercase">
-              {language === 'en' ? 'Telangana Jagruthi' : 'తెలంగాణ జాగృతి'}
-            </span>
-          </div>
+      {/* ── Left accent line ── */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0f5132] via-[#a16207] to-[#0f5132] opacity-60" />
 
-          {/* Majestic Serif Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6.5xl font-extrabold tracking-tight text-brand-green-900 leading-tight font-display">
-            {t('hero.title')}
-          </h1>
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full py-16 sm:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* Slider Content Wrapper */}
-          <div className="min-h-[160px] sm:min-h-[130px] relative">
+          {/* ── Left: Text Content ── */}
+          <div className="lg:col-span-7 space-y-6">
+
+            {/* Eyebrow */}
             <AnimatePresence mode="wait">
               <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, x: -12 }}
+                key={current + '-eyebrow'}
+                initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 12 }}
-                transition={{ duration: 0.55 }}
-                className="space-y-3.5"
+                exit={{ opacity: 0, x: 16 }}
+                transition={{ duration: 0.35 }}
               >
-                <h3 className="text-lg sm:text-xl font-bold text-brand-gold-600 font-serif">
-                  {slides[currentSlide].subtitle[language]}
-                </h3>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl font-telugu font-medium">
-                  {slides[currentSlide].desc[language]}
+                <span className="section-eyebrow">
+                  {slide.icon}
+                  {slide.eyebrow}
+                </span>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Main Title */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current + '-title'}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.45 }}
+                className="space-y-3"
+              >
+                <h1
+                  className="font-display font-black text-[#0a361e] leading-tight"
+                  style={{ fontFamily: 'Cinzel, serif' }}
+                >
+                  {t('hero.title')}
+                </h1>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#a16207] font-serif leading-snug">
+                  {slide.subtitle[language]}
+                </h2>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Ornament */}
+            <div className="flex items-center gap-3 w-fit">
+              <div className="h-px w-8 bg-[#a16207]" />
+              <div className="h-1.5 w-1.5 bg-[#a16207] rotate-45" />
+              <div className="h-px w-8 bg-[#a16207]" />
+            </div>
+
+            {/* Description */}
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={current + '-desc'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-sm sm:text-base text-[#3a4a3f] leading-relaxed font-medium max-w-xl"
+                style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}
+              >
+                {slide.desc[language]}
+              </motion.p>
+            </AnimatePresence>
+
+            {/* Stat callout */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current + '-stat'}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+                className="inline-flex items-center gap-4 bg-white border border-gray-200 border-l-4 border-l-[#0f5132] px-5 py-3 shadow-sm"
+                style={{ borderRadius: '2px' }}
+              >
+                <div>
+                  <p className="text-2xl sm:text-3xl font-black text-[#0a361e] font-display leading-none"
+                    style={{ fontFamily: 'Cinzel, serif' }}>{slide.stat.value}</p>
+                  <p className="text-[9px] uppercase tracking-widest text-[#a16207] font-bold mt-0.5">{slide.stat.label}</p>
+                </div>
+                <div className="h-10 w-px bg-gray-200" />
+                <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold max-w-[120px] leading-relaxed">
+                  Telangana Jagruthi Achievement
                 </p>
               </motion.div>
             </AnimatePresence>
-          </div>
 
-          {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-4.5 pt-2">
-            <button
-              onClick={handleExplore}
-              className="group flex items-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-stone-50 border border-brand-green-900/20 hover:border-brand-green-900/40 text-brand-green-900 text-[11px] font-display font-black uppercase tracking-widest transition-all shadow-sm cursor-pointer transform hover:-translate-y-0.5"
-            >
-              <span>{t('hero.exploreBtn')}</span>
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
-            </button>
-            <button
-              onClick={handleRegister}
-              className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-gold-600 to-brand-gold-700 hover:from-brand-gold-500 hover:to-brand-gold-600 text-white text-[11px] font-display font-black uppercase tracking-widest transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
-            >
-              {t('common.joinUs')}
-            </button>
-          </div>
-
-          {/* Slider Dots */}
-          <div className="flex items-center gap-3 pt-6">
-            {slides.map((_, index) => (
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`h-1.5 transition-all rounded-full cursor-pointer ${
-                  currentSlide === index ? 'w-10 bg-brand-green-900' : 'w-2.5 bg-slate-300 hover:bg-slate-400'
-                }`}
-              />
-            ))}
+                onClick={() => goTo('about-founder', 'about-founder')}
+                className="btn-primary text-[9px] sm:text-[10px]"
+                style={{ borderRadius: '2px' }}
+              >
+                {t('hero.exploreBtn')}
+                <ArrowRight className="h-3.5 w-3.5" />
+              </button>
+              <button
+                onClick={() => goTo('contact', 'contact')}
+                className="btn-secondary text-[9px] sm:text-[10px]"
+                style={{ borderRadius: '2px' }}
+              >
+                {t('common.joinUs')}
+              </button>
+            </div>
+
+            {/* Slide indicators */}
+            <div className="flex items-center gap-3 pt-2">
+              <button
+                onClick={prev}
+                className="h-7 w-7 border border-gray-300 hover:border-[#0f5132] text-gray-400 hover:text-[#0f5132] flex items-center justify-center transition-all cursor-pointer"
+                style={{ borderRadius: '2px' }}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <div className="flex gap-1.5">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className={`transition-all cursor-pointer ${i === current ? 'w-6 h-2 bg-[#0f5132]' : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'}`}
+                    style={{ borderRadius: '1px' }}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={next}
+                className="h-7 w-7 border border-gray-300 hover:border-[#0f5132] text-gray-400 hover:text-[#0f5132] flex items-center justify-center transition-all cursor-pointer"
+                style={{ borderRadius: '2px' }}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest ml-1">
+                {String(current + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+              </span>
+            </div>
+          </div>
+
+          {/* ── Right: 3D Emblem ── */}
+          <div className="lg:col-span-5 relative flex items-center justify-center">
+            {/* Official frame */}
+            <div
+              className="absolute inset-0 border-2 border-[#0f5132]/10 pointer-events-none"
+              style={{ borderRadius: '2px' }}
+            />
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[460px] w-full flex items-center justify-center">
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 h-5 w-5 border-t-2 border-l-2 border-[#a16207]" />
+              <div className="absolute top-0 right-0 h-5 w-5 border-t-2 border-r-2 border-[#a16207]" />
+              <div className="absolute bottom-0 left-0 h-5 w-5 border-b-2 border-l-2 border-[#a16207]" />
+              <div className="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-[#a16207]" />
+              <ThreeDHero />
+            </div>
+            {/* Official seal label */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap">
+              <span
+                className="text-[7px] font-display font-bold uppercase tracking-[0.2em] text-[#0f5132]/50"
+                style={{ fontFamily: 'Cinzel, serif' }}
+              >
+                Telangana Jagruthi — Est. 2006
+              </span>
+            </div>
           </div>
 
         </div>
-
-        {/* Right Column: 3D Emblem Canvas */}
-        <div className="lg:col-span-5 relative h-[360px] sm:h-[460px] w-full flex items-center justify-center">
-          
-          {/* Subtle light circular frame background */}
-          <div className="absolute h-[340px] w-[340px] sm:h-[430px] sm:w-[430px] rounded-full border border-brand-green-900/5 flex items-center justify-center animate-spin-slow pointer-events-none">
-            <div className="h-[280px] w-[280px] sm:h-[360px] sm:w-[360px] rounded-full border border-dashed border-brand-green-900/10" />
-          </div>
-
-          {/* 3D Canvas Component */}
-          <ThreeDHero />
-
-        </div>
-
       </div>
 
-      {/* Curved bottom transition separator */}
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] transform translate-y-[1px]">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[35px] fill-white">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C67.81,118.92,144.29,111.31,214.34,92.83,284.4,74.35,302,60,321.39,56.44Z"></path>
-        </svg>
-      </div>
-
+      {/* Bottom border stripe */}
+      <div className="absolute bottom-0 left-0 right-0 party-stripe" />
     </section>
   );
 };

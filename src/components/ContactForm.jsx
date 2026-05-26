@@ -1,282 +1,199 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Download, ShieldCheck, MapPin, Phone, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 const ContactForm = () => {
   const { language, t } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-  const [status, setStatus] = useState(null); // 'success' | 'error' | 'submitting' | null
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const [status, setStatus]     = useState('idle'); // idle | submitting | success | error
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const handleInputChange = (e) => setFormData(p => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      setStatus('error');
-      return;
-    }
-
     setStatus('submitting');
-    
-    // Mock successful submission
-    setTimeout(() => {
+    await new Promise(r => setTimeout(r, 1400));
+    if (formData.email.includes('@')) {
       setStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-      // Clear status banner after 6 seconds
-      setTimeout(() => setStatus(null), 6000);
-    }, 1500);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    } else {
+      setStatus('error');
+    }
+    setTimeout(() => setStatus('idle'), 5000);
   };
+
+  const inputCls = "w-full bg-white border border-gray-200 px-4 py-3 text-sm text-[#1a2a1f] placeholder-gray-400 focus:outline-none focus:border-[#0f5132] focus:ring-1 focus:ring-[#0f5132]/20 transition-all font-medium";
+  const labelCls = "text-[9px] font-black uppercase tracking-widest text-gray-500 block mb-1.5";
 
   return (
-    <section id="contact" className="py-24 bg-[#fafaf9] relative overflow-hidden">
-      
-      {/* Decorative glows */}
-      <div className="absolute top-[30%] left-[-10%] w-[30vw] h-[30vw] rounded-full bg-brand-green-800/[0.03] blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-brand-gold-600/[0.03] blur-[120px] pointer-events-none" />
+    <section id="contact" className="py-20 sm:py-28 bg-[#f8f7f5] border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-green-900 tracking-wide font-display">
-            {t('contact.title')}
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-2 font-bold uppercase tracking-widest font-telugu">
-            {t('contact.subtitle')}
-          </p>
-          <div className="ornament-line mt-5">
-            <div className="ornament-diamond" />
+        {/* Header */}
+        <div className="mb-10 sm:mb-14">
+          <span className="section-eyebrow mb-4 inline-flex">
+            <Mail className="h-3.5 w-3.5" />
+            {language === 'en' ? 'Official Contact' : 'అధికారిక సంప్రదింపు'}
+          </span>
+          <h2 className="section-title text-3xl sm:text-4xl mt-3 mb-2">{t('contact.title')}</h2>
+          <p className="text-sm text-gray-500">{t('contact.subtitle')}</p>
+          <div className="flex items-center gap-2 mt-5">
+            <div className="h-0.5 w-12 bg-[#0f5132]" />
+            <div className="h-1.5 w-1.5 bg-[#a16207] rotate-45" />
+            <div className="h-0.5 w-4 bg-[#a16207]" />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-          
-          {/* Left Block: Contact Details & Map Card */}
-          <div className="lg:col-span-5 flex flex-col justify-between gap-8">
-            <div className="bg-[#f5f5f4] rounded-3xl p-8 border border-brand-green-900/10 space-y-6 flex-1 shadow-premium">
-              <h3 className="text-xl font-bold text-slate-800 tracking-wide border-l-2 border-brand-gold-700 pl-3 font-display">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+
+          {/* Left: Contact Info */}
+          <div className="lg:col-span-4 space-y-4">
+            <div className="official-card bg-white p-6 sm:p-8">
+              <h3 className="text-sm font-black text-[#0a361e] mb-5 pb-3 border-b border-gray-100 font-display"
+                style={{ fontFamily: 'Cinzel, serif' }}>
                 {t('contact.officeAddress')}
               </h3>
 
-              <div className="space-y-6 pt-4">
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-brand-green-50 border border-brand-green-900/15 flex items-center justify-center text-brand-green-900 shrink-0 shadow-sm animate-pulse-slow">
-                    <MapPin className="h-5 w-5" />
+              <div className="space-y-5">
+                {[
+                  {
+                    icon: <MapPin className="h-4 w-4 text-[#0f5132]" />,
+                    label: 'Headquarters',
+                    value: t('contact.addressVal')
+                  },
+                  {
+                    icon: <Phone className="h-4 w-4 text-[#0f5132]" />,
+                    label: t('contact.phoneLabel'),
+                    value: t('contact.phoneVal')
+                  },
+                  {
+                    icon: <Mail className="h-4 w-4 text-[#0f5132]" />,
+                    label: t('contact.emailLabel'),
+                    value: t('contact.emailVal')
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3">
+                    <div className="h-8 w-8 bg-[#f0fdf4] border border-[#0f5132]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p className="text-[9px] text-gray-400 uppercase tracking-wider font-bold mb-0.5">{item.label}</p>
+                      <p className="text-xs sm:text-sm text-[#1a2a1f] font-semibold leading-relaxed"
+                        style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                        {item.value}
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-bold">Headquarters</span>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-telugu font-semibold">
-                      {t('contact.addressVal')}
-                    </p>
-                  </div>
-                </div>
+                ))}
+              </div>
 
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-brand-green-50 border border-brand-green-900/15 flex items-center justify-center text-brand-green-900 shrink-0 shadow-sm">
-                    <Phone className="h-4.5 w-4.5" />
-                  </div>
-                  <div className="space-y-1">
-                    <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-bold">{t('contact.phoneLabel')}</span>
-                    <a href="tel:04023511111" className="text-xs sm:text-sm text-slate-700 hover:text-brand-green-900 transition-colors font-bold">
-                      040 - 2351 1111
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-brand-green-50 border border-brand-green-900/15 flex items-center justify-center text-brand-green-900 shrink-0 shadow-sm">
-                    <Mail className="h-4.5 w-4.5" />
-                  </div>
-                  <div className="space-y-1">
-                    <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-bold">{t('contact.emailLabel')}</span>
-                    <a href="mailto:telanganajagruthi@gmail.com" className="text-xs sm:text-sm text-slate-700 hover:text-brand-green-900 transition-colors font-bold">
-                      telanganajagruthi@gmail.com
-                    </a>
-                  </div>
-                </div>
+              {/* Map link */}
+              <div className="mt-6 pt-4 border-t border-gray-100">
+                <a
+                  href="https://maps.google.com/?q=Hill+Top+Residency+Road+No+14+Banjara+Hills+Hyderabad"
+                  target="_blank" rel="noopener noreferrer"
+                  className="text-[9px] font-display font-black uppercase tracking-widest text-[#0f5132] hover:text-[#a16207] transition-colors flex items-center gap-1.5 cursor-pointer"
+                  style={{ fontFamily: 'Cinzel, serif' }}
+                >
+                  View on Google Maps →
+                </a>
               </div>
             </div>
 
-            {/* Stylized Google Maps Panel (Custom styling map container) */}
-            <div className="h-56 sm:h-64 rounded-3xl border border-brand-green-900/10 overflow-hidden relative shadow-premium bg-white">
-              {/* Light map placeholder with high quality vector elements */}
-              <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(180,83,9,0.15),transparent_60%)]" />
-              {/* Map grid */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,78,59,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(6,78,59,0.015)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem]" />
-              
-              {/* Map lines mock */}
-              <svg className="absolute inset-0 w-full h-full text-brand-green-900/10" viewBox="0 0 100 100" fill="none">
-                <path d="M 0 30 Q 30 40, 50 20 T 100 50" stroke="currentColor" strokeWidth="0.5" />
-                <path d="M 20 0 Q 40 40, 30 70 T 80 100" stroke="currentColor" strokeWidth="0.5" />
-                <circle cx="50" cy="50" r="1.5" fill="#eab308" className="animate-ping" />
-                <circle cx="50" cy="50" r="1.2" fill="#d97706" />
-              </svg>
-
-              <div className="absolute inset-0 p-5 flex flex-col justify-between z-10">
-                <span className="text-[10px] font-extrabold text-brand-green-900 uppercase tracking-widest bg-brand-green-50 px-2.5 py-1 rounded-full w-fit border border-brand-green-900/10 shadow-sm">Banjara Hills, Road No. 14</span>
-                
-                <div className="space-y-1">
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-800 font-telugu">తెలంగాణ జాగృతి ప్రధాన కార్యాలయం</h4>
-                  <a
-                    href="https://maps.google.com/?q=Hill+Top+Residency+Road+No+14+Banjara+Hills+Hyderabad"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[11px] font-display font-black text-brand-green-800 hover:text-brand-green-950 transition-colors uppercase tracking-widest cursor-pointer"
-                  >
-                    <span>Open in Google Maps</span>
-                    <span>→</span>
-                  </a>
+            {/* Quick info cards */}
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { label: 'Office Hours', value: 'Mon–Sat\n9AM – 6PM' },
+                { label: 'Est.', value: '2006\nHyderabad' }
+              ].map((c, i) => (
+                <div key={i} className="official-card bg-white p-4 text-center">
+                  <p className="text-[8px] text-gray-400 uppercase tracking-wider font-bold mb-1">{c.label}</p>
+                  <p className="text-xs font-black text-[#0a361e] whitespace-pre-line leading-tight"
+                    style={{ fontFamily: 'Cinzel, serif' }}>{c.value}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Right Block: Light Contact Form */}
-          <div className="lg:col-span-7">
-            <div className="bg-[#f5f5f4] rounded-3xl p-6 sm:p-8 border border-brand-green-900/10 h-full shadow-premium">
-              <form onSubmit={handleFormSubmit} className="space-y-5 font-telugu">
-                
-                {/* Notification banners */}
-                <AnimatePresence>
-                  {status === 'success' && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="p-4 rounded-xl bg-brand-green-50 border border-brand-green-900/25 text-brand-green-900 text-xs sm:text-sm leading-relaxed font-semibold shadow-sm"
-                    >
-                      {t('contact.successMsg')}
-                    </motion.div>
-                  )}
+          {/* Right: Form */}
+          <div className="lg:col-span-8">
+            <div className="official-card bg-white p-6 sm:p-8">
+              <h3 className="text-sm font-black text-[#0a361e] mb-6 pb-3 border-b border-gray-100 font-display"
+                style={{ fontFamily: 'Cinzel, serif' }}>
+                {language === 'en' ? 'Send a Message' : 'సందేశం పంపండి'}
+              </h3>
 
-                  {status === 'error' && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="p-4 rounded-xl bg-red-50 border border-red-500/25 text-red-800 text-xs sm:text-sm leading-relaxed font-semibold shadow-sm"
-                    >
-                      {t('contact.errorMsg')}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+              {/* Status banners */}
+              <AnimatePresence>
+                {status === 'success' && (
+                  <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                    className="flex items-start gap-3 p-4 bg-[#f0fdf4] border border-[#0f5132]/20 mb-5" style={{ borderRadius: '2px' }}>
+                    <CheckCircle className="h-4 w-4 text-[#0f5132] flex-shrink-0 mt-0.5" />
+                    <p className="text-xs font-semibold text-[#0f5132]">{t('contact.successMsg')}</p>
+                  </motion.div>
+                )}
+                {status === 'error' && (
+                  <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                    className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 mb-5" style={{ borderRadius: '2px' }}>
+                    <AlertCircle className="h-4 w-4 text-red-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs font-semibold text-red-700">{t('contact.errorMsg')}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-                {/* Name Input */}
-                <div className="space-y-1.5">
-                  <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    {t('contact.formName')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full bg-white border border-brand-green-900/15 rounded-xl px-4 py-3 text-slate-700 text-sm focus:outline-none focus:border-brand-gold-700 focus:ring-1 focus:ring-brand-gold-700 transition-all font-telugu font-semibold shadow-sm"
-                    placeholder={language === 'en' ? "Your Name" : "మీ పేరు"}
-                  />
-                </div>
-
-                {/* Email and Phone Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div className="space-y-1.5">
-                    <label htmlFor="email" className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                      {t('contact.formEmail')} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full bg-white border border-brand-green-900/15 rounded-xl px-4 py-3 text-slate-700 text-sm focus:outline-none focus:border-brand-gold-700 focus:ring-1 focus:ring-brand-gold-700 transition-all font-telugu font-semibold shadow-sm"
-                      placeholder="email@example.com"
-                    />
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelCls}>{t('contact.formName')} <span className="text-red-500">*</span></label>
+                    <input type="text" name="name" required value={formData.name} onChange={handleInputChange}
+                      placeholder={language === 'en' ? 'Your Full Name' : 'మీ పూర్తి పేరు'}
+                      className={inputCls} style={{ borderRadius: '2px' }} />
                   </div>
-                  <div className="space-y-1.5">
-                    <label htmlFor="phone" className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                      {t('contact.formPhone')}
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full bg-white border border-brand-green-900/15 rounded-xl px-4 py-3 text-slate-700 text-sm focus:outline-none focus:border-brand-gold-700 focus:ring-1 focus:ring-brand-gold-700 transition-all font-telugu font-semibold shadow-sm"
-                      placeholder={language === 'en' ? "Phone Number" : "ఫోన్ నెంబర్"}
-                    />
+                  <div>
+                    <label className={labelCls}>{t('contact.formEmail')} <span className="text-red-500">*</span></label>
+                    <input type="email" name="email" required value={formData.email} onChange={handleInputChange}
+                      placeholder={language === 'en' ? 'email@example.com' : 'ఇమెయిల్'}
+                      className={inputCls} style={{ borderRadius: '2px' }} />
                   </div>
                 </div>
 
-                {/* Subject Input */}
-                <div className="space-y-1.5">
-                  <label htmlFor="subject" className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    {t('contact.formSubject')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full bg-white border border-brand-green-900/15 rounded-xl px-4 py-3 text-slate-700 text-sm focus:outline-none focus:border-brand-gold-700 focus:ring-1 focus:ring-brand-gold-700 transition-all font-telugu font-semibold shadow-sm"
-                    placeholder={language === 'en' ? "Message Subject" : "సందేశ విషయం"}
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelCls}>{t('contact.formPhone')}</label>
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange}
+                      placeholder={language === 'en' ? 'Phone Number' : 'ఫోన్ నెంబర్'}
+                      className={inputCls} style={{ borderRadius: '2px' }} />
+                  </div>
+                  <div>
+                    <label className={labelCls}>{t('contact.formSubject')} <span className="text-red-500">*</span></label>
+                    <input type="text" name="subject" required value={formData.subject} onChange={handleInputChange}
+                      placeholder={language === 'en' ? 'Subject' : 'విషయం'}
+                      className={inputCls} style={{ borderRadius: '2px' }} />
+                  </div>
                 </div>
 
-                {/* Message Input */}
-                <div className="space-y-1.5">
-                  <label htmlFor="message" className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    {t('contact.formMessage')} <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows="4"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full bg-white border border-brand-green-900/15 rounded-xl px-4 py-3 text-slate-700 text-sm focus:outline-none focus:border-brand-gold-700 focus:ring-1 focus:ring-brand-gold-700 transition-all font-telugu resize-none font-semibold shadow-sm"
-                    placeholder={language === 'en' ? "Type your message here..." : "మీ సందేశాన్ని ఇక్కడ టైప్ చేయండి..."}
-                  />
+                <div>
+                  <label className={labelCls}>{t('contact.formMessage')} <span className="text-red-500">*</span></label>
+                  <textarea name="message" required rows="5" value={formData.message} onChange={handleInputChange}
+                    placeholder={language === 'en' ? 'Your message...' : 'మీ సందేశం...'}
+                    className={`${inputCls} resize-none`} style={{ borderRadius: '2px' }} />
                 </div>
 
-                {/* Submit button */}
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full mt-2 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-green-800 to-brand-green-900 hover:from-brand-green-700 hover:to-brand-green-800 disabled:from-brand-green-900 disabled:to-stone-900 text-white text-[10px] sm:text-xs font-display font-black uppercase tracking-widest transition-all shadow-sm cursor-pointer transform hover:-translate-y-0.5"
+                  className="btn-primary w-full justify-center py-3.5 disabled:opacity-60 disabled:cursor-not-allowed text-[10px]"
+                  style={{ borderRadius: '2px' }}
                 >
                   <Send className="h-4 w-4" />
-                  <span>{status === 'submitting' ? t('common.loading') : t('common.submit')}</span>
+                  {status === 'submitting' ? t('common.loading') : t('common.submit')}
                 </button>
-
               </form>
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
   );

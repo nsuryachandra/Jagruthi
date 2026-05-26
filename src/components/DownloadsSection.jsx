@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Download, ShieldCheck } from 'lucide-react';
+import { Download, ShieldCheck, Flag } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const DownloadsSection = () => {
@@ -8,190 +8,159 @@ const DownloadsSection = () => {
 
   const triggerDownload = (fileName, svgContent) => {
     const blob = new Blob([svgContent], { type: 'image/svg+xml' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = fileName;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
   };
 
   const flagSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
-    <rect width="600" height="200" fill="#15803d" />
-    <rect y="200" width="600" height="200" fill="#ffffff" />
-    <circle cx="300" cy="200" r="85" fill="#ffffff" stroke="#d97706" stroke-width="4" />
+    <rect width="600" height="200" fill="#15803d"/>
+    <rect y="200" width="600" height="200" fill="#ffffff"/>
+    <circle cx="300" cy="200" r="85" fill="#ffffff" stroke="#d97706" stroke-width="4"/>
     <text x="300" y="208" font-family="sans-serif" font-weight="bold" font-size="20" fill="#dc2626" text-anchor="middle">తెలంగాణ జాగృతి</text>
   </svg>`;
 
-  const getLogoSvg = (langText, subtitle) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%">
-    <rect width="400" height="120" rx="15" fill="#0d1b14" />
-    <circle cx="60" cy="60" r="40" fill="none" stroke="#d97706" stroke-width="2" />
+  const getLogoSvg = (text, subtitle) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%">
+    <rect width="400" height="120" rx="0" fill="#0d1b14"/>
+    <circle cx="60" cy="60" r="40" fill="none" stroke="#d97706" stroke-width="2"/>
     <path d="M 55 35 C 60 36, 68 32, 73 36 C 78 40, 80 45, 81 50 C 82 55, 80 60, 78 65 C 75 70, 70 73, 67 78 C 65 83, 60 85, 55 83 C 50 81, 47 76, 45 71 C 43 66, 38 63, 36 58 C 34 53, 37 48, 41 45 C 45 42, 48 37, 55 35 Z" fill="#15803d" opacity="0.8"/>
-    <path d="M 50 48 C 47 54, 47 60, 50 60 C 53 60, 53 54, 50 48 Z" fill="#facc15" />
-    <text x="120" y="58" font-family="sans-serif" font-weight="bold" font-size="26" fill="#dc2626">${langText}</text>
+    <text x="120" y="58" font-family="sans-serif" font-weight="bold" font-size="26" fill="#dc2626">${text}</text>
     <text x="120" y="82" font-family="sans-serif" font-size="12" fill="#22c55e" letter-spacing="3">${subtitle}</text>
   </svg>`;
 
-  const assets = {
-    flag: {
-      id: "flag",
-      title: t('downloads.flagTitle'),
-      desc: t('downloads.flagDesc'),
-      fileName: "telangana_jagruthi_flag.svg",
-      content: flagSvg,
-      render: (
-        <div className="w-full h-40 sm:h-48 rounded-xl border border-brand-green-900/10 overflow-hidden flex flex-col shadow-inner bg-stone-100 select-none">
-          <div className="flex-1 w-full relative">
-            <div className="h-1/2 bg-[#15803d]" />
-            <div className="h-1/2 bg-white" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-white border border-brand-gold-700 flex items-center justify-center">
-              <span className="text-[7px] sm:text-[9px] font-bold text-red-600">తెలంగాణ జాగృతి</span>
-            </div>
-          </div>
-          <div className="bg-[#fafaf9] border-t border-brand-green-900/5 py-2.5 px-4 text-left flex items-center justify-between">
-            <span className="text-slate-400 text-xs font-bold">Vector SVG Preview</span>
-            <span className="text-brand-green-800 font-extrabold text-xs font-telugu">తెలంగాణ జెండా</span>
-          </div>
-        </div>
-      )
-    },
-    logos: [
-      {
-        id: "logo-te",
-        langName: "Telugu (తెలుగు)",
-        text: "తెలంగాణ జాగృతి",
-        subText: "TELANGANA JAGRUTHI",
-        fileName: "telangana_jagruthi_logo_telugu.svg",
-        content: getLogoSvg("తెలంగాణ జాగృతి", "TELANGANA JAGRUTHI")
-      },
-      {
-        id: "logo-en",
-        langName: "English",
-        text: "TELANGANA JAGRUTHI",
-        subText: "FOUNDED IN 2006",
-        fileName: "telangana_jagruthi_logo_english.svg",
-        content: getLogoSvg("TELANGANA JAGRUTHI", "FOUNDED IN 2006")
-      },
-      {
-        id: "logo-hi",
-        langName: "Hindi (हिंदी)",
-        text: "तेलंगाना जागृति",
-        subText: "TELANGANA JAGRUTHI",
-        fileName: "telangana_jagruthi_logo_hindi.svg",
-        content: getLogoSvg("तेलंगाना जागृति", "TELANGANA JAGRUTHI")
-      },
-      {
-        id: "logo-ur",
-        langName: "Urdu (اردو)",
-        text: "تلنگانہ جاگرتی",
-        subText: "TELANGANA JAGRUTHI",
-        fileName: "telangana_jagruthi_logo_urdu.svg",
-        content: getLogoSvg("تلنگانہ جاگرتی", "TELANGANA JAGRUTHI")
-      }
-    ]
-  };
+  const logos = [
+    { id: 'logo-te', langName: 'Telugu (తెలుగు)',  text: 'తెలంగాణ జాగృతి',  subText: 'TELANGANA JAGRUTHI', fileName: 'telangana_jagruthi_logo_telugu.svg'  },
+    { id: 'logo-en', langName: 'English',           text: 'TELANGANA JAGRUTHI', subText: 'FOUNDED IN 2006',   fileName: 'telangana_jagruthi_logo_english.svg' },
+    { id: 'logo-hi', langName: 'Hindi (हिंदी)',     text: 'तेलंगाना जागृति',   subText: 'TELANGANA JAGRUTHI', fileName: 'telangana_jagruthi_logo_hindi.svg'   },
+    { id: 'logo-ur', langName: 'Urdu (اردو)',       text: 'تلنگانہ جاگرتی',    subText: 'TELANGANA JAGRUTHI', fileName: 'telangana_jagruthi_logo_urdu.svg'    }
+  ];
 
   return (
-    <section id="downloads" className="py-24 bg-[#f5f5f4] relative overflow-hidden border-b border-brand-green-900/5">
-      
-      {/* Decorative Glows */}
-      <div className="absolute top-[20%] left-[-5%] w-[30vw] h-[30vw] rounded-full bg-brand-green-800/[0.03] blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-5%] w-[35vw] h-[35vw] rounded-full bg-brand-gold-600/[0.03] blur-[120px] pointer-events-none" />
+    <section id="downloads" className="py-20 sm:py-28 bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-green-900 tracking-wide font-display">
-            {t('downloads.title')}
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-2 font-bold uppercase tracking-widest font-telugu">
-            {t('downloads.subtitle')}
-          </p>
-          <div className="ornament-line mt-5">
-            <div className="ornament-diamond" />
+        {/* Header */}
+        <div className="mb-10 sm:mb-14">
+          <span className="section-eyebrow mb-4 inline-flex">
+            <Download className="h-3.5 w-3.5" />
+            {language === 'en' ? 'Official Assets' : 'అధికారిక ఆస్తులు'}
+          </span>
+          <h2 className="section-title text-3xl sm:text-4xl mt-3 mb-2">{t('downloads.title')}</h2>
+          <p className="text-sm text-gray-500">{t('downloads.subtitle')}</p>
+          <div className="flex items-center gap-2 mt-5">
+            <div className="h-0.5 w-12 bg-[#0f5132]" />
+            <div className="h-1.5 w-1.5 bg-[#a16207] rotate-45" />
+            <div className="h-0.5 w-4 bg-[#a16207]" />
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
-          {/* Left Side: Flag Card */}
-          <div className="lg:col-span-5 space-y-6">
-            <h3 className="text-lg font-bold text-slate-800 tracking-wide border-l-2 border-brand-gold-700 pl-3 font-display">
-              {t('downloads.flagTitle')}
-            </h3>
-            
-            <motion.div
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.3 }}
-              className="bg-[#fafaf9] rounded-3xl p-6 border border-brand-green-900/10 shadow-premium space-y-6"
-            >
-              {assets.flag.render}
 
-              <div className="space-y-3">
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-telugu font-semibold">
-                  {assets.flag.desc}
-                </p>
-                <div className="flex items-center gap-2 text-xs text-slate-400 font-bold select-none">
-                  <ShieldCheck className="h-4 w-4 text-brand-green-800 shrink-0" />
-                  <span>High-resolution production ready SVG vector format</span>
+          {/* Left: Flag */}
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-2 mb-5">
+              <Flag className="h-4 w-4 text-[#a16207]" />
+              <h3 className="text-sm font-black text-[#0a361e]" style={{ fontFamily: 'Cinzel, serif' }}>
+                {t('downloads.flagTitle')}
+              </h3>
+            </div>
+
+            <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.3 }}
+              className="official-card bg-white official-card-gold overflow-hidden">
+              {/* Flag preview */}
+              <div className="h-44 sm:h-52 w-full flex flex-col overflow-hidden select-none">
+                <div className="flex-1 bg-[#15803d]" />
+                <div className="flex-1 bg-white" />
+                {/* Emblem */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  style={{ position: 'relative' }}>
+                  {/* rendered differently */}
                 </div>
               </div>
 
-              <button
-                onClick={() => triggerDownload(assets.flag.fileName, assets.flag.content)}
-                className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-green-800 to-brand-green-900 hover:from-brand-green-700 hover:to-brand-green-800 text-white text-[10px] sm:text-xs font-display font-black uppercase tracking-widest transition-all shadow-sm cursor-pointer"
-              >
-                <Download className="h-4 w-4" />
-                <span>{t('common.download')} FLAG (SVG)</span>
-              </button>
+              {/* Actual flag visual */}
+              <div className="h-44 sm:h-52 w-full select-none overflow-hidden relative -mt-44 sm:-mt-52">
+                <div className="h-1/2 w-full bg-[#15803d]" />
+                <div className="h-1/2 w-full bg-white" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="h-20 w-20 sm:h-24 sm:w-24 rounded-full bg-white border-2 border-[#d97706] flex items-center justify-center shadow-md">
+                    <span className="text-[7px] sm:text-[8px] font-bold text-red-600 text-center leading-tight px-1">తెలంగాణ<br/>జాగృతి</span>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-[#f8f7f5] border-t border-gray-100 px-4 py-2 flex items-center justify-between">
+                  <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">SVG Vector Preview</span>
+                  <span className="text-[9px] text-[#0f5132] font-black uppercase tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>తెలంగాణ జెండా</span>
+                </div>
+              </div>
+
+              <div className="p-5 sm:p-6 space-y-4">
+                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed"
+                  style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                  {t('downloads.flagDesc')}
+                </p>
+                <div className="flex items-center gap-2 text-[10px] text-gray-400 font-semibold">
+                  <ShieldCheck className="h-3.5 w-3.5 text-[#0f5132] flex-shrink-0" />
+                  High-resolution production-ready SVG vector format
+                </div>
+                <button
+                  onClick={() => triggerDownload('telangana_jagruthi_flag.svg', flagSvg)}
+                  className="btn-primary btn-gold w-full justify-center py-3 text-[9px]"
+                  style={{ borderRadius: '2px' }}
+                >
+                  <Download className="h-4 w-4" />
+                  {t('common.download')} FLAG (SVG)
+                </button>
+              </div>
             </motion.div>
           </div>
 
-          {/* Right Side: Logos Grid */}
-          <div className="lg:col-span-7 space-y-6">
-            <h3 className="text-lg font-bold text-slate-800 tracking-wide border-l-2 border-brand-green-800 pl-3 font-display">
-              {t('downloads.logoTitle')}
-            </h3>
+          {/* Right: Logos Grid */}
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-2 mb-5">
+              <div className="h-4 w-4 bg-[#0f5132] flex items-center justify-center">
+                <span className="text-[7px] text-white font-black">TJ</span>
+              </div>
+              <h3 className="text-sm font-black text-[#0a361e]" style={{ fontFamily: 'Cinzel, serif' }}>
+                {t('downloads.logoTitle')}
+              </h3>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {assets.logos.map((logo) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              {logos.map((logo) => (
                 <motion.div
                   key={logo.id}
-                  whileHover={{ y: -4 }}
+                  whileHover={{ y: -3 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-[#fafaf9] rounded-2xl p-5 border border-brand-green-900/10 flex flex-col justify-between space-y-4 shadow-premium hover:shadow-premium-hover hover:border-brand-gold-700/25"
+                  className="official-card bg-white p-5 flex flex-col justify-between gap-4"
                 >
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-extrabold text-brand-gold-700 tracking-wider uppercase block select-none">
+                  <div>
+                    <span className="text-[8px] font-black text-[#a16207] uppercase tracking-widest block mb-1"
+                      style={{ fontFamily: 'Cinzel, serif' }}>
                       {logo.langName}
                     </span>
-                    <h4 className="text-sm font-bold text-slate-800 font-telugu leading-tight">
-                      {logo.text}
-                    </h4>
+                    <h4 className="text-xs font-bold text-[#0a361e] leading-tight">{logo.text}</h4>
                   </div>
 
-                  {/* Vector Logo Preview Box */}
-                  <div className="bg-white border border-brand-green-900/5 p-4 rounded-xl flex items-center justify-center h-24 select-none">
-                    <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-full border border-brand-gold-700/30 flex items-center justify-center p-1 bg-brand-green-50">
-                        <div className="h-2.5 w-2.5 rounded-full bg-brand-green-800" />
-                      </div>
-                      <div className="flex flex-col text-left">
-                        <span className="text-xs font-bold text-red-600 font-telugu leading-tight">{logo.text}</span>
-                        <span className="text-[8px] text-brand-green-900 font-bold tracking-wider font-sans leading-none">{logo.subText}</span>
-                      </div>
+                  {/* Logo preview */}
+                  <div className="bg-[#0d1b14] rounded-sm p-4 flex items-center gap-3">
+                    <div className="h-9 w-9 rounded-full border border-[#d97706]/50 flex items-center justify-center flex-shrink-0 bg-[#0f5132]/30">
+                      <div className="h-2 w-2 rounded-full bg-[#15803d]" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-red-400 leading-tight block">{logo.text}</span>
+                      <span className="text-[7px] text-green-400 tracking-wider font-bold">{logo.subText}</span>
                     </div>
                   </div>
 
                   <button
-                    onClick={() => triggerDownload(logo.fileName, logo.content)}
-                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-brand-green-50 hover:bg-brand-green-100 text-brand-green-900 border border-brand-green-900/15 text-[10px] sm:text-xs font-display font-black uppercase tracking-widest transition-all cursor-pointer"
+                    onClick={() => triggerDownload(logo.fileName, getLogoSvg(logo.text, logo.subText))}
+                    className="btn-secondary w-full justify-center py-2.5 text-[9px]"
+                    style={{ borderRadius: '2px' }}
                   >
                     <Download className="h-3.5 w-3.5" />
-                    <span>Download SVG</span>
+                    Download SVG
                   </button>
                 </motion.div>
               ))}
@@ -199,7 +168,6 @@ const DownloadsSection = () => {
           </div>
 
         </div>
-
       </div>
     </section>
   );

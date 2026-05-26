@@ -11,14 +11,12 @@ import { ArrowUp } from 'lucide-react';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
-  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showScrollTop, setShowScrollTop]  = useState(false);
 
-  // Monitor scroll height to show/hide "Back to Top" button
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
-      
-      // Determine active section based on scroll position
+
       const sections = ['hero', 'about-founder', 'about-vision', 'about-history', 'about-org', 'news', 'downloads', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -32,7 +30,7 @@ function App() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -42,45 +40,38 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col relative">
-      
-      {/* 1. Glassmorphic Floating Header Navigation */}
+    <div className="min-h-screen bg-[#f8f7f5] text-[#1a2a1f] flex flex-col relative">
+
+      {/* Floating Navigation (ribbon + navbar handled inside) */}
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
 
-      {/* Main Single Page Sections */}
-      <main className="flex-1">
-        
-        {/* 2. Hero Interactive Canvas Slider */}
+      {/*
+        Top padding accounts for fixed nav stack height:
+          Mobile  → nav bar only:            64px  → pt-16
+          sm+     → ribbon (28px) + nav (68px) = 96px → sm:pt-24
+      */}
+      <main className="flex-1 pt-16 sm:pt-24">
+
         <HeroSlider setActiveSection={setActiveSection} />
-
-        {/* 3. About, Vision & History Section */}
         <AboutSection />
-
-        {/* 4. Interactive Leadership directory */}
         <LeadershipOrg />
-
-        {/* 5. News & agitations */}
         <NewsArticles />
-
-        {/* 6. High-res Downloads section */}
         <DownloadsSection />
-
-        {/* 7. Validated Contact portal */}
         <ContactForm />
 
       </main>
 
-      {/* 8. Modern Curved Footer */}
       <Footer setActiveSection={setActiveSection} />
 
-      {/* 9. Floating Back to Top Button */}
+      {/* Back to top — official square style */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-40 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-emerald-600 hover:bg-emerald-500 border border-emerald-400/20 text-white flex items-center justify-center cursor-pointer shadow-lg hover:shadow-emerald-500/20 transition-all hover:scale-110 active:scale-95 transform duration-300"
+          className="fixed bottom-6 right-6 z-40 h-11 w-11 bg-[#0f5132] hover:bg-[#15803d] text-white flex items-center justify-center cursor-pointer shadow-xl transition-all hover:scale-105 active:scale-95 duration-200"
+          style={{ borderRadius: '2px', borderTop: '2px solid #a16207' }}
           aria-label="Scroll to top"
         >
-          <ArrowUp className="h-5 w-5 sm:h-6 sm:w-6" />
+          <ArrowUp className="h-4 w-4" />
         </button>
       )}
 
