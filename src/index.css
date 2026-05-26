@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@300;400;500;600;700;800&family=Mandali&family=NTR&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', 'Mandali', 'NTR', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', 'Mandali', 'NTR', Georgia, serif;
+  --font-display: 'Cinzel', 'Playfair Display', 'Mandali', 'NTR', Georgia, serif;
+  --font-telugu: 'Mandali', 'NTR', sans-serif;
+  --color-brand-green-50: #f0fdf4;
+  --color-brand-green-100: #dcfce7;
+  --color-brand-green-200: #bbf7d0;
+  --color-brand-green-500: #22c55e;
+  --color-brand-green-600: #16a34a;
+  --color-brand-green-700: #15803d;
+  --color-brand-green-800: #0f5132;
+  --color-brand-green-900: #0a361e;
+  --color-brand-gold-300: #fde047;
+  --color-brand-gold-400: #facc15;
+  --color-brand-gold-500: #eab308;
+  --color-brand-gold-600: #b45309;
+  --color-brand-gold-700: #a16207;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #fafaf9; /* Warm alabaster stone white background */
+  color: #1c2c22; /* Deep forest charcoal text */
+  overflow-x: hidden;
+}
+
+/* Glassmorphism light-frosted custom styling utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(6, 78, 59, 0.05);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(180, 83, 9, 0.06);
+}
+
+/* Premium shadows representing high-end administrative panels */
+.shadow-premium {
+  box-shadow: 0 10px 40px -4px rgba(6, 78, 59, 0.03), 0 2px 12px -2px rgba(180, 83, 9, 0.015);
+}
+
+.shadow-premium-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shadow-premium-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 60px -8px rgba(6, 78, 59, 0.07), 0 4px 20px -3px rgba(180, 83, 9, 0.03);
+}
+
+/* Glow effects in light mode */
+.glow-green {
+  box-shadow: 0 0 35px -5px rgba(6, 78, 59, 0.08);
+}
+
+.glow-gold {
+  box-shadow: 0 0 35px -5px rgba(180, 83, 9, 0.08);
+}
+
+/* Elegant decorative divider for heritage aesthetic */
+.ornament-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+.ornament-line::before,
+.ornament-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(6, 78, 59, 0.1), transparent);
+}
+.ornament-diamond {
+  width: 8px;
+  height: 8px;
+  background: #b45309;
+  transform: rotate(45deg);
+  border: 1px solid #fafaf9;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f4;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 78, 59, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 78, 59, 0.4);
+}
