@@ -50,7 +50,7 @@ function App() {
           Mobile  → nav bar only:            64px  → pt-16
           sm+     → ribbon (28px) + nav (68px) = 96px → sm:pt-24
       */}
-      <main className="flex-1 pt-16 sm:pt-24">
+      <main className="flex-1 pt-[66px] lg:pt-[70px]">
 
         <HeroSlider setActiveSection={setActiveSection} />
         <AboutSection />
