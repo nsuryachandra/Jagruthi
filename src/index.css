@@ -103,3 +103,28 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(6, 78, 59, 0.4);
 }
+
+/* Mobile responsive safeguards (under 400px) */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.85rem !important; /* Scale down titles to prevent page breaks */
+    line-height: 2.3rem !important;
+  }
+  h2 {
+    font-size: 1.55rem !important;
+    line-height: 2.0rem !important;
+  }
+  h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.7rem !important;
+  }
+  .px-4 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .py-24 {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+}
+
