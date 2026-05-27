@@ -62,11 +62,32 @@ const Footer = ({ setActiveSection }) => {
     { id: 'downloads',      label: t('nav.downloads') },
     { id: 'contact',        label: t('nav.contact') }
   ];
+  const galleryImages = Array.from({ length: 9 }, (_, i) => `https://telanganajagruthi.org/wp-content/uploads/2024/04/footer-gallery-0${i + 1}.jpg`);
+  const doubledGallery = [...galleryImages, ...galleryImages];
 
   return (
     <footer className="bg-[#0a361e] text-white">
       {/* Top golden party stripe */}
       <div className="h-1 bg-gradient-to-r from-[#0f5132] via-[#a16207] to-[#0f5132]" />
+
+      {/* Footer Gallery Infinite Scrolling Carousel */}
+      <div className="w-full bg-[#072c18] py-5 border-b border-[#a16207]/20 overflow-hidden relative group">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#a16207]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#a16207]/30 to-transparent" />
+        
+        <div className="flex gap-4 animate-marquee hover:[animation-play-state:paused] transition-all">
+          {doubledGallery.map((imgUrl, index) => (
+            <div key={index} className="w-32 h-20 sm:w-40 sm:h-24 lg:w-48 lg:h-28 flex-shrink-0 overflow-hidden border border-[#a16207]/20 relative shadow-sm transition-opacity duration-300 hover:opacity-90">
+              <img
+                src={imgUrl}
+                alt={`Telangana Jagruthi Gallery ${index + 1}`}
+                className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Main footer body */}
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-16">

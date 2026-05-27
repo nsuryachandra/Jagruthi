@@ -8,42 +8,73 @@ import { ArrowRight, Award, Users, ShieldAlert, ChevronLeft, ChevronRight } from
 const SLIDES = [
   {
     id: 'slide-1',
-    eyebrow: { en: 'Cultural Revival',           te: 'సాంస్కృతిక పునరుజ్జీవనం' },
-    title:   { en: 'Preserving Telangana\'s Heritage', te: 'తెలంగాణ వారసత్వ సంరక్షణ' },
-    highlight:{ en: 'Bathukamma — Celebrated in 18+ Nations', te: 'బతుకమ్మ — 18+ దేశాల్లో వేడుక' },
-    desc:    {
-      en: 'Telangana Jagruthi revitalised the ancient Bathukamma floral festival, transforming a regional tradition into an internationally celebrated cultural milestone.',
-      te: 'తెలంగాణ జాగృతి బతుకమ్మ పూల పండుగను పునరుద్ధరించి, ఒక ప్రాంతీయ సంప్రదాయాన్ని అంతర్జాతీయంగా ఘనంగా నిర్వహించింది.'
+    eyebrow: { en: 'Bhoomi Poratam', te: 'భూ పోరాటం' },
+    title: { en: 'Justice for Movement Activists', te: 'ఉద్యమకారుల హక్కుల రక్షణ' },
+    highlight: { en: 'Land Agitation Lead by Kavitha in Manakondur', te: 'మానకొండూరులో కవిత గారి భూపోరాటం' },
+    desc: {
+      en: 'Demanding immediate justice and land allocations for Telangana movement activists who sacrificed for statehood.',
+      te: 'తెలంగాణ రాష్ట్ర సాధన కోసం ప్రాణాలర్పించిన ఉద్యమకారుల కుటుంబాలకు తక్షణ న్యాయం మరియు భూ కేటాయింపులను డిమాండ్ చేస్తున్నాము.'
     },
-    stat: { value: '18+', label: { en: 'Countries', te: 'దేశాలు' } },
-    icon: Award,
-    accentColor: '#a16207'
+    stat: { value: '10K+', label: { en: 'Activists Joined', te: 'పాల్గొన్న ఉద్యమకారులు' } },
+    icon: ShieldAlert,
+    accentColor: '#b91c1c',
+    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg'
   },
   {
     id: 'slide-2',
-    eyebrow: { en: 'Community Development',      te: 'సమాజాభివృద్ధి' },
-    title:   { en: 'Empowering Every Community', te: 'ప్రతి వర్గాన్ని శక్తిమంతం చేయడం' },
-    highlight:{ en: '17+ Skill Centres Operating Statewide', te: '17+ నైపుణ్య కేంద్రాలు రాష్ట్రవ్యాప్తంగా' },
-    desc:    {
-      en: 'Through vocational training, digital literacy programmes and women\'s empowerment cells, we build a self-reliant Telangana — district by district.',
-      te: 'వృత్తి శిక్షణ, డిజిటల్ అక్షరాస్యత కార్యక్రమాలు మరియు మహిళా సాధికారత కేంద్రాల ద్వారా మేము జిల్లా జిల్లాగా స్వావలంబన తెలంగాణను నిర్మిస్తున్నాం.'
+    eyebrow: { en: 'Janam Bata Campaign', te: 'జనం బాట యాత్ర' },
+    title: { en: 'Jagruthi Janam Bata — Karimnagar', te: 'జాగృతి జనం బాట — కరీంనగర్' },
+    highlight: { en: 'Connecting with Citizens at the Grassroots', te: 'క్షేత్రస్థాయిలో ప్రజలతో మమేకం' },
+    desc: {
+      en: 'Travelling village to village to understand local grievances, advocate for solutions, and lead grassroots development.',
+      te: 'స్థానిక సమస్యలను తెలుసుకోవడానికి, పరిష్కారాల కోసం పోరాడటానికి మరియు గ్రామ గ్రామాన అభివృద్ధిని ప్రోత్సహించడానికి క్షేత్రస్థాయి పర్యటన.'
     },
-    stat: { value: '17+', label: { en: 'Training Centres', te: 'శిక్షణ కేంద్రాలు' } },
+    stat: { value: 'Karimnagar', label: { en: 'District Campaign', te: 'జిల్ల్లా ప్రచారం' } },
     icon: Users,
-    accentColor: '#0f5132'
+    accentColor: '#0f5132',
+    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg'
   },
   {
     id: 'slide-3',
-    eyebrow: { en: 'People\'s Movement',         te: 'ప్రజా ఉద్యమం' },
-    title:   { en: 'Standing for Farmers & Workers', te: 'రైతులు & కార్మికుల పక్షాన' },
-    highlight:{ en: 'Grassroots Advocacy Since 2006', te: '2006 నుండి క్షేత్రస్థాయి పోరాటం' },
-    desc:    {
-      en: 'Rooted in the separate statehood movement, Jagruthi leads peaceful agitations demanding farmers\' procurement bonuses, crop insurance, and fair education fee regulations.',
-      te: 'ప్రత్యేక రాష్ట్ర ఉద్యమ స్ఫూర్తితో రైతుల కొనుగోలు బోనస్, పంట బీమా మరియు విద్యా ఫీజుల నియంత్రణ కోసం జాగృతి శాంతియుత ఆందోళనలు నిర్వహిస్తోంది.'
+    eyebrow: { en: 'Public Outreach', te: 'ప్రజా బాట' },
+    title: { en: 'A Journey to Listen and Lead', te: 'వినడం మరియు నడిపించే ప్రయాణం' },
+    highlight: { en: 'Jagruthi Janam Bata Statewide Movement', te: 'జాగృతి జనం బాట రాష్ట్రవ్యాప్త ఉద్యమం' },
+    desc: {
+      en: 'Organising mass public meetings to raise awareness on agricultural rights, educational reforms, and heritage preservation.',
+      te: 'వ్యవసాయ హక్కులు, విద్యా రంగ సంస్కరణలు మరియు సంస్కృతి సంరక్షణపై అవగాహన పెంచేందుకు భారీ బహిరంగ సభల నిర్వహణ.'
     },
     stat: { value: '2006', label: { en: 'Established', te: 'స్థాపితమైంది' } },
-    icon: ShieldAlert,
-    accentColor: '#b91c1c'
+    icon: Award,
+    accentColor: '#a16207',
+    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg'
+  },
+  {
+    id: 'slide-4',
+    eyebrow: { en: 'Nizamabad Session', te: 'నిజామాబాద్ సదస్సు' },
+    title: { en: 'Jagruthi Janam Bata — Nizamabad', te: 'జాగృతి జనం బాట — నిజామాబాద్' },
+    highlight: { en: 'Resolving Grievances & Mobilising Youth', te: 'సమస్యల పరిష్కారం & యువత సమీకరణ' },
+    desc: {
+      en: 'Empowering local communities by assessing ground realities, holding town halls, and creating regional livelihood opportunities.',
+      te: 'క్షేత్రస్థాయి పరిస్థితులను అంచనా వేయడం, సదస్సులు నిర్వహించడం మరియు ప్రాంతీయ ఉపాధి అవకాశాలను సృష్టించడం ద్వారా ప్రజలను బలోపేతం చేయడం.'
+    },
+    stat: { value: 'Nizamabad', label: { en: 'District Campaign', te: 'జిల్లా ప్రచారం' } },
+    icon: Users,
+    accentColor: '#0f5132',
+    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg'
+  },
+  {
+    id: 'slide-5',
+    eyebrow: { en: 'Heritage & Welfare', te: 'వారసత్వం & సంక్షేమం' },
+    title: { en: 'Statewide Cultural Empowerment', te: 'రాష్ట్రవ్యాప్త సాంస్కృతిక సాధికారత' },
+    highlight: { en: 'Reviving Traditions and Supporting Livelihoods', te: 'సంప్రదాయాల పునరుద్ధరణ & ఉపాధి మద్దతు' },
+    desc: {
+      en: 'From Bathukamma celebrations to skill-building initiatives, we work to protect Telangana\'s unique identity and economic strength.',
+      te: 'బతుకమ్మ పండుగ వేడుకల నుండి నైపుణ్య శిక్షణా కార్యక్రమాల వరకు, తెలంగాణ ప్రత్యేక అస్తిత్వాన్ని మరియు ఆర్థిక బలాన్ని కాపాడటానికి కృషి చేస్తున్నాము.'
+    },
+    stat: { value: '33', label: { en: 'Districts Covered', te: 'కవర్ చేసిన జిల్లాలు' } },
+    icon: Award,
+    accentColor: '#a16207',
+    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg'
   }
 ];
 
@@ -221,11 +252,25 @@ const HeroSlider = ({ setActiveSection }) => {
             </div>
           </div>
 
-          {/* ───────── RIGHT: 3D Canvas ───────── */}
+          {/* ───────── RIGHT: Stacked Image and 3D Canvas ───────── */}
           <div className="order-1 lg:order-2 relative flex items-center justify-center">
 
             {/* Official frame with corner brackets */}
-            <div className="relative w-full max-w-[480px] mx-auto h-[300px] sm:h-[380px] lg:h-[460px]">
+            <div className="relative w-full max-w-[480px] mx-auto h-[300px] sm:h-[380px] lg:h-[460px] bg-[#0a361e]/5 overflow-hidden">
+              {/* Event Image */}
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={slide.id}
+                  src={slide.image}
+                  alt={slide.title[language]}
+                  initial={{ opacity: 0, scale: 1.03 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: 0.45 }}
+                  className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+                />
+              </AnimatePresence>
+
               {/* Corner bracket accents */}
               {[
                 'top-0 left-0 border-t-2 border-l-2',
@@ -233,18 +278,20 @@ const HeroSlider = ({ setActiveSection }) => {
                 'bottom-0 left-0 border-b-2 border-l-2',
                 'bottom-0 right-0 border-b-2 border-r-2'
               ].map((cls, i) => (
-                <div key={i} className={`absolute h-6 w-6 border-[#a16207] ${cls} pointer-events-none`} />
+                <div key={i} className={`absolute h-6 w-6 border-[#a16207] ${cls} pointer-events-none z-20`} />
               ))}
 
               {/* Faint inner border */}
-              <div className="absolute inset-3 border border-[#0f5132]/5 pointer-events-none" />
+              <div className="absolute inset-3 border border-[#a16207]/20 pointer-events-none z-20" />
 
               {/* 3D Canvas */}
-              <ThreeDHero />
+              <div className="absolute inset-0 z-10 pointer-events-none opacity-90">
+                <ThreeDHero />
+              </div>
 
               {/* Footer label */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                <span className="text-[7px] tracking-[0.25em] uppercase text-[#0f5132]/30 font-display font-black">
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap z-20 bg-[#0a361e]/70 px-3 py-1 border border-[#a16207]/30" style={{ borderRadius: '1px' }}>
+                <span className="text-[7px] tracking-[0.25em] uppercase text-white/90 font-display font-black">
                   Telangana Jagruthi — Est. 2006
                 </span>
               </div>

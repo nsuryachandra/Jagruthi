@@ -6,6 +6,7 @@ import LeadershipOrg from './components/LeadershipOrg';
 import NewsArticles from './components/NewsArticles';
 import DownloadsSection from './components/DownloadsSection';
 import ContactForm from './components/ContactForm';
+import SocialFeeds from './components/SocialFeeds';
 import Footer from './components/Footer';
 import { ArrowUp } from 'lucide-react';
 
@@ -51,11 +52,29 @@ function App() {
           sm+     → ribbon (28px) + nav (68px) = 96px → sm:pt-24
       */}
       <main className="flex-1 pt-[66px] lg:pt-[70px]">
+        {/* Clickable Party Membership Banner */}
+        <div className="w-full bg-[#0a361e] border-b border-[#a16207]/30 overflow-hidden relative group">
+          <a
+            href="https://www.telanganajagruthi.org/party-membership-form/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full hover:opacity-95 transition-opacity duration-300"
+          >
+            <img
+              src="https://www.telanganajagruthi.org/wp-content/uploads/2024/03/telanaga-membership-party.jpg.jpeg"
+              alt="Click Here to Register Party Membership"
+              className="w-full h-auto max-h-[90px] sm:max-h-[110px] lg:max-h-[140px] object-cover object-center transition-transform duration-500 group-hover:scale-[1.01]"
+            />
+            {/* Subtle premium gold shine overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#a16207]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+          </a>
+        </div>
 
         <HeroSlider setActiveSection={setActiveSection} />
         <AboutSection />
         <LeadershipOrg />
         <NewsArticles />
+        <SocialFeeds />
         <DownloadsSection />
         <ContactForm />
 
