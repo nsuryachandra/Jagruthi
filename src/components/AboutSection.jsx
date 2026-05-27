@@ -73,18 +73,16 @@ const AboutSection = () => {
                       </svg>
                     </div>
                     {/* Official badge */}
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#0f5132] text-white text-[7px] font-display font-black uppercase tracking-widest px-3 py-1 whitespace-nowrap"
-                      style={{ borderRadius: '1px', fontFamily: 'Cinzel, serif' }}>
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#0f5132] text-white text-[7px] font-ui font-black uppercase tracking-widest px-3 py-1 whitespace-nowrap"
+                      style={{ borderRadius: '1px' }}>
                       Founder & President
                     </div>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-black text-[#0a361e] mt-4 font-display"
-                    style={{ fontFamily: 'Cinzel, serif' }}>
+                  <h3 className="text-lg sm:text-xl font-black text-[#0a361e] mt-4 font-display">
                     {t('founder.subtitle')}
                   </h3>
-                  <p className="text-xs text-[#a16207] font-bold uppercase tracking-widest mt-1 mb-5"
-                    style={{ fontFamily: 'Cinzel, serif' }}>
+                  <p className="text-xs text-[#a16207] font-bold uppercase tracking-widest mt-1 mb-5 font-ui">
                     {language === 'en' ? 'Telangana Jagruthi' : 'తెలంగాణ జాగృతి'}
                   </p>
 
@@ -116,8 +114,7 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              <div className="space-y-4 text-sm sm:text-base text-[#3a4a3f] leading-relaxed"
-                style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+              <div className="space-y-4 text-sm sm:text-base text-[#3a4a3f] leading-relaxed font-sans">
                 <p>{t('founder.p1')}</p>
                 <p>{t('founder.p2')}</p>
                 <p>{t('founder.p3')}</p>
@@ -148,14 +145,12 @@ const AboutSection = () => {
                 <div className="h-10 w-10 bg-[#f0fdf4] border border-[#0f5132]/20 flex items-center justify-center flex-shrink-0">
                   <Eye className="h-5 w-5 text-[#0f5132]" />
                 </div>
-                <h3 className="text-xl font-black text-[#0a361e] font-display"
-                  style={{ fontFamily: 'Cinzel, serif' }}>
+                <h3 className="text-xl font-black text-[#0a361e] font-display">
                   {t('vision.visionTitle')}
                 </h3>
               </div>
               <div className="h-0.5 w-full bg-gradient-to-r from-[#0f5132]/30 to-transparent mb-5" />
-              <p className="text-sm sm:text-base text-[#3a4a3f] leading-relaxed"
-                style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+              <p className="text-sm sm:text-base text-[#3a4a3f] leading-relaxed font-sans">
                 {t('vision.visionText')}
               </p>
             </motion.div>
@@ -170,14 +165,12 @@ const AboutSection = () => {
                 <div className="h-10 w-10 bg-[#fffbeb] border border-[#a16207]/20 flex items-center justify-center flex-shrink-0">
                   <Compass className="h-5 w-5 text-[#a16207]" />
                 </div>
-                <h3 className="text-xl font-black text-[#0a361e] font-display"
-                  style={{ fontFamily: 'Cinzel, serif' }}>
+                <h3 className="text-xl font-black text-[#0a361e] font-display">
                   {t('vision.missionTitle')}
                 </h3>
               </div>
               <div className="h-0.5 w-full bg-gradient-to-r from-[#a16207]/30 to-transparent mb-5" />
-              <p className="text-sm sm:text-base text-[#3a4a3f] leading-relaxed"
-                style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+              <p className="text-sm sm:text-base text-[#3a4a3f] leading-relaxed font-sans">
                 {t('vision.missionText')}
               </p>
             </motion.div>
@@ -196,8 +189,7 @@ const AboutSection = () => {
             subtitle={t('history.subtitle')}
           />
 
-          <p className="text-sm sm:text-base text-[#3a4a3f] leading-relaxed mb-16 max-w-3xl"
-            style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+          <p className="text-sm sm:text-base text-[#3a4a3f] leading-relaxed mb-16 max-w-3xl font-sans">
             {t('history.intro')}
           </p>
 
@@ -230,14 +222,12 @@ const AboutSection = () => {
                       <div className="official-card bg-white p-5 group cursor-default hover:border-t-[#a16207]">
                         <div className="flex items-center gap-2 mb-3">
                           <Calendar className="h-3.5 w-3.5 text-[#0f5132] flex-shrink-0" />
-                          <span className="text-base font-black text-[#a16207] font-display"
-                            style={{ fontFamily: 'Cinzel, serif' }}>{item.year}</span>
+                          <span className="text-base font-black text-[#a16207] font-display">{item.year}</span>
                         </div>
                         <h4 className="text-sm sm:text-base font-bold text-[#0a361e] mb-2 group-hover:text-[#0f5132] transition-colors">
                           {item.title[language]}
                         </h4>
-                        <p className="text-xs sm:text-sm text-gray-500 leading-relaxed"
-                          style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                        <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-sans">
                           {item.desc[language]}
                         </p>
                       </div>

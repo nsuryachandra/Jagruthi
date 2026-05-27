@@ -93,12 +93,11 @@ const LeadershipOrg = () => {
                 key={tab.id}
                 onClick={() => { setActiveTab(tab.id); setSelectedWing('all'); }}
                 className={[
-                  'px-4 py-2.5 text-[9px] font-display font-black uppercase tracking-widest transition-all cursor-pointer border-r border-gray-200 last:border-r-0 whitespace-nowrap',
+                  'px-4 py-2.5 text-[9px] font-ui font-black uppercase tracking-widest transition-all cursor-pointer border-r border-gray-200 last:border-r-0 whitespace-nowrap',
                   activeTab === tab.id
                     ? 'bg-[#0f5132] text-white'
                     : 'bg-white text-gray-500 hover:bg-[#f0fdf4] hover:text-[#0f5132]'
                 ].join(' ')}
-                style={{ fontFamily: 'Cinzel, serif' }}
               >
                 {tab.label}
               </button>
@@ -156,20 +155,17 @@ const LeadershipOrg = () => {
               >
                 <div className="p-4 flex flex-col items-center text-center">
                   {/* Avatar */}
-                  <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-[#f0fdf4] border-2 border-[#0f5132]/15 flex items-center justify-center text-[#0f5132] font-black text-sm mb-3 mt-2 group-hover:border-[#a16207]/40 transition-colors select-none"
-                    style={{ fontFamily: 'Cinzel, serif' }}>
+                  <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-[#f0fdf4] border-2 border-[#0f5132]/15 flex items-center justify-center text-[#0f5132] font-display font-black text-sm mb-3 mt-2 group-hover:border-[#a16207]/40 transition-colors select-none">
                     {leader.avatar}
                   </div>
 
                   {/* Name */}
-                  <h3 className="text-xs sm:text-sm font-black text-[#0a361e] leading-tight mb-1 group-hover:text-[#0f5132] transition-colors"
-                    style={{ fontFamily: 'Cinzel, serif' }}>
+                  <h3 className="text-xs sm:text-sm font-black text-[#0a361e] leading-tight mb-1 group-hover:text-[#0f5132] transition-colors font-display">
                     {leader.name[language]}
                   </h3>
 
                   {/* Role */}
-                  <p className="text-[9px] sm:text-[10px] font-bold text-[#a16207] uppercase tracking-wider leading-tight"
-                    style={{ fontFamily: 'Mandali, sans-serif' }}>
+                  <p className="text-[9px] sm:text-[10px] font-bold text-[#a16207] uppercase tracking-wider leading-tight font-ui">
                     {leader.role[language]}
                   </p>
 
@@ -202,8 +198,7 @@ const LeadershipOrg = () => {
             style={{ borderRadius: '2px' }}
           >
             <Users className="h-10 w-10 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-base font-black text-gray-600 font-display"
-              style={{ fontFamily: 'Cinzel, serif' }}>
+            <h3 className="text-base font-black text-gray-600 font-display">
               {language === 'en' ? 'No leaders found' : 'ఎటువంటి నాయకులు లభించలేదు'}
             </h3>
             <p className="text-xs text-gray-400 mt-2">

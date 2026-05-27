@@ -62,7 +62,7 @@ const DownloadsSection = () => {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-2 mb-5">
               <Flag className="h-4 w-4 text-[#a16207]" />
-              <h3 className="text-sm font-black text-[#0a361e]" style={{ fontFamily: 'Cinzel, serif' }}>
+              <h3 className="text-sm font-black text-[#0a361e] font-display">
                 {t('downloads.flagTitle')}
               </h3>
             </div>
@@ -91,13 +91,11 @@ const DownloadsSection = () => {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-[#f8f7f5] border-t border-gray-100 px-4 py-2 flex items-center justify-between">
                   <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">SVG Vector Preview</span>
-                  <span className="text-[9px] text-[#0f5132] font-black uppercase tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>తెలంగాణ జెండా</span>
+                  <span className="text-[9px] text-[#0f5132] font-black uppercase tracking-wider font-telugu">తెలంగాణ జెండా</span>
                 </div>
               </div>
-
               <div className="p-5 sm:p-6 space-y-4">
-                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed"
-                  style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-sans">
                   {t('downloads.flagDesc')}
                 </p>
                 <div className="flex items-center gap-2 text-[10px] text-gray-400 font-semibold">
@@ -122,7 +120,7 @@ const DownloadsSection = () => {
               <div className="h-4 w-4 bg-[#0f5132] flex items-center justify-center">
                 <span className="text-[7px] text-white font-black">TJ</span>
               </div>
-              <h3 className="text-sm font-black text-[#0a361e]" style={{ fontFamily: 'Cinzel, serif' }}>
+              <h3 className="text-sm font-black text-[#0a361e] font-display">
                 {t('downloads.logoTitle')}
               </h3>
             </div>
@@ -136,8 +134,7 @@ const DownloadsSection = () => {
                   className="official-card bg-white p-5 flex flex-col justify-between gap-4"
                 >
                   <div>
-                    <span className="text-[8px] font-black text-[#a16207] uppercase tracking-widest block mb-1"
-                      style={{ fontFamily: 'Cinzel, serif' }}>
+                    <span className="text-[8px] font-black text-[#a16207] uppercase tracking-widest block mb-1 font-ui">
                       {logo.langName}
                     </span>
                     <h4 className="text-xs font-bold text-[#0a361e] leading-tight">{logo.text}</h4>

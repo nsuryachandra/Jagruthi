@@ -109,14 +109,12 @@ const Navbar = ({ activeSection, setActiveSection }) => {
               <Logo className="h-[38px] w-[38px] lg:h-[42px] lg:w-[42px] transition-transform group-hover:scale-105" lightBg={true} />
               <div className="flex flex-col items-start">
                 <span
-                  className="text-[13px] lg:text-[14px] font-black leading-none tracking-[0.1em] uppercase text-[#0a361e]"
-                  style={{ fontFamily: "'Cinzel', Georgia, serif" }}
+                  className="text-[13px] lg:text-[14px] font-display font-black leading-none tracking-[0.08em] uppercase text-[#0a361e]"
                 >
                   Telangana Jagruthi
                 </span>
                 <span
-                  className="text-[9px] tracking-[0.22em] uppercase font-bold text-[#a16207] leading-none mt-[3px]"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                  className="text-[9px] tracking-[0.22em] uppercase font-ui font-bold text-[#a16207] leading-none mt-[3px]"
                 >
                   {language === 'en' ? 'తెలంగాణ జాగృతి' : 'Telangana Jagruthi'}
                 </span>
@@ -124,7 +122,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             </button>
 
             {/* ── Desktop Nav ── */}
-            <div className="hidden lg:flex items-center" style={{ fontFamily: "'Cinzel', serif" }}>
+            <div className="hidden lg:flex items-center font-ui">
               {menuItems.map((item) => {
                 if (item.dropdown) return (
                   <div key={item.id} className="relative"
@@ -139,12 +137,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                         {item.dropdown.map((sub) => (
                           <button key={sub.id} onClick={() => navigateTo(sub.id)}
                             className={[
-                              'w-full text-left px-4 py-2.5 text-[10px] font-bold transition-all cursor-pointer flex items-center gap-2 border-b border-gray-50 last:border-0 tracking-wider uppercase',
+                              'w-full text-left px-4 py-2.5 text-[10px] font-ui font-bold transition-all cursor-pointer flex items-center gap-2 border-b border-gray-50 last:border-0 tracking-wider uppercase',
                               activeSection === sub.id
                                 ? 'text-[#0f5132] bg-[#f0fdf4]'
                                 : 'text-gray-500 hover:text-[#0f5132] hover:bg-[#f0fdf4] hover:pl-6'
-                            ].join(' ')}
-                            style={{ fontFamily: "'Cinzel', serif" }}>
+                            ].join(' ')}>
                             <ChevronRight className="h-3 w-3 text-[#a16207] flex-shrink-0" />
                             {sub.label}
                           </button>
@@ -165,10 +162,10 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                     {activeDropdown === item.id && (
                       <div className="absolute left-1/2 -translate-x-1/2 top-full w-[680px] xl:w-[780px] bg-white border border-gray-200 border-t-2 border-t-[#a16207] shadow-2xl p-5 animate-slideDown z-50">
                         <div className="flex items-center justify-between mb-3 pb-3 border-b border-gray-100">
-                          <span className="text-[9px] font-black uppercase tracking-widest text-[#0a361e]" style={{ fontFamily: "'Cinzel', serif" }}>
+                          <span className="text-[9px] font-display font-black uppercase tracking-widest text-[#0a361e]">
                             Party Wings — 22 Active Divisions
                           </span>
-                          <span className="text-[8px] font-bold bg-amber-50 text-[#a16207] border border-amber-200 px-2 py-0.5 uppercase tracking-wider">తెలంగాణ జాగృతి</span>
+                          <span className="text-[8px] font-ui font-bold bg-amber-50 text-[#a16207] border border-amber-200 px-2 py-0.5 uppercase tracking-wider">తెలంగాణ జాగృతి</span>
                         </div>
                         <div className="grid grid-cols-4 gap-0.5">
                           {item.wingsList.map((wing) => (
@@ -176,7 +173,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                               navigateTo('about-org');
                               window.dispatchEvent(new CustomEvent('filter-wing', { detail: wing.id }));
                             }}
-                              className="text-left px-3 py-2 text-[10px] text-gray-600 hover:text-[#0f5132] hover:bg-[#f0fdf4] transition-all cursor-pointer flex items-center gap-1.5 font-medium">
+                              className="text-left px-3 py-2 text-[10px] text-gray-600 hover:text-[#0f5132] hover:bg-[#f0fdf4] transition-all cursor-pointer flex items-center gap-1.5 font-ui font-medium">
                               <span className="h-1 w-1 rounded-full bg-[#15803d] flex-shrink-0" />
                               {wing.label}
                             </button>
@@ -199,14 +196,14 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             {/* ── Desktop Right Controls ── */}
             <div className="hidden lg:flex items-center gap-2">
               <button onClick={toggleLanguage}
-                className="flex items-center gap-1.5 px-3 py-2 text-[9px] font-black uppercase tracking-widest text-[#0f5132] bg-[#f0fdf4] border border-[#0f5132]/20 hover:border-[#0f5132]/60 transition-all cursor-pointer"
-                style={{ borderRadius: '2px', fontFamily: "'Cinzel', serif" }}>
+                className="flex items-center gap-1.5 px-3 py-2 text-[9px] font-ui font-black uppercase tracking-widest text-[#0f5132] bg-[#f0fdf4] border border-[#0f5132]/20 hover:border-[#0f5132]/60 transition-all cursor-pointer"
+                style={{ borderRadius: '2px' }}>
                 <Globe className="h-3.5 w-3.5 text-[#a16207]" />
                 {language === 'en' ? 'తెలుగు' : 'English'}
               </button>
               <button onClick={() => navigateTo('contact')}
                 className="btn-primary text-[9px] gap-1.5 px-4 py-2.5"
-                style={{ borderRadius: '2px', fontFamily: "'Cinzel', serif" }}>
+                style={{ borderRadius: '2px' }}>
                 <UserPlus className="h-3.5 w-3.5" />
                 {t('common.joinUs')}
               </button>
@@ -215,8 +212,8 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             {/* ── Mobile Controls ── */}
             <div className="flex lg:hidden items-center gap-2">
               <button onClick={toggleLanguage}
-                className="flex items-center gap-1 px-2.5 py-1.5 text-[9px] font-black uppercase tracking-wider text-[#0f5132] bg-[#f0fdf4] border border-[#0f5132]/20 cursor-pointer"
-                style={{ borderRadius: '2px', fontFamily: "'Cinzel', serif" }}>
+                className="flex items-center gap-1 px-2.5 py-1.5 text-[9px] font-ui font-black uppercase tracking-wider text-[#0f5132] bg-[#f0fdf4] border border-[#0f5132]/20 cursor-pointer"
+                style={{ borderRadius: '2px' }}>
                 <Globe className="h-3 w-3 text-[#a16207]" />
                 {language === 'en' ? 'తె' : 'EN'}
               </button>
@@ -238,8 +235,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 if (item.dropdown) return (
                   <div key={item.id}>
                     <button onClick={() => setMobileExpanded(mobileExpanded === item.id ? null : item.id)}
-                      className="w-full flex items-center justify-between px-5 py-4 text-[10px] font-black uppercase tracking-widest text-[#1a2a1f] hover:bg-[#f0fdf4] cursor-pointer transition-colors"
-                      style={{ fontFamily: "'Cinzel', serif" }}>
+                      className="w-full flex items-center justify-between px-5 py-4 text-[10px] font-ui font-black uppercase tracking-widest text-[#1a2a1f] hover:bg-[#f0fdf4] cursor-pointer transition-colors">
                       <span>{item.label}</span>
                       <ChevronDown className={`h-4 w-4 text-[#a16207] transition-transform ${mobileExpanded === item.id ? 'rotate-180' : ''}`} />
                     </button>
@@ -248,12 +244,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                         {item.dropdown.map((sub) => (
                           <button key={sub.id} onClick={() => navigateTo(sub.id)}
                             className={[
-                              'w-full text-left px-8 py-3.5 text-[10px] font-bold flex items-center gap-2.5 tracking-wider uppercase transition-all cursor-pointer',
+                              'w-full text-left px-8 py-3.5 text-[10px] font-ui font-bold flex items-center gap-2.5 tracking-wider uppercase transition-all cursor-pointer',
                               activeSection === sub.id
                                 ? 'text-[#0f5132] bg-[#f0fdf4] border-l-2 border-[#0f5132] pl-7'
                                 : 'text-gray-500 hover:text-[#0f5132] hover:bg-[#f0fdf4]'
-                            ].join(' ')}
-                            style={{ fontFamily: "'Cinzel', serif" }}>
+                            ].join(' ')}>
                             <ChevronRight className="h-3 w-3 text-[#a16207] flex-shrink-0" />
                             {sub.label}
                           </button>
@@ -266,8 +261,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 if (item.mega) return (
                   <div key={item.id}>
                     <button onClick={() => setMobileExpanded(mobileExpanded === item.id ? null : item.id)}
-                      className="w-full flex items-center justify-between px-5 py-4 text-[10px] font-black uppercase tracking-widest text-[#1a2a1f] hover:bg-[#f0fdf4] cursor-pointer transition-colors"
-                      style={{ fontFamily: "'Cinzel', serif" }}>
+                      className="w-full flex items-center justify-between px-5 py-4 text-[10px] font-ui font-black uppercase tracking-widest text-[#1a2a1f] hover:bg-[#f0fdf4] cursor-pointer transition-colors">
                       <span>{item.label}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-[7px] bg-amber-50 text-[#a16207] border border-amber-200 px-1.5 py-0.5 font-bold tracking-wider">22</span>
@@ -282,7 +276,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                               navigateTo('about-org');
                               window.dispatchEvent(new CustomEvent('filter-wing', { detail: wing.id }));
                             }}
-                              className="text-left px-3 py-2 text-[10px] text-gray-600 hover:text-[#0f5132] hover:bg-white transition-all cursor-pointer flex items-center gap-1.5 font-medium border border-transparent hover:border-gray-200"
+                              className="text-left px-3 py-2 text-[10px] text-gray-600 hover:text-[#0f5132] hover:bg-white transition-all cursor-pointer flex items-center gap-1.5 font-ui font-medium border border-transparent hover:border-gray-200"
                               style={{ borderRadius: '1px' }}>
                               <span className="h-1 w-1 rounded-full bg-[#15803d] flex-shrink-0" />
                               {wing.label}
@@ -297,12 +291,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 return (
                   <button key={item.id} onClick={() => navigateTo(item.id)}
                     className={[
-                      'w-full text-left px-5 py-4 text-[10px] font-black uppercase tracking-widest transition-all cursor-pointer',
+                      'w-full text-left px-5 py-4 text-[10px] font-ui font-black uppercase tracking-widest transition-all cursor-pointer',
                       activeSection === item.id
                         ? 'text-[#0f5132] bg-[#f0fdf4] border-l-4 border-[#0f5132]'
                         : 'text-[#1a2a1f] hover:text-[#0f5132] hover:bg-[#f0fdf4]'
-                    ].join(' ')}
-                    style={{ fontFamily: "'Cinzel', serif" }}>
+                    ].join(' ')}>
                     {item.label}
                   </button>
                 );
@@ -313,7 +306,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             <div className="p-4 bg-[#f8f7f5] border-t border-gray-200">
               <button onClick={() => navigateTo('contact')}
                 className="btn-primary w-full justify-center py-3.5 text-[9px]"
-                style={{ borderRadius: '2px', fontFamily: "'Cinzel', serif" }}>
+                style={{ borderRadius: '2px' }}>
                 <UserPlus className="h-4 w-4" />
                 {t('common.joinUs')}
               </button>

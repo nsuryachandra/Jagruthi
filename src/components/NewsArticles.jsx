@@ -98,12 +98,11 @@ const NewsArticles = () => {
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
                 className={[
-                  'px-4 py-2.5 text-[9px] font-display font-black uppercase tracking-widest transition-all cursor-pointer border-r border-gray-200 last:border-r-0 whitespace-nowrap',
+                  'px-4 py-2.5 text-[9px] font-ui font-black uppercase tracking-widest transition-all cursor-pointer border-r border-gray-200 last:border-r-0 whitespace-nowrap',
                   selectedCategory === cat.id
                     ? 'bg-[#0f5132] text-white'
                     : 'bg-white text-gray-500 hover:bg-[#f0fdf4] hover:text-[#0f5132]'
                 ].join(' ')}
-                style={{ fontFamily: 'Cinzel, serif' }}
               >
                 {cat.label}
               </button>
@@ -156,25 +155,22 @@ const NewsArticles = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-sm sm:text-base font-black text-[#0a361e] leading-snug group-hover:text-[#0f5132] transition-colors"
-                    style={{ fontFamily: 'Cinzel, serif' }}>
+                  <h3 className="text-sm sm:text-base font-black text-[#0a361e] leading-snug group-hover:text-[#0f5132] transition-colors font-display">
                     {item.title[language]}
                   </h3>
 
                   {/* Summary */}
-                  <p className="text-xs sm:text-sm text-gray-500 leading-relaxed flex-1"
-                    style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                  <p className="text-xs sm:text-sm text-gray-500 leading-relaxed flex-1 font-sans">
                     {item.summary[language]}
                   </p>
 
                   {/* Footer */}
                   <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                    <span className="text-[8px] font-black uppercase tracking-widest"
-                      style={{ color: item.accentColor, fontFamily: 'Cinzel, serif' }}>
+                    <span className="text-[8px] font-black uppercase tracking-widest font-ui"
+                      style={{ color: item.accentColor }}>
                       {item.category}
                     </span>
-                    <button className="text-[10px] font-black text-[#0f5132] hover:text-[#a16207] transition-colors flex items-center gap-1 cursor-pointer uppercase tracking-wider"
-                      style={{ fontFamily: 'Cinzel, serif' }}>
+                    <button className="text-[10px] font-black text-[#0f5132] hover:text-[#a16207] transition-colors flex items-center gap-1 cursor-pointer uppercase tracking-wider font-ui">
                       {t('common.readMore')} →
                     </button>
                   </div>
@@ -187,7 +183,7 @@ const NewsArticles = () => {
         {filteredNews.length === 0 && (
           <div className="text-center py-20 bg-[#f8f7f5] border border-gray-200" style={{ borderRadius: '2px' }}>
             <Newspaper className="h-10 w-10 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-base font-black text-gray-500" style={{ fontFamily: 'Cinzel, serif' }}>
+            <h3 className="text-base font-black text-gray-500 font-display">
               {language === 'en' ? 'No articles found' : 'ఎటువంటి వ్యాసాలు లభించలేదు'}
             </h3>
           </div>

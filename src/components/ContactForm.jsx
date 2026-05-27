@@ -50,8 +50,7 @@ const ContactForm = () => {
           {/* Left: Contact Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="official-card bg-white p-6 sm:p-8">
-              <h3 className="text-sm font-black text-[#0a361e] mb-5 pb-3 border-b border-gray-100 font-display"
-                style={{ fontFamily: 'Cinzel, serif' }}>
+              <h3 className="text-sm font-black text-[#0a361e] mb-5 pb-3 border-b border-gray-100 font-display">
                 {t('contact.officeAddress')}
               </h3>
 
@@ -79,8 +78,7 @@ const ContactForm = () => {
                     </div>
                     <div>
                       <p className="text-[9px] text-gray-400 uppercase tracking-wider font-bold mb-0.5">{item.label}</p>
-                      <p className="text-xs sm:text-sm text-[#1a2a1f] font-semibold leading-relaxed"
-                        style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                      <p className="text-xs sm:text-sm text-[#1a2a1f] font-semibold leading-relaxed font-sans">
                         {item.value}
                       </p>
                     </div>
@@ -93,8 +91,7 @@ const ContactForm = () => {
                 <a
                   href="https://maps.google.com/?q=Hill+Top+Residency+Road+No+14+Banjara+Hills+Hyderabad"
                   target="_blank" rel="noopener noreferrer"
-                  className="text-[9px] font-display font-black uppercase tracking-widest text-[#0f5132] hover:text-[#a16207] transition-colors flex items-center gap-1.5 cursor-pointer"
-                  style={{ fontFamily: 'Cinzel, serif' }}
+                  className="text-[9px] font-ui font-black uppercase tracking-widest text-[#0f5132] hover:text-[#a16207] transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
                   View on Google Maps →
                 </a>
@@ -109,8 +106,7 @@ const ContactForm = () => {
               ].map((c, i) => (
                 <div key={i} className="official-card bg-white p-4 text-center">
                   <p className="text-[8px] text-gray-400 uppercase tracking-wider font-bold mb-1">{c.label}</p>
-                  <p className="text-xs font-black text-[#0a361e] whitespace-pre-line leading-tight"
-                    style={{ fontFamily: 'Cinzel, serif' }}>{c.value}</p>
+                  <p className="text-xs font-black text-[#0a361e] whitespace-pre-line leading-tight font-display">{c.value}</p>
                 </div>
               ))}
             </div>
@@ -119,8 +115,7 @@ const ContactForm = () => {
           {/* Right: Form */}
           <div className="lg:col-span-8">
             <div className="official-card bg-white p-6 sm:p-8">
-              <h3 className="text-sm font-black text-[#0a361e] mb-6 pb-3 border-b border-gray-100 font-display"
-                style={{ fontFamily: 'Cinzel, serif' }}>
+              <h3 className="text-sm font-black text-[#0a361e] mb-6 pb-3 border-b border-gray-100 font-display">
                 {language === 'en' ? 'Send a Message' : 'సందేశం పంపండి'}
               </h3>
 

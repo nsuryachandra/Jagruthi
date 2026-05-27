@@ -77,16 +77,14 @@ const Footer = ({ setActiveSection }) => {
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => go('hero')}>
               <Logo className="h-11 w-11 flex-shrink-0" lightBg={false} />
               <div>
-                <p className="text-xs font-black tracking-[0.16em] uppercase text-white"
-                  style={{ fontFamily: 'Cinzel, serif' }}>
+                <p className="text-xs font-black tracking-[0.16em] uppercase text-white font-display">
                   Telangana Jagruthi
                 </p>
-                <p className="text-[9px] text-[#a16207] tracking-widest uppercase font-bold">Official Website</p>
+                <p className="text-[9px] text-[#a16207] tracking-widest uppercase font-bold font-ui">Official Website</p>
               </div>
             </div>
 
-            <p className="text-xs text-white/60 leading-relaxed max-w-[220px]"
-              style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+            <p className="text-xs text-white/60 leading-relaxed max-w-[220px] font-sans">
               {language === 'en'
                 ? 'A registered political organisation dedicated to Telangana heritage, welfare, and people\'s rights since 2006.'
                 : '2006 నుండి తెలంగాణ వారసత్వం, సంక్షేమం మరియు ప్రజల హక్కులకు అంకితమైన నమోదిత రాజకీయ సంస్థ.'}
@@ -112,8 +110,7 @@ const Footer = ({ setActiveSection }) => {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10"
-              style={{ fontFamily: 'Cinzel, serif' }}>
+            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10 font-display">
               Quick Links
             </h4>
             <ul className="space-y-2.5">
@@ -121,8 +118,7 @@ const Footer = ({ setActiveSection }) => {
                 <li key={link.id}>
                   <button
                     onClick={() => go(link.id)}
-                    className="text-xs text-white/60 hover:text-white transition-colors cursor-pointer flex items-center gap-2 hover:gap-3 font-medium"
-                    style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}
+                    className="text-xs text-white/60 hover:text-white transition-colors cursor-pointer flex items-center gap-2 hover:gap-3 font-ui font-medium"
                   >
                     <span className="h-px w-3 bg-[#a16207] flex-shrink-0" />
                     {link.label}
@@ -134,8 +130,7 @@ const Footer = ({ setActiveSection }) => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10"
-              style={{ fontFamily: 'Cinzel, serif' }}>
+            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10 font-display">
               Contact
             </h4>
             <ul className="space-y-4">
@@ -146,8 +141,7 @@ const Footer = ({ setActiveSection }) => {
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   {item.icon}
-                  <span className="text-xs text-white/60 leading-relaxed"
-                    style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                  <span className="text-xs text-white/60 leading-relaxed font-sans">
                     {item.val}
                   </span>
                 </li>
@@ -157,8 +151,7 @@ const Footer = ({ setActiveSection }) => {
 
           {/* Registration & Trust */}
           <div>
-            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10"
-              style={{ fontFamily: 'Cinzel, serif' }}>
+            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10 font-display">
               Official Registration
             </h4>
             <div className="space-y-3">
@@ -169,13 +162,11 @@ const Footer = ({ setActiveSection }) => {
                 { label: 'State',   value: 'Telangana, India' }
               ].map((r, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <span className="text-[8px] text-[#a16207] font-black uppercase tracking-wider min-w-[52px] pt-0.5"
-                    style={{ fontFamily: 'Cinzel, serif' }}>
+                  <span className="text-[8px] text-[#a16207] font-ui font-black uppercase tracking-wider min-w-[52px] pt-0.5">
                     {r.label}
                   </span>
                   <span className="text-[8px] text-white/50">—</span>
-                  <span className="text-[11px] text-white/70 font-semibold"
-                    style={{ fontFamily: 'Mandali, Outfit, sans-serif' }}>
+                  <span className="text-[11px] text-white/70 font-ui font-semibold">
                     {r.value}
                   </span>
                 </div>

@@ -101,9 +101,8 @@ const HeroSlider = ({ setActiveSection }) => {
               <motion.div key={slide.id + '-eyebrow'}
                 initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 12 }} transition={{ duration: 0.3 }}>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 text-[8px] font-black uppercase tracking-[0.22em] border"
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 text-[8px] font-ui font-black uppercase tracking-[0.22em] border"
                   style={{
-                    fontFamily: "'Cinzel', serif",
                     color: slide.accentColor,
                     borderColor: slide.accentColor + '40',
                     background: slide.accentColor + '08',
@@ -121,8 +120,7 @@ const HeroSlider = ({ setActiveSection }) => {
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.45 }}>
                 <h1
-                  className="text-[clamp(2rem,5vw,3.6rem)] font-black leading-[1.1] text-[#0a361e]"
-                  style={{ fontFamily: "'Cinzel', Georgia, serif", letterSpacing: '-0.01em' }}
+                  className="text-[clamp(2rem,5vw,3.6rem)] font-display font-black leading-[1.1] text-[#0a361e] tracking-tight"
                 >
                   {slide.title[language]}
                 </h1>
@@ -134,8 +132,8 @@ const HeroSlider = ({ setActiveSection }) => {
               <motion.p key={slide.id + '-hl'}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }} transition={{ duration: 0.4, delay: 0.1 }}
-                className="text-[clamp(0.9rem,2.5vw,1.2rem)] font-bold leading-snug"
-                style={{ fontFamily: "'Playfair Display', Georgia, serif", color: slide.accentColor }}>
+                className="text-[clamp(0.9rem,2.5vw,1.15rem)] font-display font-bold leading-snug tracking-tight"
+                style={{ color: slide.accentColor }}>
                 {slide.highlight[language]}
               </motion.p>
             </AnimatePresence>
@@ -152,8 +150,7 @@ const HeroSlider = ({ setActiveSection }) => {
               <motion.p key={slide.id + '-desc'}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
-                className="text-[clamp(0.82rem,1.8vw,0.95rem)] text-[#3d4f41] leading-[1.8] max-w-[520px] font-medium"
-                style={{ fontFamily: "'Outfit', 'Mandali', sans-serif" }}>
+                className="text-[clamp(0.82rem,1.8vw,0.95rem)] text-[#3d4f41] leading-[1.8] max-w-[520px] font-sans font-medium">
                 {slide.desc[language]}
               </motion.p>
             </AnimatePresence>
@@ -166,19 +163,17 @@ const HeroSlider = ({ setActiveSection }) => {
                 className="inline-flex items-stretch gap-0 bg-white border border-gray-200 shadow-sm overflow-hidden w-fit"
                 style={{ borderRadius: '2px', borderLeft: `4px solid ${slide.accentColor}` }}>
                 <div className="px-5 py-3.5">
-                  <p className="text-[clamp(1.5rem,4vw,2.2rem)] font-black text-[#0a361e] leading-none"
-                    style={{ fontFamily: "'Cinzel', serif" }}>
+                  <p className="text-[clamp(1.5rem,4vw,2.2rem)] font-display font-black text-[#0a361e] leading-none">
                     {slide.stat.value}
                   </p>
-                  <p className="text-[8px] uppercase tracking-[0.2em] font-bold mt-1"
-                    style={{ color: slide.accentColor, fontFamily: "'Outfit', sans-serif" }}>
+                  <p className="text-[8px] uppercase tracking-[0.2em] font-ui font-bold mt-1"
+                    style={{ color: slide.accentColor }}>
                     {slide.stat.label[language]}
                   </p>
                 </div>
                 <div className="w-px bg-gray-100" />
                 <div className="px-4 py-3.5 flex items-center">
-                  <p className="text-[9px] uppercase tracking-widest text-gray-400 font-bold leading-relaxed max-w-[100px]"
-                    style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <p className="text-[9px] uppercase tracking-widest text-gray-400 font-ui font-bold leading-relaxed max-w-[100px]">
                     Telangana Jagruthi Achievement
                   </p>
                 </div>
@@ -189,13 +184,13 @@ const HeroSlider = ({ setActiveSection }) => {
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button onClick={() => goTo('about-founder', 'about-founder')}
                 className="btn-primary gap-2 text-[9px] px-5 py-3"
-                style={{ borderRadius: '2px', fontFamily: "'Cinzel', serif" }}>
+                style={{ borderRadius: '2px' }}>
                 {t('hero.exploreBtn')}
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
               <button onClick={() => goTo('contact', 'contact')}
                 className="btn-secondary gap-2 text-[9px] px-5 py-3"
-                style={{ borderRadius: '2px', fontFamily: "'Cinzel', serif" }}>
+                style={{ borderRadius: '2px' }}>
                 {t('common.joinUs')}
               </button>
             </div>
@@ -220,8 +215,7 @@ const HeroSlider = ({ setActiveSection }) => {
                 style={{ borderRadius: '2px' }}>
                 <ChevronRight className="h-4 w-4" />
               </button>
-              <span className="text-[8px] font-bold text-gray-400 uppercase tracking-[0.2em] ml-1"
-                style={{ fontFamily: "'Cinzel', serif" }}>
+              <span className="text-[8px] font-ui font-bold text-gray-400 uppercase tracking-[0.2em] ml-1">
                 {String(idx + 1).padStart(2, '0')} / {String(SLIDES.length).padStart(2, '0')}
               </span>
             </div>
@@ -250,8 +244,7 @@ const HeroSlider = ({ setActiveSection }) => {
 
               {/* Footer label */}
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                <span className="text-[7px] tracking-[0.25em] uppercase text-[#0f5132]/30 font-black"
-                  style={{ fontFamily: "'Cinzel', serif" }}>
+                <span className="text-[7px] tracking-[0.25em] uppercase text-[#0f5132]/30 font-display font-black">
                   Telangana Jagruthi — Est. 2006
                 </span>
               </div>
