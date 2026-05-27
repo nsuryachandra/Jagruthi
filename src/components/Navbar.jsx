@@ -94,7 +94,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       {/* ── Main Navbar ── */}
       <nav
         className={[
-          'fixed top-[4px] left-0 right-0 z-50 w-full transition-all duration-300',
+          'fixed top-[4px] left-0 right-0 z-50 transition-all duration-300',
           scrolled
             ? 'bg-white border-b border-gray-200 shadow-[0_2px_20px_rgba(0,0,0,0.07)]'
             : 'bg-white border-b border-gray-100'

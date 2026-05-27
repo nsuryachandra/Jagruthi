@@ -86,7 +86,7 @@ const LeadershipOrg = () => {
           style={{ borderRadius: '2px' }}>
 
           {/* Tab switcher */}
-          <div className="flex items-center gap-0 border border-gray-200 overflow-hidden"
+          <div className="flex items-center gap-0 border border-gray-200 overflow-x-auto max-w-full no-scrollbar"
             style={{ borderRadius: '2px' }}>
             {tabs.map((tab) => (
               <button

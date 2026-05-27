@@ -91,7 +91,7 @@ const NewsArticles = () => {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10 p-4 bg-[#f8f7f5] border border-gray-200"
           style={{ borderRadius: '2px' }}>
           {/* Category tabs */}
-          <div className="flex items-center gap-0 border border-gray-200 overflow-hidden flex-wrap"
+          <div className="flex items-center gap-0 border border-gray-200 overflow-x-auto max-w-full no-scrollbar"
             style={{ borderRadius: '2px' }}>
             {categories.map((cat) => (
               <button
