@@ -190,6 +190,8 @@ export const translations = {
     },
     phoneLabel: { en: "Phone Number", te: "ఫోన్ నెంబర్" },
     emailLabel: { en: "Email Address", te: "ఈమెయిల్ చిరునామా" },
+    phoneVal: { en: "+91 40 2330 0006", te: "+91 40 2330 0006" },
+    emailVal: { en: "info@telanganajagruthi.org", te: "info@telanganajagruthi.org" },
     formName: { en: "Full Name", te: "పూర్తి పేరు" },
     formEmail: { en: "Email Address", te: "ఈమెయిల్ చిరునామా" },
     formPhone: { en: "Phone Number (Optional)", te: "ఫోన్ నెంబర్ (ఐచ్ఛికం)" },

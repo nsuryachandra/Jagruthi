@@ -62,15 +62,12 @@ const AboutSection = () => {
                 <div className="p-6 sm:p-8 flex flex-col items-center text-center">
                   {/* Avatar emblem */}
                   <div className="relative mb-6 mt-2">
-                    <div className="h-32 w-32 sm:h-36 sm:w-36 rounded-full bg-gradient-to-br from-[#f0fdf4] to-[#dcfce7] border-4 border-[#0f5132]/15 flex items-center justify-center shadow-inner">
-                      <svg className="w-20 h-20" viewBox="0 0 100 100" fill="none">
-                        <circle cx="50" cy="50" r="40" fill="rgba(6,78,59,0.05)" />
-                        <path d="M30 42 C30 25, 70 25, 70 42 C70 42, 75 52, 68 56 C62 60, 68 72, 50 72 C32 72, 38 60, 32 56 C25 52, 30 42, 30 42 Z"
-                          fill="#15803d" />
-                        <circle cx="50" cy="44" r="2.5" fill="#ef4444" />
-                        <path d="M 38 65 C 42 73, 58 73, 62 65 C 60 77, 40 77, 38 65 Z" fill="#b45309" />
-                        <text x="50" y="88" textAnchor="middle" fill="#0a361e" fontSize="9" fontWeight="bold" letterSpacing="1.5">Smt. KK</text>
-                      </svg>
+                    <div className="h-32 w-32 sm:h-36 sm:w-36 rounded-full overflow-hidden bg-gradient-to-br from-[#f0fdf4] to-[#dcfce7] border-4 border-[#0f5132]/15 flex items-center justify-center shadow-inner">
+                      <img
+                        src="https://www.telanganajagruthi.org/wp-content/uploads/2025/10/about-us-kalvakuntla-kavitha.jpg"
+                        alt="Smt. Kalvakuntla Kavitha"
+                        className="w-full h-full object-cover select-none pointer-events-none"
+                      />
                     </div>
                     {/* Official badge */}
                     <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#0f5132] text-white text-[7px] font-ui font-black uppercase tracking-widest px-3 py-1 whitespace-nowrap"

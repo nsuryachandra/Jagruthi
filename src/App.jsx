@@ -66,7 +66,7 @@ function App() {
             <img
               src="https://www.telanganajagruthi.org/wp-content/uploads/2024/03/telanaga-membership-party.jpg.jpeg"
               alt="Click Here to Register Party Membership"
-              className="w-full h-auto max-h-[90px] sm:max-h-[110px] lg:max-h-[140px] object-cover object-center transition-transform duration-500 group-hover:scale-[1.01]"
+              className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.01]"
             />
             {/* Subtle premium gold shine overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#a16207]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />

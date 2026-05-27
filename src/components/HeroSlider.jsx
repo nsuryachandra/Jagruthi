@@ -259,16 +259,21 @@ const HeroSlider = ({ setActiveSection }) => {
             <div className="relative w-full max-w-[480px] mx-auto h-[300px] sm:h-[380px] lg:h-[460px] bg-[#0a361e]/5 overflow-hidden">
               {/* Event Image */}
               <AnimatePresence mode="wait">
-                <motion.img
+                <motion.div
                   key={slide.id}
-                  src={slide.image}
-                  alt={slide.title[language]}
-                  initial={{ opacity: 0, scale: 1.03 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.45 }}
-                  className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
-                />
+                  className="absolute inset-6 sm:inset-10 z-10 overflow-hidden shadow-2xl border border-white/20 bg-[#0a361e]/5"
+                >
+                  <img
+                    src={slide.image}
+                    alt={slide.title[language]}
+                    className="w-full h-full object-cover select-none pointer-events-none"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                </motion.div>
               </AnimatePresence>
 
               {/* Corner bracket accents */}
@@ -278,14 +283,14 @@ const HeroSlider = ({ setActiveSection }) => {
                 'bottom-0 left-0 border-b-2 border-l-2',
                 'bottom-0 right-0 border-b-2 border-r-2'
               ].map((cls, i) => (
-                <div key={i} className={`absolute h-6 w-6 border-[#a16207] ${cls} pointer-events-none z-20`} />
+                <div key={i} className={`absolute h-6 w-6 border-[#a16207] ${cls} pointer-events-none z-25`} />
               ))}
 
               {/* Faint inner border */}
-              <div className="absolute inset-3 border border-[#a16207]/20 pointer-events-none z-20" />
+              <div className="absolute inset-3 border border-[#a16207]/20 pointer-events-none z-25" />
 
               {/* 3D Canvas */}
-              <div className="absolute inset-0 z-10 pointer-events-none opacity-90">
+              <div className="absolute inset-0 z-0 pointer-events-none opacity-85">
                 <ThreeDHero />
               </div>
 
