@@ -118,6 +118,24 @@ function App() {
       <Navbar activeSection={activeSection} setActiveSection={navigateTo} />
 
       <main className="flex-1 pt-[66px] lg:pt-[70px]">
+
+        {/* ── Official Top Header Banner (Home only) ── */}
+        <a
+          href="https://www.telanganajagruthi.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full overflow-hidden"
+          aria-label="Telangana Jagruthi – Official Website"
+        >
+          <img
+            src="/tj-header-banner.jpg"
+            alt="Telangana Jagruthi – Smt. Kalvakuntla Kavitha and Prof. K. Jayashankar – Official Banner"
+            className="w-full h-auto block"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </a>
+
         {/* Clickable Party Membership Banner — always visible on all pages */}
         <div className="w-full bg-[#0a361e] border-b border-[#a16207]/30 overflow-hidden relative group">
           <a
