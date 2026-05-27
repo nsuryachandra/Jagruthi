@@ -18,7 +18,7 @@ const SectionHeader = ({ eyebrow, title, subtitle }) => (
   </div>
 );
 
-const AboutSection = () => {
+const AboutSection = ({ section }) => {
   const { language, t } = useLanguage();
   const historyPoints = Array.isArray(t('history.points')) ? t('history.points') : [];
 
@@ -37,7 +37,7 @@ const AboutSection = () => {
       {/* ══════════════════════════════════════════
           1. FOUNDER SECTION
       ══════════════════════════════════════════ */}
-      <section id="about-founder" className="py-20 sm:py-28 border-b border-gray-200 relative">
+        <section id="about-founder" className="py-20 sm:py-28 border-b border-gray-200 relative">
         {/* Subtle left accent */}
         <div className="absolute left-0 top-12 bottom-12 w-0.5 bg-gradient-to-b from-transparent via-[#0f5132]/20 to-transparent hidden lg:block" />
 

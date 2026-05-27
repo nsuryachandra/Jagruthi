@@ -8,7 +8,7 @@ const Footer = ({ setActiveSection }) => {
 
   const go = (id) => {
     setActiveSection(id);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const socialLinks = [

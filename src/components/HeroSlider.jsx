@@ -121,6 +121,11 @@ const HeroSlider = ({ setActiveSection }) => {
       {/* ── Vertical left accent ── */}
       <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#0f5132] via-[#a16207] to-transparent hidden lg:block" />
 
+      {/* 3D Canvas Background (Interactive Bathukamma Particles) */}
+      <div className="absolute left-[8%] top-1/2 -translate-y-1/2 w-[480px] h-[480px] z-0 pointer-events-none opacity-[0.22] hidden lg:block">
+        <ThreeDHero />
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full py-16 sm:py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -259,21 +264,16 @@ const HeroSlider = ({ setActiveSection }) => {
             <div className="relative w-full max-w-[480px] mx-auto h-[300px] sm:h-[380px] lg:h-[460px] bg-[#0a361e]/5 overflow-hidden">
               {/* Event Image */}
               <AnimatePresence mode="wait">
-                <motion.div
+                <motion.img
                   key={slide.id}
-                  initial={{ opacity: 0, scale: 0.96 }}
+                  src={slide.image}
+                  alt={slide.title[language]}
+                  initial={{ opacity: 0, scale: 1.03 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.45 }}
-                  className="absolute inset-6 sm:inset-10 z-10 overflow-hidden shadow-2xl border border-white/20 bg-[#0a361e]/5"
-                >
-                  <img
-                    src={slide.image}
-                    alt={slide.title[language]}
-                    className="w-full h-full object-cover select-none pointer-events-none"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                </motion.div>
+                  className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none z-10"
+                />
               </AnimatePresence>
 
               {/* Corner bracket accents */}
@@ -283,16 +283,11 @@ const HeroSlider = ({ setActiveSection }) => {
                 'bottom-0 left-0 border-b-2 border-l-2',
                 'bottom-0 right-0 border-b-2 border-r-2'
               ].map((cls, i) => (
-                <div key={i} className={`absolute h-6 w-6 border-[#a16207] ${cls} pointer-events-none z-25`} />
+                <div key={i} className={`absolute h-6 w-6 border-[#a16207] ${cls} pointer-events-none z-20`} />
               ))}
 
               {/* Faint inner border */}
-              <div className="absolute inset-3 border border-[#a16207]/20 pointer-events-none z-25" />
-
-              {/* 3D Canvas */}
-              <div className="absolute inset-0 z-0 pointer-events-none opacity-85">
-                <ThreeDHero />
-              </div>
+              <div className="absolute inset-3 border border-[#a16207]/20 pointer-events-none z-20" />
 
               {/* Footer label */}
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap z-20 bg-[#0a361e]/70 px-3 py-1 border border-[#a16207]/30" style={{ borderRadius: '1px' }}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
-import HeroSlider from './components/HeroSlider';
+import Footer from './components/Footer';
+import HomeView from './components/HomeView';
 import AboutSection from './components/AboutSection';
 import LeadershipOrg from './components/LeadershipOrg';
 import NewsArticles from './components/NewsArticles';
@@ -10,52 +11,84 @@ import SocialFeeds from './components/SocialFeeds';
 import ProgramsActivities from './components/ProgramsActivities';
 import OrganizationalWings from './components/OrganizationalWings';
 import VideoGallery from './components/VideoGallery';
-import Footer from './components/Footer';
 import { ArrowUp } from 'lucide-react';
+
+const ABOUT_IDS = ['about-founder', 'about-vision', 'about-history', 'about-org'];
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
-  const [showScrollTop, setShowScrollTop]  = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Scroll-to-top button visibility
   useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-
-      const sections = ['hero', 'about-founder', 'about-vision', 'about-history', 'about-org', 'programs', 'wings', 'news', 'videos', 'downloads', 'contact'];
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
+    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll to top whenever the view changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [activeSection]);
+
+  const navigateTo = (id) => setActiveSection(id);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setActiveSection('hero');
+  };
+
+  /* ── Determine what to render ── */
+  const isHome = activeSection === 'hero';
+  const isAbout = ABOUT_IDS.includes(activeSection);
+
+  const renderMain = () => {
+    if (isHome) {
+      return <HomeView navigateTo={navigateTo} />;
+    }
+    if (isAbout) {
+      return (
+        <div className="bg-[#f8f7f5]">
+          <AboutSection />
+        </div>
+      );
+    }
+    switch (activeSection) {
+      case 'programs':
+        return <ProgramsActivities />;
+      case 'wings':
+        return <OrganizationalWings />;
+      case 'news':
+        return <NewsArticles />;
+      case 'videos':
+        return <VideoGallery />;
+      case 'downloads':
+        return <DownloadsSection />;
+      case 'contact':
+        return (
+          <div className="bg-[#f8f7f5]">
+            <ContactForm />
+            <SocialFeeds />
+          </div>
+        );
+      case 'about-org':
+        return (
+          <div className="bg-[#f8f7f5]">
+            <LeadershipOrg />
+          </div>
+        );
+      default:
+        return <HomeView navigateTo={navigateTo} />;
+    }
   };
 
   return (
     <div className="min-h-screen bg-[#f8f7f5] text-[#1a2a1f] flex flex-col relative">
 
-      {/* Floating Navigation (ribbon + navbar handled inside) */}
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      {/* Fixed Navigation */}
+      <Navbar activeSection={activeSection} setActiveSection={navigateTo} />
 
-      {/*
-        Top padding accounts for fixed nav stack height:
-          Mobile  → nav bar only:            64px  → pt-16
-          sm+     → ribbon (28px) + nav (68px) = 96px → sm:pt-24
-      */}
       <main className="flex-1 pt-[66px] lg:pt-[70px]">
-        {/* Clickable Party Membership Banner */}
+        {/* Clickable Party Membership Banner — always visible on all pages */}
         <div className="w-full bg-[#0a361e] border-b border-[#a16207]/30 overflow-hidden relative group">
           <a
             href="https://www.telanganajagruthi.org/party-membership-form/"
@@ -68,27 +101,17 @@ function App() {
               alt="Click Here to Register Party Membership"
               className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.01]"
             />
-            {/* Subtle premium gold shine overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#a16207]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
           </a>
         </div>
 
-        <HeroSlider setActiveSection={setActiveSection} />
-        <AboutSection />
-        <ProgramsActivities />
-        <LeadershipOrg />
-        <OrganizationalWings />
-        <NewsArticles />
-        <VideoGallery />
-        <SocialFeeds />
-        <DownloadsSection />
-        <ContactForm />
-
+        {/* Routed View */}
+        {renderMain()}
       </main>
 
-      <Footer setActiveSection={setActiveSection} />
+      <Footer setActiveSection={navigateTo} />
 
-      {/* Back to top — official square style */}
+      {/* Back to top */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}

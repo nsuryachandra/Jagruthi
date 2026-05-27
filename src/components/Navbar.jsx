@@ -72,7 +72,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     setIsOpen(false);
     setActiveDropdown(null);
     setMobileExpanded(null);
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const isActive = (item) => {
