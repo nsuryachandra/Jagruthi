@@ -7,6 +7,9 @@ import NewsArticles from './components/NewsArticles';
 import DownloadsSection from './components/DownloadsSection';
 import ContactForm from './components/ContactForm';
 import SocialFeeds from './components/SocialFeeds';
+import ProgramsActivities from './components/ProgramsActivities';
+import OrganizationalWings from './components/OrganizationalWings';
+import VideoGallery from './components/VideoGallery';
 import Footer from './components/Footer';
 import { ArrowUp } from 'lucide-react';
 
@@ -18,7 +21,7 @@ function App() {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
 
-      const sections = ['hero', 'about-founder', 'about-vision', 'about-history', 'about-org', 'news', 'downloads', 'contact'];
+      const sections = ['hero', 'about-founder', 'about-vision', 'about-history', 'about-org', 'programs', 'wings', 'news', 'videos', 'downloads', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
@@ -72,8 +75,11 @@ function App() {
 
         <HeroSlider setActiveSection={setActiveSection} />
         <AboutSection />
+        <ProgramsActivities />
         <LeadershipOrg />
+        <OrganizationalWings />
         <NewsArticles />
+        <VideoGallery />
         <SocialFeeds />
         <DownloadsSection />
         <ContactForm />

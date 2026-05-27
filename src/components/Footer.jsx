@@ -32,7 +32,7 @@ const Footer = ({ setActiveSection }) => {
     },
     {
       label: 'Instagram',
-      url: 'https://instagram.com/telanganajagruthi',
+      url: 'https://www.instagram.com/telangana_jagruthi_official/',
       icon: (
         <svg className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -57,8 +57,10 @@ const Footer = ({ setActiveSection }) => {
     { id: 'about-founder',  label: t('nav.founder') },
     { id: 'about-vision',   label: t('nav.vision') },
     { id: 'about-history',  label: t('nav.history') },
-    { id: 'about-org',      label: t('nav.organization') },
+    { id: 'programs',       label: language === 'en' ? 'Programs' : 'కార్యక్రమాలు' },
+    { id: 'wings',          label: language === 'en' ? 'Wings' : 'విభాగాలు' },
     { id: 'news',           label: t('nav.news') },
+    { id: 'videos',         label: language === 'en' ? 'Videos' : 'వీడియోలు' },
     { id: 'downloads',      label: t('nav.downloads') },
     { id: 'contact',        label: t('nav.contact') }
   ];

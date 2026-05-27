@@ -33,8 +33,9 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         { id: 'about-org',     label: t('nav.organization') }
       ]
     },
+    { id: 'programs',  label: language === 'en' ? 'Programs' : 'కార్యక్రమాలు' },
     {
-      id: 'wings', label: t('nav.wings'), mega: true,
+      id: 'wings', label: language === 'en' ? 'Wings' : 'విభాగాలు', mega: true,
       wingsList: [
         { id: 'bc',          label: t('wings.bc') },
         { id: 'mbc',         label: t('wings.mbc') },
@@ -61,6 +62,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       ]
     },
     { id: 'news',      label: t('nav.news') },
+    { id: 'videos',    label: language === 'en' ? 'Videos' : 'వీడియోలు' },
     { id: 'downloads', label: t('nav.downloads') },
     { id: 'contact',   label: t('nav.contact') }
   ];
@@ -170,7 +172,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                         <div className="grid grid-cols-4 gap-0.5">
                           {item.wingsList.map((wing) => (
                             <button key={wing.id} onClick={() => {
-                              navigateTo('about-org');
+                              navigateTo('wings');
                               window.dispatchEvent(new CustomEvent('filter-wing', { detail: wing.id }));
                             }}
                               className="text-left px-3 py-2 text-[10px] text-gray-600 hover:text-[#0f5132] hover:bg-[#f0fdf4] transition-all cursor-pointer flex items-center gap-1.5 font-ui font-medium">
@@ -273,7 +275,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                         <div className="grid grid-cols-2 gap-1">
                           {item.wingsList.map((wing) => (
                             <button key={wing.id} onClick={() => {
-                              navigateTo('about-org');
+                              navigateTo('wings');
                               window.dispatchEvent(new CustomEvent('filter-wing', { detail: wing.id }));
                             }}
                               className="text-left px-3 py-2 text-[10px] text-gray-600 hover:text-[#0f5132] hover:bg-white transition-all cursor-pointer flex items-center gap-1.5 font-ui font-medium border border-transparent hover:border-gray-200"
