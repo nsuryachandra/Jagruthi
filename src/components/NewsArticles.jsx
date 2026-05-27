@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ShieldAlert, HeartHandshake, Eye, Search, Newspaper } from 'lucide-react';
+import { Calendar, ShieldAlert, HeartHandshake, Eye, Search, Newspaper, Users } from 'lucide-react';
 
 const NewsArticles = () => {
   const { language, t } = useLanguage();
