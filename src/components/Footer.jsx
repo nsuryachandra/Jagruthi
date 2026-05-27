@@ -70,10 +70,10 @@ const Footer = ({ setActiveSection }) => {
 
       {/* Main footer body */}
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
 
           {/* Brand column */}
-          <div className="sm:col-span-2 lg:col-span-1 space-y-5">
+          <div className="space-y-5">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => go('hero')}>
               <Logo className="h-11 w-11 flex-shrink-0" lightBg={false} />
               <div>
@@ -147,31 +147,6 @@ const Footer = ({ setActiveSection }) => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Registration & Trust */}
-          <div>
-            <h4 className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a16207] mb-5 pb-2 border-b border-white/10 font-display">
-              Official Registration
-            </h4>
-            <div className="space-y-3">
-              {[
-                { label: 'Reg. No', value: 'ECI/SN/23/2020' },
-                { label: 'Founded', value: '2006, Hyderabad' },
-                { label: 'Type',    value: 'State Political Party' },
-                { label: 'State',   value: 'Telangana, India' }
-              ].map((r, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="text-[8px] text-[#a16207] font-ui font-black uppercase tracking-wider min-w-[52px] pt-0.5">
-                    {r.label}
-                  </span>
-                  <span className="text-[8px] text-white/50">—</span>
-                  <span className="text-[11px] text-white/70 font-ui font-semibold">
-                    {r.value}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
 
         </div>

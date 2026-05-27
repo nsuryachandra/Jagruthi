@@ -1,27 +1,14 @@
 export const translations = {
   common: {
-    en: {
-      readMore: "Read More",
-      download: "Download",
-      loading: "Loading...",
-      joinUs: "Join Us",
-      submit: "Submit",
-      telugu: "Telugu",
-      english: "English",
-      success: "Success",
-      error: "Error"
-    },
-    te: {
-      readMore: "మరింత చదవండి",
-      download: "డౌన్‌లోడ్",
-      loading: "లోడ్ అవుతోంది...",
-      joinUs: "మాతో చేరండి",
-      submit: "సమర్పించు",
-      telugu: "తెలుగు",
-      english: "ఇంగ్లీష్",
-      success: "విజయం",
-      error: "తప్పు"
-    }
+    readMore: { en: "Read More", te: "మరింత చదవండి" },
+    download: { en: "Download", te: "డౌన్‌లోడ్" },
+    loading: { en: "Loading...", te: "లోడ్ అవుతోంది..." },
+    joinUs: { en: "Join Us", te: "మాతో చేరండి" },
+    submit: { en: "Submit", te: "సమర్పించు" },
+    telugu: { en: "Telugu", te: "తెలుగు" },
+    english: { en: "English", te: "ఇంగ్లీష్" },
+    success: { en: "Success", te: "విజయం" },
+    error: { en: "Error", te: "తప్పు" }
   },
   nav: {
     home: { en: "Home", te: "హోమ్" },

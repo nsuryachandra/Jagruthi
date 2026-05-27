@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700&family=Mandali&family=NTR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Mandali&family=NTR&display=swap');
 @import "tailwindcss";
 
 @theme {
   /* Modern Official Font System */
-  --font-sans:    'Inter',       'Mandali', 'NTR', system-ui, sans-serif;
-  --font-serif:   'Montserrat',  'Mandali', 'NTR', system-ui, sans-serif;
-  --font-display: 'Montserrat',  'Mandali', 'NTR', system-ui, sans-serif;
-  --font-ui:      'DM Sans',     'Mandali', 'NTR', system-ui, sans-serif;
-  --font-telugu:  'Mandali',     'NTR', sans-serif;
+  --font-sans:    'Inter',             'Mandali', 'NTR', system-ui, sans-serif;
+  --font-serif:   'Plus Jakarta Sans', 'Mandali', 'NTR', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Mandali', 'NTR', system-ui, sans-serif;
+  --font-ui:      'Plus Jakarta Sans', 'Mandali', 'NTR', system-ui, sans-serif;
+  --font-telugu:  'Mandali',           'NTR', sans-serif;
 
+  /* Prevent over-bold/heavy look by capping black/extrabold weights at 700 (Bold) */
+  --font-weight-black: 700;
+  --font-weight-extrabold: 700;
 
   --color-brand-green-50:  #f0fdf4;
   --color-brand-green-100: #dcfce7;

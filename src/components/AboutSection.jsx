@@ -218,7 +218,7 @@ const AboutSection = () => {
                       style={{ borderRadius: '1px' }} />
 
                     {/* Card */}
-                    <div className="w-full md:w-1/2 pl-8 md:pl-0 md:px-8">
+                    <div className="w-full md:w-1/2 pl-8 pr-4 md:pl-0 md:pr-0 md:px-8">
                       <div className="official-card bg-white p-5 group cursor-default hover:border-t-[#a16207]">
                         <div className="flex items-center gap-2 mb-3">
                           <Calendar className="h-3.5 w-3.5 text-[#0f5132] flex-shrink-0" />
