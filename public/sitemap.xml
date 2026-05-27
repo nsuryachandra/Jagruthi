@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home -->
+  <url>
+    <loc>https://jagruthi.onrender.com/</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jagruthi.onrender.com/" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://jagruthi.onrender.com/" />
+    <image:image>
+      <image:loc>https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg</image:loc>
+      <image:title>Telangana Jagruthi – Smt. Kalvakuntla Kavitha Janam Baata Campaign</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Us – Founder -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#about-founder</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.telanganajagruthi.org/wp-content/uploads/2025/10/about-us-kalvakuntla-kavitha.jpg</image:loc>
+      <image:title>Smt. Kalvakuntla Kavitha – Founder and President of Telangana Jagruthi</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Us – Vision & Mission -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#about-vision</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About Us – History -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#about-history</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Programs & Activities -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#programs</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg</image:loc>
+      <image:title>Jagruthi Janam Baata – Statewide Campaign Programs</image:title>
+    </image:image>
+  </url>
+
+  <!-- Jagruthi Wings -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#wings</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- News & Articles -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#news</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg</image:loc>
+      <image:title>Telangana Jagruthi News – Latest Updates and Protests</image:title>
+    </image:image>
+  </url>
+
+  <!-- Videos -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#videos</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Downloads -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#downloads</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact Us -->
+  <url>
+    <loc>https://jagruthi.onrender.com/#contact</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block build artifacts
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /src/
+
+# Sitemap location
+Sitemap: https://jagruthi.onrender.com/sitemap.xml

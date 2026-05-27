@@ -13,7 +13,20 @@ import OrganizationalWings from './components/OrganizationalWings';
 import VideoGallery from './components/VideoGallery';
 import { ArrowUp } from 'lucide-react';
 
-const ABOUT_IDS = ['about-founder', 'about-vision', 'about-history', 'about-org'];
+// Per-view SEO metadata
+const PAGE_META = {
+  hero:          { title: 'Telangana Jagruthi | Official Website', desc: 'Telangana Jagruthi – Founded in 2006 by Smt. Kalvakuntla Kavitha. Upholding cultural heritage and empowering lives across Telangana and 18+ countries.' },
+  'about-founder': { title: 'Smt. Kalvakuntla Kavitha – Founder & President | Telangana Jagruthi', desc: 'Learn about Smt. Kalvakuntla Kavitha, founder and president of Telangana Jagruthi, her leadership in the statehood movement and ongoing social advocacy.' },
+  'about-vision':  { title: 'Vision & Mission | Telangana Jagruthi', desc: 'Explore the vision and mission of Telangana Jagruthi – building a progressive, self-reliant Telangana with social justice for all.' },
+  'about-history': { title: 'History & Milestones | Telangana Jagruthi', desc: 'A timeline of cultural resistance and social empowerment by Telangana Jagruthi from 2006 to present – statehood, Bathukamma, and beyond.' },
+  'about-org':     { title: 'State Leadership | Telangana Jagruthi', desc: 'Meet the core leadership, wing presidents and district office bearers of Telangana Jagruthi across 33 districts of Telangana.' },
+  programs:        { title: 'Programs & Activities | Telangana Jagruthi', desc: 'Discover Jagruthi Janam Baata, Bathukamma Renaissance, land struggle protests, Annadanam, and more official programs by Telangana Jagruthi.' },
+  wings:           { title: '22 Jagruthi Wings | Telangana Jagruthi', desc: 'Browse all 22 specialized wings of Telangana Jagruthi including BC, Student, IT, Farmer, Women, and more organizational divisions.' },
+  news:            { title: 'News & Articles | Telangana Jagruthi', desc: 'Stay updated with the latest news, protests, cultural events and welfare activities of Telangana Jagruthi and Smt. Kalvakuntla Kavitha.' },
+  videos:          { title: 'Video Broadcasts | Telangana Jagruthi', desc: 'Watch official video broadcasts, press conferences and public addresses by Smt. Kalvakuntla Kavitha and Telangana Jagruthi.' },
+  downloads:       { title: 'Media Downloads | Telangana Jagruthi', desc: 'Download official Telangana Jagruthi logos, flag assets and branding materials in high resolution.' },
+  contact:         { title: 'Contact Us | Telangana Jagruthi', desc: 'Contact Telangana Jagruthi central office in Banjara Hills, Hyderabad. Reach out for enquiries, collaboration or media queries.' },
+};
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -31,6 +44,22 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [activeSection]);
 
+  // Dynamic page title + meta description update per view
+  useEffect(() => {
+    const meta = PAGE_META[activeSection] || PAGE_META.hero;
+    document.title = meta.title;
+    const descEl = document.querySelector('meta[name="description"]');
+    if (descEl) descEl.setAttribute('content', meta.desc);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', meta.title);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', meta.desc);
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', meta.title);
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', meta.desc);
+  }, [activeSection]);
+
   const navigateTo = (id) => setActiveSection(id);
 
   const scrollToTop = () => {
@@ -38,6 +67,7 @@ function App() {
   };
 
   /* ── Determine what to render ── */
+  const ABOUT_IDS = ['about-founder', 'about-vision', 'about-history', 'about-org'];
   const isHome = activeSection === 'hero';
   const isAbout = ABOUT_IDS.includes(activeSection);
 
