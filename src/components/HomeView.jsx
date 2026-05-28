@@ -6,6 +6,27 @@ import { Award, ShieldAlert, Users, HeartHandshake, Eye, ArrowRight, Play, FileT
 const HomeView = ({ navigateTo }) => {
   const { language, t } = useLanguage();
 
+  React.useEffect(() => {
+    const scriptId = 'instagram-embed-script';
+    let script = document.getElementById(scriptId);
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://www.instagram.com/embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+      script.onload = () => {
+        if (window.instgrm && window.instgrm.Embeds) {
+          window.instgrm.Embeds.process();
+        }
+      };
+    } else {
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+    }
+  }, []);
+
   // News On Jagruthi Press Clippings
   const pressClippings = [
     {
@@ -495,98 +516,18 @@ const HomeView = ({ navigateTo }) => {
                 </a>
               </div>
 
-              {/* Custom Designed Facebook Posts Feed (No scrollbar / clean layout) */}
-              <div className="w-full h-[500px] overflow-y-auto bg-gray-50 border border-gray-100 p-4 space-y-4 no-scrollbar">
-                {[
-                  {
-                    date: language === 'en' ? '2 hours ago' : '2 గంటల క్రితం',
-                    text: {
-                      en: "Conducting a statewide protest demanding immediate and fair paddy procurement prices for our farmers. We stand firmly with Telangana's farming families. 🌾",
-                      te: "రైతులకు న్యాయమైన మద్దతు ధర లభించే వరకు మా పోరాటం ఆగదు. తెలంగాణ రైతు లోకానికి భారత్ జాగృతి ఎల్లప్పుడూ అండగా ఉంటుంది."
-                    },
-                    image: "https://www.telanganajagruthi.org/wp-content/uploads/2026/05/k-kavitha-telangana-paddy-procurement-protest-farmers-668x520.jpg",
-                    likes: "1.2K",
-                    comments: "240"
-                  },
-                  {
-                    date: language === 'en' ? '1 day ago' : '1 రోజు క్రితం',
-                    text: {
-                      en: "Smt. Kalvakuntla Kavitha visiting families in Suryapet district to review local welfare demands and public feedback. ✊",
-                      te: "సూర్యాపేట జిల్లాలో స్థానిక సమస్యలపై ప్రజలతో ముఖాముఖి మరియు సంక్షేమ పథకాల సమీక్షా సమావేశంలో పాల్గొన్న శ్రీమతి కల్వకుంట్ల కవిత గారు."
-                    },
-                    image: "https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-integrated-market-visit-600x400.jpeg",
-                    likes: "890",
-                    comments: "110"
-                  },
-                  {
-                    date: language === 'en' ? '3 days ago' : '3 రోజుల క్రితం',
-                    text: {
-                      en: "Addressing the grand Bathukamma floral celebrations, elevating our culture globally. Proud of our heritage! 🌸",
-                      te: "అద్భుతమైన బతుకమ్మ పూల పండుగ వేడుకలు - మన సంస్కృతి, సాంప్రదాయాలను అంతర్జాతీయ వేదికలపై సగర్వంగా ప్రదర్శిస్తున్నాము."
-                    },
-                    image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/10/bathukamma-festival-600x428.png",
-                    likes: "2.4K",
-                    comments: "450"
-                  }
-                ].map((post, idx) => (
-                  <div key={idx} className="bg-white border border-gray-200 p-4 shadow-sm space-y-3" style={{ borderRadius: '2px' }}>
-                    {/* Header */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2.5">
-                        <img 
-                          src="https://www.telanganajagruthi.org/wp-content/uploads/2024/03/telangana-jagruthi-logo.png" 
-                          alt="Bharat Jagruthi" 
-                          className="w-9 h-9 rounded-full object-cover border border-gray-100"
-                        />
-                        <div>
-                          <h4 className="font-ui font-black text-xs text-[#0a361e] leading-none uppercase tracking-wider">Bharat Jagruthi</h4>
-                          <p className="text-[9px] text-gray-400 mt-1 font-bold">{post.date} · Public</p>
-                        </div>
-                      </div>
-                      <a href="https://www.facebook.com/BharatJagruthi" target="_blank" rel="noopener noreferrer">
-                        <svg className="h-4 w-4 fill-current text-gray-400 hover:text-[#1877F2] transition-colors" viewBox="0 0 24 24">
-                          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-                        </svg>
-                      </a>
-                    </div>
-
-                    {/* Text */}
-                    <p className="text-xs text-gray-700 leading-relaxed font-sans font-medium">
-                      {post.text[language]}
-                    </p>
-
-                    {/* Media Image */}
-                    {post.image && (
-                      <div className="h-44 w-full overflow-hidden bg-gray-100 border border-gray-100">
-                        <img src={post.image} alt="Facebook post attachment" className="w-full h-full object-cover select-none pointer-events-none" />
-                      </div>
-                    )}
-
-                    {/* Engagement bar */}
-                    <div className="flex items-center justify-between pt-2 border-t border-gray-100 text-[10px] text-gray-400 font-bold">
-                      <div className="flex items-center gap-1">
-                        <span className="flex items-center justify-center w-4 h-4 rounded-full bg-[#1877F2] text-white text-[8px]">👍</span>
-                        <span>{post.likes}</span>
-                      </div>
-                      <div>
-                        <span>{post.comments} comments</span>
-                      </div>
-                    </div>
-
-                    {/* Action buttons */}
-                    <div className="flex items-center justify-around border-t border-gray-100 pt-2 text-[10px] font-black uppercase tracking-wider text-gray-500">
-                      <a href="https://www.facebook.com/BharatJagruthi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#1877F2] transition-colors py-1 px-2">
-                        <span>Like</span>
-                      </a>
-                      <a href="https://www.facebook.com/BharatJagruthi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#1877F2] transition-colors py-1 px-2">
-                        <span>Comment</span>
-                      </a>
-                      <a href="https://www.facebook.com/BharatJagruthi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#1877F2] transition-colors py-1 px-2">
-                        <span>Share</span>
-                      </a>
-                    </div>
-                  </div>
-                ))}
+              {/* Real Facebook Iframe Timeline Embed */}
+              <div className="w-full h-[500px] bg-white flex items-center justify-center relative overflow-hidden border border-gray-100">
+                <iframe
+                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBharatJagruthi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=1798293220578993"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none', overflow: 'hidden', maxWidth: '500px', width: '500px', height: '500px' }}
+                  scrolling="yes"
+                  frameBorder="0"
+                  allowFullScreen={true}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                ></iframe>
               </div>
             </div>
 
@@ -617,53 +558,18 @@ const HomeView = ({ navigateTo }) => {
                 </a>
               </div>
 
-              {/* Instagram Interactive Feed Display */}
-              <div className="w-full h-[500px] overflow-y-auto bg-gray-50 border border-gray-100 p-4 space-y-4">
-                <div className="grid grid-cols-3 gap-2">
-                  {[
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg',
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg',
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg',
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg',
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg',
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-press-meet-maoists-600x400.jpg',
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
-                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-kacheguda-high-school-visit-hyderabad-1-668x520.jpeg'
-                  ].map((img, idx) => (
-                    <a
-                      key={idx}
-                      href="https://www.instagram.com/telangana__jagruthi"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="aspect-square bg-gray-200 overflow-hidden relative group block"
-                    >
-                      <img src={img} alt="Instagram Post" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[9px] font-black uppercase tracking-wider">
-                        View Post
-                      </div>
-                    </a>
-                  ))}
-                </div>
-                
-                <div className="bg-white border border-gray-100 p-4 shadow-sm flex items-center justify-between" style={{ borderRadius: '2px' }}>
-                  <div className="flex items-center gap-3">
-                    <img src="https://www.telanganajagruthi.org/wp-content/uploads/2024/03/telanaga-membership-party.jpg.jpeg" alt="Avatar" className="w-9 h-9 rounded-full object-cover" />
-                    <div>
-                      <h4 className="font-ui font-black text-[10px] text-[#0a361e] leading-none uppercase tracking-wider">telangana_jagruthi_official</h4>
-                      <p className="text-[9px] text-gray-400 mt-1 font-bold">Official Updates Profile</p>
-                    </div>
-                  </div>
-                  <a
-                    href="https://www.instagram.com/telangana_jagruthi_official"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3 py-1.5 border border-gray-200 hover:border-[#0f5132] hover:bg-[#0f5132]/5 text-[9px] font-black uppercase tracking-wider text-[#0f5132] transition-all"
-                    style={{ borderRadius: '1.5px' }}
-                  >
-                    View Account
+              {/* Real Instagram Blockquote Embed */}
+              <div className="w-full h-[500px] overflow-y-auto bg-white border border-gray-100 p-2 flex justify-center no-scrollbar">
+                <blockquote 
+                  className="instagram-media w-full" 
+                  data-instgrm-permalink="https://www.instagram.com/telangana__jagruthi/?utm_source=ig_embed&ig_rid=b111820c-2e58-4834-a8e0-2beada848f1d" 
+                  data-instgrm-version="14"
+                  style={{ margin: '0 auto', width: '100%', minWidth: '326px', maxWidth: '500px' }}
+                >
+                  <a href="https://www.instagram.com/telangana__jagruthi/?utm_source=ig_embed&ig_rid=b111820c-2e58-4834-a8e0-2beada848f1d" target="_blank" rel="noopener noreferrer">
+                    Loading Instagram Feed...
                   </a>
-                </div>
+                </blockquote>
               </div>
             </div>
           </div>
