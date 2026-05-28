@@ -10,10 +10,10 @@ const SocialFeeds = () => {
     {
       id: 'facebook',
       platform: 'Facebook',
-      handle: '@TelanganaJagruthi',
+      handle: '@BharatJagruthi',
       title: { en: 'Official Campaign Stream', te: 'అధికారిక ఫేస్బుక్ అప్‌డేట్స్' },
       desc: { en: 'Track daily grassroots activities, local statements, and public engagement notices.', te: 'రోజువారీ క్షేత్రస్థాయి కార్యక్రమాలు మరియు ప్రజలతో ముఖాముఖి సమాచారం.' },
-      link: 'https://facebook.com/TelanganaJagruthi',
+      link: 'https://www.facebook.com/BharatJagruthi/',
       icon: (
         <svg className="h-6 w-6 fill-current text-[#1877F2]" viewBox="0 0 24 24">
           <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
