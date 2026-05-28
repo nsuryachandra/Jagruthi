@@ -6,8 +6,30 @@ import { motion } from 'framer-motion';
 const DownloadsSection = () => {
   const { language, t } = useLanguage();
 
-  const handleDownload = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const handleDownload = async (url, customName) => {
+    try {
+      const response = await fetch(url, { mode: 'cors' });
+      if (!response.ok) throw new Error('Network response was not ok');
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = customName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.warn("Direct blob download failed, falling back to link download:", error);
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.download = customName;
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   const logos = [
@@ -17,6 +39,7 @@ const DownloadsSection = () => {
       title: { en: 'Official Telugu Logo', te: 'అధికారిక తెలుగు లోగో' },
       desc: { en: 'Main identity logo in Telugu script, optimized for state-level campaigns and local media.', te: 'రాష్ట్రవ్యాప్త ప్రచారాలు మరియు స్థానిక మీడియాకు అనువైన ప్రధాన తెలుగు అధికారిక లోగో.' },
       imageUrl: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/11/jagruthi-telugu-logo-scaled.png',
+      downloadName: 'logo-telugu-jagruthi.png',
       bgColor: 'bg-[#0a361e]'
     },
     {
@@ -25,6 +48,7 @@ const DownloadsSection = () => {
       title: { en: 'Official English Logo', te: 'అధికారిక ఇంగ్లీష్ లోగో' },
       desc: { en: 'International outreach logo in English script, designed for national and global releases.', te: 'జాతీయ మరియు అంతర్జాతీయ ప్రచారాల కోసం రూపొందించబడిన ఇంగ్లీష్ అధికారిక లోగో.' },
       imageUrl: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/11/telangana-jagruthi-telaugu-logo-scaled.png',
+      downloadName: 'logo-english-jagruthi.png',
       bgColor: 'bg-[#0a361e]'
     },
     {
@@ -33,6 +57,7 @@ const DownloadsSection = () => {
       title: { en: 'Official Urdu Logo', te: 'అధికారిక ఉర్దూ లోగో' },
       desc: { en: 'Identity logo in Urdu script, celebrating the syncretic culture and legacy of Telangana.', te: 'తెలంగాణ గంగా-జమునా తెహజీబ్ సంస్కృతిని ప్రతిబింబించే అధికారిక ఉర్దూ లోగో.' },
       imageUrl: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/tj-oldloo-urdu-scaled.png',
+      downloadName: 'logo-urdu-jagruthi.png',
       bgColor: 'bg-white border border-gray-100'
     },
     {
@@ -41,6 +66,7 @@ const DownloadsSection = () => {
       title: { en: 'Official Hindi Logo', te: 'అధికారిక హిందీ లోగో' },
       desc: { en: 'Identity logo in Hindi Devanagari script, optimized for national cultural forums.', te: 'జాతీయ సాంస్కృతిక వేదికలు మరియు సదస్సుల కొరకు రూపొందించిన అధికారిక హిందీ లోగో.' },
       imageUrl: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/tj-old-logo-hindi-scaled.png',
+      downloadName: 'logo-hindi-jagruthi.png',
       bgColor: 'bg-white border border-gray-100'
     }
   ];
@@ -94,7 +120,7 @@ const DownloadsSection = () => {
 
               <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
-                  <h4 className="text-sm font-display font-black text-[#0a361e]">
+                  <h4 className="text-sm font-display font-display font-black text-[#0a361e]">
                     {language === 'en' ? 'Telangana Jagruthi Flag (High-Res)' : 'తెలంగాణ జాగృతి జెండా (హై-రెజల్యూషన్)'}
                   </h4>
                   <p className="text-xs text-gray-500 leading-relaxed font-sans font-medium">
@@ -108,7 +134,7 @@ const DownloadsSection = () => {
                     {language === 'en' ? 'Verified Official Asset' : 'ధృవీకరించబడిన అధికారిక ఆస్తి'}
                   </div>
                   <button
-                    onClick={() => handleDownload('https://www.telanganajagruthi.org/wp-content/uploads/2025/11/jagruthi-flag.png')}
+                    onClick={() => handleDownload('https://www.telanganajagruthi.org/wp-content/uploads/2025/11/jagruthi-flag.png', 'flag-telangana-jagruthi.png')}
                     className="btn-primary btn-gold w-full justify-center py-3 text-[9px] uppercase tracking-widest font-ui"
                     style={{ borderRadius: '2px' }}
                   >
@@ -164,7 +190,7 @@ const DownloadsSection = () => {
                   </div>
 
                   <button
-                    onClick={() => handleDownload(logo.imageUrl)}
+                    onClick={() => handleDownload(logo.imageUrl, logo.downloadName)}
                     className="btn-secondary w-full justify-center py-2.5 text-[9px] uppercase tracking-widest font-ui hover:border-[#0f5132]"
                     style={{ borderRadius: '2px' }}
                   >
