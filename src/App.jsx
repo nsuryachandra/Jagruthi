@@ -11,6 +11,7 @@ import SocialFeeds from './components/SocialFeeds';
 import ProgramsActivities from './components/ProgramsActivities';
 import OrganizationalWings from './components/OrganizationalWings';
 import VideoGallery from './components/VideoGallery';
+import MembershipFormView from './components/MembershipFormView';
 import { ArrowUp } from 'lucide-react';
 
 // Per-view SEO metadata
@@ -26,11 +27,26 @@ const PAGE_META = {
   videos:          { title: 'Video Broadcasts | Telangana Jagruthi', desc: 'Watch official video broadcasts, press conferences and public addresses by Smt. Kalvakuntla Kavitha and Telangana Jagruthi.' },
   downloads:       { title: 'Media Downloads | Telangana Jagruthi', desc: 'Download official Telangana Jagruthi logos, flag assets and branding materials in high resolution.' },
   contact:         { title: 'Contact Us | Telangana Jagruthi', desc: 'Contact Telangana Jagruthi central office in Banjara Hills, Hyderabad. Reach out for enquiries, collaboration or media queries.' },
+  membership:      { title: 'Official Membership Registration | Telangana Jagruthi', desc: 'Online membership registration form for Telangana Jagruthi. Join Kalvakuntla Kavitha in social development initiatives.' },
 };
 
 function App() {
-  const [activeSection, setActiveSection] = useState('hero');
+  // Initialize state from URL hash (e.g. #/about-founder -> about-founder)
+  const [activeSection, setActiveSection] = useState(() => {
+    const hash = window.location.hash.replace(/^#\/?/, '');
+    return hash || 'hero';
+  });
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Sync hash to state (e.g. on page refresh or browser forward/back button click)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace(/^#\/?/, '');
+      setActiveSection(hash || 'hero');
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   // Scroll-to-top button visibility
   useEffect(() => {
@@ -60,7 +76,10 @@ function App() {
     if (twDesc) twDesc.setAttribute('content', meta.desc);
   }, [activeSection]);
 
-  const navigateTo = (id) => setActiveSection(id);
+  // Navigation updater updates the location hash, triggering state sync
+  const navigateTo = (id) => {
+    window.location.hash = `#/${id}`;
+  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -93,6 +112,8 @@ function App() {
         return <VideoGallery />;
       case 'downloads':
         return <DownloadsSection />;
+      case 'membership':
+        return <MembershipFormView />;
       case 'contact':
         return (
           <div className="bg-[#f8f7f5]">
@@ -121,11 +142,13 @@ function App() {
 
         {/* ── Official Top Header Banner (Home only) ── */}
         <a
-          href="https://www.telanganajagruthi.org/"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#/hero"
+          onClick={(e) => {
+            e.preventDefault();
+            navigateTo('hero');
+          }}
           className="block w-full overflow-hidden"
-          aria-label="Telangana Jagruthi – Official Website"
+          aria-label="Telangana Jagruthi – Official Website Home"
         >
           <img
             src="/tj-header-banner.jpg"
@@ -139,9 +162,11 @@ function App() {
         {/* Clickable Party Membership Banner — always visible on all pages */}
         <div className="w-full bg-[#0a361e] border-b border-[#a16207]/30 overflow-hidden relative group">
           <a
-            href="https://www.telanganajagruthi.org/party-membership-form/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#/membership"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo('membership');
+            }}
             className="block w-full hover:opacity-95 transition-opacity duration-300"
           >
             <img

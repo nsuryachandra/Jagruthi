@@ -62,6 +62,7 @@ const Footer = ({ setActiveSection }) => {
     { id: 'news',           label: t('nav.news') },
     { id: 'videos',         label: language === 'en' ? 'Videos' : 'వీడియోలు' },
     { id: 'downloads',      label: t('nav.downloads') },
+    { id: 'membership',     label: language === 'en' ? 'Register Membership' : 'సభ్యత్వ నమోదు' },
     { id: 'contact',        label: t('nav.contact') }
   ];
   const galleryImages = Array.from({ length: 9 }, (_, i) => `https://telanganajagruthi.org/wp-content/uploads/2024/04/footer-gallery-0${i + 1}.jpg`);

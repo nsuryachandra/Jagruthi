@@ -203,7 +203,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 <Globe className="h-3.5 w-3.5 text-[#a16207]" />
                 {language === 'en' ? 'తెలుగు' : 'English'}
               </button>
-              <button onClick={() => navigateTo('contact')}
+              <button onClick={() => navigateTo('membership')}
                 className="btn-primary text-[9px] gap-1.5 px-4 py-2.5"
                 style={{ borderRadius: '2px' }}>
                 <UserPlus className="h-3.5 w-3.5" />
@@ -304,9 +304,8 @@ const Navbar = ({ activeSection, setActiveSection }) => {
               })}
             </div>
 
-            {/* Mobile CTA */}
             <div className="p-4 bg-[#f8f7f5] border-t border-gray-200">
-              <button onClick={() => navigateTo('contact')}
+              <button onClick={() => navigateTo('membership')}
                 className="btn-primary w-full justify-center py-3.5 text-[9px]"
                 style={{ borderRadius: '2px' }}>
                 <UserPlus className="h-4 w-4" />
