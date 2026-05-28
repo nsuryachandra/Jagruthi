@@ -445,12 +445,147 @@ const HomeView = ({ navigateTo }) => {
           <div className="w-full aspect-video border-2 border-[#a16207]/30 shadow-2xl relative bg-black">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/videoseries?list=PL28c4t1jQf5o3YjU6P4_a87265F0t9580"
+              src="https://www.youtube.com/embed/h0RdKGW2WXA"
               title="Telangana Jagruthi Live Video Broadcasts"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Social Feed Panels (Facebook & Instagram Side-by-Side) */}
+      <section className="py-16 sm:py-20 bg-[#f8f7f5] border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          
+          <div className="flex flex-col items-center text-center space-y-4 mb-14">
+            <span className="section-eyebrow bg-[#0f5132]/5 text-[#0f5132] inline-flex items-center gap-1.5">
+              {language === 'en' ? 'LIVE SOCIAL CHANNELS' : 'సామాజిక ప్రవాహాలు'}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-display font-black text-[#0a361e] uppercase tracking-tight">
+              {language === 'en' ? 'Our Facebook & Instagram Feeds' : 'ఫేస్‌బుక్ & ఇన్‌స్టాగ్రామ్ ఫీడ్స్'}
+            </h2>
+            <div className="h-1 w-14 bg-[#a16207]" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Facebook Page Feed Panel */}
+            <div className="bg-white border border-gray-200 shadow-sm p-5 sm:p-6 flex flex-col justify-between" style={{ borderRadius: '2px' }}>
+              <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-[#1877F2]/10 rounded-sm">
+                    <svg className="h-5.5 w-5.5 fill-current text-[#1877F2]" viewBox="0 0 24 24">
+                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-display font-black text-sm text-[#0a361e] uppercase tracking-wider">Bharat Jagruthi Facebook</h3>
+                    <p className="text-[10px] text-gray-400 font-bold">@BharatJagruthi</p>
+                  </div>
+                </div>
+                <a
+                  href="https://www.facebook.com/BharatJagruthi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-1.5 bg-[#1877F2] text-white font-ui font-black text-[9px] uppercase tracking-widest hover:bg-[#1565C0] transition-colors"
+                  style={{ borderRadius: '1.5px' }}
+                >
+                  Visit Page
+                </a>
+              </div>
+
+              {/* Facebook Iframe Timeline Embed */}
+              <div className="w-full h-[500px] overflow-hidden bg-gray-50 border border-gray-100 relative">
+                <iframe
+                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBharatJagruthi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none', overflow: 'hidden' }}
+                  scrolling="no"
+                  frameBorder="0"
+                  allowFullScreen={true}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Instagram Feed Panel */}
+            <div className="bg-white border border-gray-200 shadow-sm p-5 sm:p-6 flex flex-col justify-between" style={{ borderRadius: '2px' }}>
+              <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-[#E1306C]/10 rounded-sm">
+                    <svg className="h-5.5 w-5.5 fill-none stroke-[#E1306C]" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-display font-black text-sm text-[#0a361e] uppercase tracking-wider">Telangana Jagruthi Instagram</h3>
+                    <p className="text-[10px] text-gray-400 font-bold">@telangana__jagruthi</p>
+                  </div>
+                </div>
+                <a
+                  href="https://www.instagram.com/telangana__jagruthi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-1.5 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white font-ui font-black text-[9px] uppercase tracking-widest hover:opacity-90 transition-opacity"
+                  style={{ borderRadius: '1.5px' }}
+                >
+                  Follow Us
+                </a>
+              </div>
+
+              {/* Instagram Interactive Feed Display */}
+              <div className="w-full h-[500px] overflow-y-auto bg-gray-50 border border-gray-100 p-4 space-y-4">
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg',
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg',
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg',
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg',
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg',
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-press-meet-maoists-600x400.jpg',
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
+                    'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-kacheguda-high-school-visit-hyderabad-1-668x520.jpeg'
+                  ].map((img, idx) => (
+                    <a
+                      key={idx}
+                      href="https://www.instagram.com/telangana__jagruthi"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="aspect-square bg-gray-200 overflow-hidden relative group block"
+                    >
+                      <img src={img} alt="Instagram Post" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[9px] font-black uppercase tracking-wider">
+                        View Post
+                      </div>
+                    </a>
+                  ))}
+                </div>
+                
+                <div className="bg-white border border-gray-100 p-4 shadow-sm flex items-center justify-between" style={{ borderRadius: '2px' }}>
+                  <div className="flex items-center gap-3">
+                    <img src="https://www.telanganajagruthi.org/wp-content/uploads/2024/03/telanaga-membership-party.jpg.jpeg" alt="Avatar" className="w-9 h-9 rounded-full object-cover" />
+                    <div>
+                      <h4 className="font-ui font-black text-[10px] text-[#0a361e] leading-none uppercase tracking-wider">telangana_jagruthi_official</h4>
+                      <p className="text-[9px] text-gray-400 mt-1 font-bold">Official Updates Profile</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.instagram.com/telangana_jagruthi_official"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 border border-gray-200 hover:border-[#0f5132] hover:bg-[#0f5132]/5 text-[9px] font-black uppercase tracking-wider text-[#0f5132] transition-all"
+                    style={{ borderRadius: '1.5px' }}
+                  >
+                    View Account
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

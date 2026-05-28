@@ -65,7 +65,7 @@ const Footer = ({ setActiveSection }) => {
     { id: 'membership',     label: language === 'en' ? 'Register Membership' : 'సభ్యత్వ నమోదు' },
     { id: 'contact',        label: t('nav.contact') }
   ];
-  const galleryImages = Array.from({ length: 9 }, (_, i) => `https://telanganajagruthi.org/wp-content/uploads/2024/04/footer-gallery-0${i + 1}.jpg`);
+  const galleryImages = Array.from({ length: 9 }, (_, i) => `https://www.telanganajagruthi.org/wp-content/uploads/2024/04/footer-gallery-0${i + 1}.jpg`);
   const doubledGallery = [...galleryImages, ...galleryImages];
 
   return (

@@ -37,7 +37,7 @@ const ProgramsActivities = () => {
         en: 'Telangana Jagruthi transformed the traditional Bathukamma floral festival into a state symbol and elevated it globally, including historic light shows on the Burj Khalifa in Dubai.',
         te: 'సాంప్రదాయ బతుకమ్మ పూల పండుగను రాష్ట్ర సంస్కృతికి ప్రతీకగా మార్చడమే కాకుండా, దుబాయ్ లోని బూర్జ్ ఖలీఫా పై చారిత్రాత్మక ప్రదర్శనతో అంతర్జాతీయ స్థాయికి తీసుకువెళ్ళాము.'
       },
-      image: 'https://telanganajagruthi.org/wp-content/uploads/2024/04/footer-gallery-05.jpg',
+      image: 'https://www.telanganajagruthi.org/wp-content/uploads/2024/04/footer-gallery-05.jpg',
       stat: '18+ Nations',
       statLabel: { en: 'Global Celebrations', te: 'అంతర్జాతీయ వేడుకలు' }
     },

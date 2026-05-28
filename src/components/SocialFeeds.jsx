@@ -26,10 +26,10 @@ const SocialFeeds = () => {
     {
       id: 'instagram',
       platform: 'Instagram',
-      handle: '@telangana_jagruthi_official',
+      handle: '@telangana__jagruthi',
       title: { en: 'Photo Gallery & Highlights', te: 'ఇన్‌స్టాగ్రామ్ విశేషాలు' },
       desc: { en: 'Visual reports of cultural preservation drives, district training meets, and Bathukamma highlights.', te: 'సాంస్కృతిక వేడుకలు, జిల్లా శిక్షణా శిబిరాలు మరియు ఫోటోల సమాహారం.' },
-      link: 'https://www.instagram.com/telangana_jagruthi_official/',
+      link: 'https://www.instagram.com/telangana__jagruthi/',
       icon: (
         <svg className="h-6 w-6 fill-none stroke-[#E1306C]" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
