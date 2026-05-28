@@ -65,7 +65,17 @@ const Footer = ({ setActiveSection }) => {
     { id: 'membership',     label: language === 'en' ? 'Register Membership' : 'సభ్యత్వ నమోదు' },
     { id: 'contact',        label: t('nav.contact') }
   ];
-  const galleryImages = Array.from({ length: 9 }, (_, i) => `https://www.telanganajagruthi.org/wp-content/uploads/2024/04/footer-gallery-0${i + 1}.jpg`);
+  const galleryImages = [
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-press-meet-maoists-600x400.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-kacheguda-high-school-visit-hyderabad-1-668x520.jpeg'
+  ];
   const doubledGallery = [...galleryImages, ...galleryImages];
 
   return (

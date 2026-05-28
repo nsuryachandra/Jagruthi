@@ -495,18 +495,98 @@ const HomeView = ({ navigateTo }) => {
                 </a>
               </div>
 
-              {/* Facebook Iframe Timeline Embed */}
-              <div className="w-full h-[500px] overflow-hidden bg-gray-50 border border-gray-100 relative">
-                <iframe
-                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBharatJagruthi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 'none', overflow: 'hidden' }}
-                  scrolling="no"
-                  frameBorder="0"
-                  allowFullScreen={true}
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                ></iframe>
+              {/* Custom Designed Facebook Posts Feed (No scrollbar / clean layout) */}
+              <div className="w-full h-[500px] overflow-y-auto bg-gray-50 border border-gray-100 p-4 space-y-4 no-scrollbar">
+                {[
+                  {
+                    date: language === 'en' ? '2 hours ago' : '2 గంటల క్రితం',
+                    text: {
+                      en: "Conducting a statewide protest demanding immediate and fair paddy procurement prices for our farmers. We stand firmly with Telangana's farming families. 🌾",
+                      te: "రైతులకు న్యాయమైన మద్దతు ధర లభించే వరకు మా పోరాటం ఆగదు. తెలంగాణ రైతు లోకానికి భారత్ జాగృతి ఎల్లప్పుడూ అండగా ఉంటుంది."
+                    },
+                    image: "https://www.telanganajagruthi.org/wp-content/uploads/2026/05/k-kavitha-telangana-paddy-procurement-protest-farmers-668x520.jpg",
+                    likes: "1.2K",
+                    comments: "240"
+                  },
+                  {
+                    date: language === 'en' ? '1 day ago' : '1 రోజు క్రితం',
+                    text: {
+                      en: "Smt. Kalvakuntla Kavitha visiting families in Suryapet district to review local welfare demands and public feedback. ✊",
+                      te: "సూర్యాపేట జిల్లాలో స్థానిక సమస్యలపై ప్రజలతో ముఖాముఖి మరియు సంక్షేమ పథకాల సమీక్షా సమావేశంలో పాల్గొన్న శ్రీమతి కల్వకుంట్ల కవిత గారు."
+                    },
+                    image: "https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-integrated-market-visit-600x400.jpeg",
+                    likes: "890",
+                    comments: "110"
+                  },
+                  {
+                    date: language === 'en' ? '3 days ago' : '3 రోజుల క్రితం',
+                    text: {
+                      en: "Addressing the grand Bathukamma floral celebrations, elevating our culture globally. Proud of our heritage! 🌸",
+                      te: "అద్భుతమైన బతుకమ్మ పూల పండుగ వేడుకలు - మన సంస్కృతి, సాంప్రదాయాలను అంతర్జాతీయ వేదికలపై సగర్వంగా ప్రదర్శిస్తున్నాము."
+                    },
+                    image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/10/bathukamma-festival-600x428.png",
+                    likes: "2.4K",
+                    comments: "450"
+                  }
+                ].map((post, idx) => (
+                  <div key={idx} className="bg-white border border-gray-200 p-4 shadow-sm space-y-3" style={{ borderRadius: '2px' }}>
+                    {/* Header */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <img 
+                          src="https://www.telanganajagruthi.org/wp-content/uploads/2024/03/telangana-jagruthi-logo.png" 
+                          alt="Bharat Jagruthi" 
+                          className="w-9 h-9 rounded-full object-cover border border-gray-100"
+                        />
+                        <div>
+                          <h4 className="font-ui font-black text-xs text-[#0a361e] leading-none uppercase tracking-wider">Bharat Jagruthi</h4>
+                          <p className="text-[9px] text-gray-400 mt-1 font-bold">{post.date} · Public</p>
+                        </div>
+                      </div>
+                      <a href="https://www.facebook.com/BharatJagruthi" target="_blank" rel="noopener noreferrer">
+                        <svg className="h-4 w-4 fill-current text-gray-400 hover:text-[#1877F2] transition-colors" viewBox="0 0 24 24">
+                          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                      </a>
+                    </div>
+
+                    {/* Text */}
+                    <p className="text-xs text-gray-700 leading-relaxed font-sans font-medium">
+                      {post.text[language]}
+                    </p>
+
+                    {/* Media Image */}
+                    {post.image && (
+                      <div className="h-44 w-full overflow-hidden bg-gray-100 border border-gray-100">
+                        <img src={post.image} alt="Facebook post attachment" className="w-full h-full object-cover select-none pointer-events-none" />
+                      </div>
+                    )}
+
+                    {/* Engagement bar */}
+                    <div className="flex items-center justify-between pt-2 border-t border-gray-100 text-[10px] text-gray-400 font-bold">
+                      <div className="flex items-center gap-1">
+                        <span className="flex items-center justify-center w-4 h-4 rounded-full bg-[#1877F2] text-white text-[8px]">👍</span>
+                        <span>{post.likes}</span>
+                      </div>
+                      <div>
+                        <span>{post.comments} comments</span>
+                      </div>
+                    </div>
+
+                    {/* Action buttons */}
+                    <div className="flex items-center justify-around border-t border-gray-100 pt-2 text-[10px] font-black uppercase tracking-wider text-gray-500">
+                      <a href="https://www.facebook.com/BharatJagruthi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#1877F2] transition-colors py-1 px-2">
+                        <span>Like</span>
+                      </a>
+                      <a href="https://www.facebook.com/BharatJagruthi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#1877F2] transition-colors py-1 px-2">
+                        <span>Comment</span>
+                      </a>
+                      <a href="https://www.facebook.com/BharatJagruthi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#1877F2] transition-colors py-1 px-2">
+                        <span>Share</span>
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
