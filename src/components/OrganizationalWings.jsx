@@ -49,7 +49,7 @@ const OrganizationalWings = () => {
             <span>{language === 'en' ? 'Our Structure' : 'విభాగాలు'}</span>
           </div>
           <h2 className="section-title text-[#0a361e] font-display font-black uppercase tracking-tight">
-            {language === 'en' ? '22 Specialized Wings' : 'టీఆర్ఎస్: తెలంగాణ రక్షణ సేన 22 విభాగాలు'}
+            {language === 'en' ? '22 Specialized Wings' : 'తెలంగాణ రక్షణ సేన 22 విభాగాలు'}
           </h2>
           <div className="h-1 w-14 bg-[#a16207]" />
         </div>
@@ -106,7 +106,7 @@ const OrganizationalWings = () => {
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-[8px] font-black uppercase tracking-widest text-[#0f5132] font-ui">
-                  <span>TRS: Telangana Rakshana Sena</span>
+                  <span>Telangana Rakshana Sena</span>
                   <span>Active</span>
                 </div>
               </motion.div>

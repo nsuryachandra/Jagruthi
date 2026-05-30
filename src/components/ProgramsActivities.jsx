@@ -24,7 +24,7 @@ const ProgramsActivities = () => {
         en: 'A massive public outreach campaign led by Smt. Kalvakuntla Kavitha, visiting villages across all districts of Telangana to listen to grievances and lead local agitations.',
         te: 'తెలంగాణలోని అన్ని జిల్లాల్లో పర్యటించి, ప్రజల సమస్యలను తెలుసుకోవడానికి మరియు స్థానిక పోరాటాలను నడిపించడానికి శ్రీమతి కల్వకుంట్ల కవిత గారి నేతృత్వంలో సాగిన భారీ ప్రజా యాత్ర.'
       },
-      image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-page-slider.jpg',
+      image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg',
       stat: '33 Districts',
       statLabel: { en: 'Campaign Scope', te: 'యాత్రా పరిధి' }
     },
@@ -34,10 +34,10 @@ const ProgramsActivities = () => {
       title: { en: 'Bathukamma Renaissance', te: 'బతుకమ్మ పూల పండుగ పునరుజ్జీవనం' },
       highlight: { en: 'Global Recognition for Telangana\'s Identity', te: 'తెలంగాణ అస్తిత్వానికి అంతర్జాతీయ గుర్తింపు' },
       desc: {
-        en: 'TRS: Telangana Rakshana Sena transformed the traditional Bathukamma floral festival into a state symbol and elevated it globally, including historic light shows on the Burj Khalifa in Dubai.',
+        en: 'Telangana Rakshana Sena transformed the traditional Bathukamma floral festival into a state symbol and elevated it globally, including historic light shows on the Burj Khalifa in Dubai.',
         te: 'సాంప్రదాయ బతుకమ్మ పూల పండుగను రాష్ట్ర సంస్కృతికి ప్రతీకగా మార్చడమే కాకుండా, దుబాయ్ లోని బూర్జ్ ఖలీఫా పై చారిత్రాత్మక ప్రదర్శనతో అంతర్జాతీయ స్థాయికి తీసుకువెళ్ళాము.'
       },
-      image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2024/04/footer-gallery-05.jpg',
+      image: 'https://www.telanganajagruthi.org/wp-content/uploads/2024/04/footer-gallery-05.jpg',
       stat: '18+ Nations',
       statLabel: { en: 'Global Celebrations', te: 'అంతర్జాతీయ వేడుకలు' }
     },
@@ -50,7 +50,7 @@ const ProgramsActivities = () => {
         en: 'A month-long campaign to hoist organization and party flags across rural areas to connect with local cadre and strengthen public relations.',
         te: 'గ్రామీణ ప్రాంతాల్లో పార్టీ పతాకాలను ఆవిష్కరించి, స్థానిక శ్రేణులతో మమేకం కావడానికి మరియు ప్రజా సంబంధాలను బలోపేతం చేయడానికి నెల రోజుల పాటు సాగిన ప్రచార కార్యక్రమం.'
       },
-      image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2026/05/trs-flag-festival-kalvakuntla-kavitha-hyderabad-668x520.jpeg',
+      image: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/05/trs-flag-festival-kalvakuntla-kavitha-hyderabad-668x520.jpeg',
       stat: '30 Days',
       statLabel: { en: 'Statewide Tour', te: 'రాష్ట్రవ్యాప్త యాత్ర' }
     },
@@ -63,7 +63,7 @@ const ProgramsActivities = () => {
         en: 'Leading statewide peaceful agitations and representations demanding immediate and fair paddy procurement bonuses from the government.',
         te: 'రైతులకు తక్షణ మరియు మద్దతు ధరతో కూడిన వరి కొనుగోలు బోనస్ అందించాలని డిమాండ్ చేస్తూ రాష్ట్రవ్యాప్తంగా శాంతియుత నిరసనల నిర్వహణ.'
       },
-      image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2026/05/k-kavitha-telangana-paddy-procurement-protest-farmers-668x520.jpeg',
+      image: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/05/k-kavitha-telangana-paddy-procurement-protest-farmers-668x520.jpeg',
       stat: '100% Support',
       statLabel: { en: 'For Farming Families', te: 'రైతు కుటుంబాల కొరకు' }
     },
@@ -76,7 +76,7 @@ const ProgramsActivities = () => {
         en: 'Adopted 389 families affected by farmer suicides across Telangana, offering financial assistance of INR 2,500 monthly for four years alongside education support.',
         te: 'తెలంగాణ వ్యాప్తంగా ఆత్మహత్య చేసుకున్న 389 రైతు కుటుంబాలను దత్తత తీసుకుని, నాలుగేళ్ల పాటు నెలకు రూ. 2,500 ఆర్థిక సహాయంతో పాటు పిల్లల చదువుకు మద్దతు.'
       },
-      image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg',
+      image: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg',
       stat: '389 Families',
       statLabel: { en: 'Adopted & Assisted', te: 'దత్తత మరియు సహాయం' }
     },
@@ -89,7 +89,7 @@ const ProgramsActivities = () => {
         en: 'Providing daily free quality meals to patients and attendees in government hospitals, alongside nutritious lunches for youth preparing for state competitive exams.',
         te: 'ప్రభుత్వ ఆసుపత్రులలోని రోగులు మరియు వారి సహాయకులకు ప్రతిరోజూ ఉచిత నాణ్యమైన భోజనం మరియు పోటీ పరీక్షలకు సిద్ధమవుతున్న నిరుద్యోగ యువతకు ఉచిత మధ్యాహ్న భోజన సౌకర్యం.'
       },
-      image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kavitha-tungaturthi-chc-hospital-visit-1-600x400.jpeg',
+      image: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kavitha-tungaturthi-chc-hospital-visit-1-600x400.jpeg',
       stat: 'Daily Meals',
       statLabel: { en: 'Continuous Service', te: 'నిరంతర సేవ' }
     },
@@ -102,7 +102,7 @@ const ProgramsActivities = () => {
         en: 'A specialized history wing researched 328 sites in Telangana, translating 42 rare ancient inscriptions and identifying 23 pre-historic Rock Art sites.',
         te: 'తెలంగాణలోని 328 చారిత్రక ప్రదేశాలపై పరిశోధన చేసి, 42 అరుదైన ప్రాచీన శిలాశాసనాలను అనువదించి మరియు 23 చరిత్రపూర్వ రాతి చిత్రాల స్థలాలను గుర్తించారు.'
       },
-      image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/about-telangana-jagruthi-intro-1-1024x676.png',
+      image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/about-telangana-jagruthi-intro-1-1024x676.png',
       stat: '328 Sites',
       statLabel: { en: 'Researched & Cataloged', te: 'పరిశోధించిన ప్రదేశాలు' }
     }

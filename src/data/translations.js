@@ -53,8 +53,8 @@ export const translations = {
       te: "సాంస్కృతిక వారసత్వాన్ని కాపాడుతూ, జీవితాలను సాధికారిత వైపు నడిపిస్తూ"
     },
     title: {
-      en: "TRS: Telangana Rakshana Sena",
-      te: "టీఆర్ఎస్: తెలంగాణ రక్షణ సేన"
+      en: "Telangana Rakshana Sena",
+      te: "తెలంగాణ రక్షణ సేన"
     },
     subtitle: {
       en: "Founded in 2006 under the visionary leadership of Smt. Kalvakuntla Kavitha, uniting Telangana's youth, students, and citizens globally through cultural revival and social empowerment.",
@@ -69,12 +69,12 @@ export const translations = {
     title: { en: "Our Founder & President", te: "మా వ్యవస్థాపకురాలు & అధ్యక్షురాలు" },
     subtitle: { en: "Smt. Kalvakuntla Kavitha", te: "శ్రీమతి కల్వకుంట్ల కవిత" },
     p1: {
-      en: "Smt. Kalvakuntla Kavitha is the Founder and President of TRS: Telangana Rakshana Sena. As a dynamic leader, social activist, and former Member of Parliament (MP) and Member of Legislative Council (MLC), she played a historic role in mobilising the masses during the separate Telangana statehood movement.",
-      te: "శ్రీమతి కల్వకుంట్ల కవిత గారు టీఆర్ఎస్: తెలంగాణ రక్షణ సేన వ్యవస్థాపక అధ్యక్షురాలు. ఒక క్రియాశీల నాయకురాలిగా, సామాజిక కార్యకర్తగా, మాజీ పార్లమెంటు సభ్యురాలు (MP) మరియు శాసన మండలి సభ్యురాలు (MLC)గా, ఆమె ప్రత్యేక తెలంగాణ రాష్ట్ర సాధన ఉద్యమ సమయంలో ప్రజలను సమీకరించడంలో చారిత్రాత్మక పాత్ర పోషించారు."
+      en: "Smt. Kalvakuntla Kavitha is the Founder and President of Telangana Rakshana Sena. As a dynamic leader, social activist, and former Member of Parliament (MP) and Member of Legislative Council (MLC), she played a historic role in mobilising the masses during the separate Telangana statehood movement.",
+      te: "శ్రీమతి కల్వకుంట్ల కవిత గారు తెలంగాణ రక్షణ సేన వ్యవస్థాపక అధ్యక్షురాలు. ఒక క్రియాశీల నాయకురాలిగా, సామాజిక కార్యకర్తగా, మాజీ పార్లమెంటు సభ్యురాలు (MP) మరియు శాసన మండలి సభ్యురాలు (MLC)గా, ఆమె ప్రత్యేక తెలంగాణ రాష్ట్ర సాధన ఉద్యమ సమయంలో ప్రజలను సమీకరించడంలో చారిత్రాత్మక పాత్ర పోషించారు."
     },
     p2: {
-      en: "In 2006, identifying the need to preserve Telangana's rich cultural history and build a common identity, she established TRS: Telangana Rakshana Sena. Under her visionary guidance, the organization evolved from a cultural resistance front into a global social action organization, representing the voice of millions of youth, women, and marginalized sections.",
-      te: "2006లో తెలంగాణ సంపన్న సాంస్కృతిక చరిత్రను కాపాడుకోవాల్సిన మరియు ఒక ఉమ్మడి గుర్తింపును నిర్మించాల్సిన అవసరాన్ని గుర్తించి, ఆమె టీఆర్ఎస్: తెలంగాణ రక్షణ సేనని స్థాపించారు. ఆమె దూరదృష్టితో కూడిన మార్గదర్శకత్వంలో, ఈ సంస్థ సాంస్కృతిక నిరోధక వేదిక నుండి ప్రపంచవ్యాప్త సామాజిక కార్యాచరణ సంస్థగా రూపాంతరం చెందింది, మిలియన్ల కొద్దీ యువత, మహిళలు మరియు అణగారిన వర్గాల స్వరాన్ని వినిపిస్తోంది."
+      en: "In 2006, identifying the need to preserve Telangana's rich cultural history and build a common identity, she established Telangana Rakshana Sena. Under her visionary guidance, the organization evolved from a cultural resistance front into a global social action organization, representing the voice of millions of youth, women, and marginalized sections.",
+      te: "2006లో తెలంగాణ సంపన్న సాంస్కృతిక చరిత్రను కాపాడుకోవాల్సిన మరియు ఒక ఉమ్మడి గుర్తింపును నిర్మించాల్సిన అవసరాన్ని గుర్తించి, ఆమె తెలంగాణ రక్షణ సేనని స్థాపించారు. ఆమె దూరదృష్టితో కూడిన మార్గదర్శకత్వంలో, ఈ సంస్థ సాంస్కృతిక నిరోధక వేదిక నుండి ప్రపంచవ్యాప్త సామాజిక కార్యాచరణ సంస్థగా రూపాంతరం చెందింది, మిలియన్ల కొద్దీ యువత, మహిళలు మరియు అణగారిన వర్గాల స్వరాన్ని వినిపిస్తోంది."
     },
     p3: {
       en: "Her work draws profound inspiration from Professor Jayashankar Sir's ideals of social justice (Samajika Telangana). Today, she continues to lead global campaigns for women's rights, skill-building for rural youth, and the promotion of Telangana's identity across 18 countries.",
@@ -85,8 +85,8 @@ export const translations = {
     title: { en: "Vision & Mission", te: "లక్ష్యం & ధ్యేయం" },
     visionTitle: { en: "Our Vision", te: "మా దార్శనికత (విజన్)" },
     visionText: {
-      en: "TRS: Telangana Rakshana Sena aims to build a strong, self-reliant, and progressive Telangana where every citizen of the state enjoys equal opportunities in governance, livelihood, and development. We strive to establish a society anchored in absolute social justice (Samajika Telangana) as envisioned during the historic statehood struggle.",
-      te: "టీఆర్ఎస్: తెలంగాణ రక్షణ సేన ఒక బలమైన, స్వయం సమృద్ధ మరియు ప్రగతిశీల తెలంగాణను నిర్మించాలని ఆకాంక్షిస్తోంది, ఇక్కడ రాష్ట్రంలోని ప్రతి పౌరుడికి పరిపాలన, జీవనోపాధి మరియు అభివృద్ధిలో సమాన అవకాశాలు లభిస్తాయి. చారిత్రాత్మక రాష్ట్ర సాధన ఉద్యమ సమయంలో ఊహించిన విధంగా పరిపూర్ణ సామాజిక న్యాయం (సామాజిక తెలంగాణ) ప్రాతిపదికన సమాజాన్ని స్థాపించడానికి మేము కృషి చేస్తున్నాము."
+      en: "Telangana Rakshana Sena aims to build a strong, self-reliant, and progressive Telangana where every citizen of the state enjoys equal opportunities in governance, livelihood, and development. We strive to establish a society anchored in absolute social justice (Samajika Telangana) as envisioned during the historic statehood struggle.",
+      te: "తెలంగాణ రక్షణ సేన ఒక బలమైన, స్వయం సమృద్ధ మరియు ప్రగతిశీల తెలంగాణను నిర్మించాలని ఆకాంక్షిస్తోంది, ఇక్కడ రాష్ట్రంలోని ప్రతి పౌరుడికి పరిపాలన, జీవనోపాధి మరియు అభివృద్ధిలో సమాన అవకాశాలు లభిస్తాయి. చారిత్రాత్మక రాష్ట్ర సాధన ఉద్యమ సమయంలో ఊహించిన విధంగా పరిపూర్ణ సామాజిక న్యాయం (సామాజిక తెలంగాణ) ప్రాతిపదికన సమాజాన్ని స్థాపించడానికి మేము కృషి చేస్తున్నాము."
     },
     missionTitle: { en: "Our Mission", te: "మా ధ్యేయం (మిషన్)" },
     missionText: {
@@ -101,8 +101,8 @@ export const translations = {
       te: "సాంస్కృతిక పోరాటం, సామాజిక సంక్షేమం మరియు క్షేత్రస్థాయి సాధికారత యొక్క కాలక్రమం."
     },
     intro: {
-      en: "Founded during the peak of the separate statehood movement, TRS: Telangana Rakshana Sena successfully mobilized public sentiment by celebrating Telangana's unique heritage. What started in rural households in 2006 has now spread to 33 districts, 2 neighboring states, and over 18 countries.",
-      te: "ప్రత్యేక రాష్ట్ర ఉద్యమ ఉధృతి సమయంలో స్థాపించబడిన టీఆర్ఎస్: తెలంగాణ రక్షణ సేన, తెలంగాణ యొక్క విశిష్ట వారసత్వాన్ని వేడుకగా జరుపుకోవడం ద్వారా ప్రజా భావాలను విజయవంతంగా సమీకరించింది. 2006లో గ్రామీణ ఇళ్లలో ప్రారంభమైన ఈ ప్రయాణం ఇప్పుడు 33 జిల్లాలకు, 2 పొరుగు రాష్ట్రాలకు మరియు 18 కంటే ఎక్కువ దేశాలకు విస్తరించింది."
+      en: "Founded during the peak of the separate statehood movement, Telangana Rakshana Sena successfully mobilized public sentiment by celebrating Telangana's unique heritage. What started in rural households in 2006 has now spread to 33 districts, 2 neighboring states, and over 18 countries.",
+      te: "ప్రత్యేక రాష్ట్ర ఉద్యమ ఉధృతి సమయంలో స్థాపించబడిన తెలంగాణ రక్షణ సేన, తెలంగాణ యొక్క విశిష్ట వారసత్వాన్ని వేడుకగా జరుపుకోవడం ద్వారా ప్రజా భావాలను విజయవంతంగా సమీకరించింది. 2006లో గ్రామీణ ఇళ్లలో ప్రారంభమైన ఈ ప్రయాణం ఇప్పుడు 33 జిల్లాలకు, 2 పొరుగు రాష్ట్రాలకు మరియు 18 కంటే ఎక్కువ దేశాలకు విస్తరించింది."
     },
     points: [
       {
@@ -153,15 +153,15 @@ export const translations = {
       en: "Access high-resolution branding materials, official logos, and official flag assets.",
       te: "హై-రెజల్యూషన్ బ్రాండింగ్ మెటీరియల్స్, అధికారిక లోగోలు మరియు అధికారిక జెండా వివరాలను ఇక్కడ పొందండి."
     },
-    flagTitle: { en: "Official TRS: Telangana Rakshana Sena Flag", te: "టీఆర్ఎస్: తెలంగాణ రక్షణ సేన అధికారిక జెండా" },
+    flagTitle: { en: "Official Telangana Rakshana Sena Flag", te: "తెలంగాణ రక్షణ సేన అధికారిక జెండా" },
     logoTitle: { en: "Official Multi-lingual Logos", te: "అధికారిక బహుభాషా లోగోలు" },
     flagDesc: {
       en: "Vibrant green and white horizontal bi-color flag representing growth, peace, and the cultural map of Telangana.",
       te: "తెలంగాణ వృద్ధి, శాంతి మరియు సాంస్కృతిక పటాన్ని ప్రతిబింబించే ఆకుపచ్చ మరియు తెలుపు రంగుల ద్వీ-వర్ణ జెండా."
     },
     logoDesc: {
-      en: "TRS: Telangana Rakshana Sena logo featuring the state outline map and traditional lamp symbol, available in multiple languages.",
-      te: "తెలంగాణ మ్యాప్ రూపురేఖలు మరియు సాంప్రదాయ దీపం గుర్తుతో కూడిన టీఆర్ఎస్: తెలంగాణ రక్షణ సేన అధికారిక లోగో, పలు భాషల్లో అందుబాటులో ఉంది."
+      en: "Telangana Rakshana Sena logo featuring the state outline map and traditional lamp symbol, available in multiple languages.",
+      te: "తెలంగాణ మ్యాప్ రూపురేఖలు మరియు సాంప్రదాయ దీపం గుర్తుతో కూడిన తెలంగాణ రక్షణ సేన అధికారిక లోగో, పలు భాషల్లో అందుబాటులో ఉంది."
     }
   },
   news: {

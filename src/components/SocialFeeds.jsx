@@ -19,7 +19,7 @@ const SocialFeeds = () => {
           <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
         </svg>
       ),
-      banner: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/slider-4.jpg',
+      banner: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg',
       stat: '500K+ Followers',
       action: { en: 'Visit Page', te: 'పేజీని సందర్శించండి' }
     },
@@ -37,14 +37,14 @@ const SocialFeeds = () => {
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
         </svg>
       ),
-      banner: 'https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
+      banner: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
       stat: '150K+ Followers',
       action: { en: 'Follow Us', te: 'ఫాలో అవ్వండి' }
     },
     {
       id: 'youtube',
       platform: 'YouTube',
-      handle: 'TRS: Telangana Rakshana Sena TV',
+      handle: 'Telangana Rakshana Sena TV',
       title: { en: 'Official Videos & Speeches', te: 'యూట్యూబ్ వీడియో ప్రసంగాలు' },
       desc: { en: 'Watch press conferences, live speeches of Smt. Kavitha, and documentary archives.', te: 'పత్రికా సమావేశాలు, కవిత గారి ప్రసంగాలు మరియు అధికారిక డాక్యుమెంటరీలు.' },
       link: 'https://youtube.com/user/TelanganaTRS',
@@ -53,7 +53,7 @@ const SocialFeeds = () => {
           <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.002 3.002 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
         </svg>
       ),
-      banner: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
+      banner: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
       stat: '100K+ Subscribers',
       action: { en: 'Subscribe', te: 'సబ్‌స్క్రయిబ్ చేయండి' }
     }

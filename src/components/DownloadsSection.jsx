@@ -110,7 +110,7 @@ const DownloadsSection = () => {
               <div className="h-56 sm:h-64 bg-[#0a361e]/5 flex items-center justify-center p-6 border-b border-gray-100 overflow-hidden relative">
                 <img 
                   src="/trslogo.jpeg" 
-                  alt="TRS: Telangana Rakshana Sena Official Logo" 
+                  alt="Telangana Rakshana Sena Official Logo" 
                   className="max-h-full max-w-full object-contain shadow-md transition-transform duration-300 hover:scale-105"
                 />
                 <span className="absolute bottom-3 right-3 bg-black/60 text-white text-[7px] font-black uppercase tracking-widest px-2.5 py-1" style={{ borderRadius: '1px' }}>
@@ -121,10 +121,10 @@ const DownloadsSection = () => {
               <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
                   <h4 className="text-sm font-display font-display font-black text-[#0a361e]">
-                    {language === 'en' ? 'TRS: Telangana Rakshana Sena Official Logo (High-Res)' : 'టీఆర్ఎస్: తెలంగాణ రక్షణ సేన అధికారిక లోగో (హై-రెజల్యూషన్)'}
+                    {language === 'en' ? 'Telangana Rakshana Sena Official Logo (High-Res)' : 'తెలంగాణ రక్షణ సేన అధికారిక లోగో (హై-రెజల్యూషన్)'}
                   </h4>
                   <p className="text-xs text-gray-500 leading-relaxed font-sans font-medium">
-                    {language === 'en' ? 'Official symbol representing the leadership and mission of TRS: Telangana Rakshana Sena.' : 'టీఆర్ఎస్: తెలంగాణ రక్షణ సేన యొక్క నాయకత్వం మరియు ఆశయాలకు ప్రతిబింబమైన అధికారిక లోగో.'}
+                    {language === 'en' ? 'Official symbol representing the leadership and mission of Telangana Rakshana Sena.' : 'తెలంగాణ రక్షణ సేన యొక్క నాయకత్వం మరియు ఆశయాలకు ప్రతిబింబమైన అధికారిక లోగో.'}
                   </p>
                 </div>
                 

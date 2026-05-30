@@ -66,15 +66,15 @@ const Footer = ({ setActiveSection }) => {
     { id: 'contact',        label: t('nav.contact') }
   ];
   const galleryImages = [
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg',
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/slider-4.jpg',
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-page-slider.jpg',
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg',
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg',
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-press-meet-maoists-600x400.jpg',
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
-    'https://www.telanganarakshanasena.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-kacheguda-high-school-visit-hyderabad-1-668x520.jpeg'
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-press-meet-maoists-600x400.jpg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
+    'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-kacheguda-high-school-visit-hyderabad-1-668x520.jpeg'
   ];
   const doubledGallery = [...galleryImages, ...galleryImages];
 
@@ -93,7 +93,7 @@ const Footer = ({ setActiveSection }) => {
             <div key={index} className="w-32 h-20 sm:w-40 sm:h-24 lg:w-48 lg:h-28 flex-shrink-0 overflow-hidden border border-[#a16207]/20 relative shadow-sm transition-opacity duration-300 hover:opacity-90">
               <img
                 src={imgUrl}
-                alt={`TRS: Telangana Rakshana Sena Gallery ${index + 1}`}
+                alt={`Telangana Rakshana Sena Gallery ${index + 1}`}
                 className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
@@ -112,7 +112,7 @@ const Footer = ({ setActiveSection }) => {
               <Logo className="h-11 w-11 flex-shrink-0" lightBg={false} />
               <div>
                 <p className="text-xs font-black tracking-[0.16em] uppercase text-white font-display">
-                  TRS: Telangana Rakshana Sena
+                  Telangana Rakshana Sena
                 </p>
                 <p className="text-[9px] text-[#a16207] tracking-widest uppercase font-bold font-ui">Official Website</p>
               </div>
@@ -190,7 +190,7 @@ const Footer = ({ setActiveSection }) => {
       <div className="border-t border-white/8">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[9px] text-white/40 font-medium text-center sm:text-left">
-            © {new Date().getFullYear()} TRS: Telangana Rakshana Sena. All Rights Reserved.
+            © {new Date().getFullYear()} Telangana Rakshana Sena. All Rights Reserved.
           </p>
           <p className="text-[9px] text-white/30 font-medium">
             {language === 'en' ? 'Built for the People of Telangana' : 'తెలంగాణ ప్రజల కోసం నిర్మించబడింది'}
