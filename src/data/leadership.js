@@ -8,7 +8,7 @@ export const leadershipData = [
     role: { en: "Founder & President", te: "వ్యవస్థాపకురాలు & అధ్యక్షురాలు" },
     avatar: "KK",
     phone: "040-2351 1111",
-    email: "telanganajagruthi@gmail.com"
+    email: "telanganarakshanasena@gmail.com"
   },
   {
     id: "l2",

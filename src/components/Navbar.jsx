@@ -113,12 +113,12 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 <span
                   className="text-[13px] lg:text-[14px] font-display font-black leading-none tracking-[0.08em] uppercase text-[#0a361e]"
                 >
-                  Telangana Jagruthi
+                  TRS: Telangana Rakshana Sena
                 </span>
                 <span
                   className="text-[9px] tracking-[0.22em] uppercase font-ui font-bold text-[#a16207] leading-none mt-[3px]"
                 >
-                  {language === 'en' ? 'తెలంగాణ జాగృతి' : 'Telangana Jagruthi'}
+                  {language === 'en' ? 'టీఆర్ఎస్: తెలంగాణ రక్షణ సేన' : 'TRS: Telangana Rakshana Sena'}
                 </span>
               </div>
             </button>
@@ -167,7 +167,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                           <span className="text-[9px] font-display font-black uppercase tracking-widest text-[#0a361e]">
                             Party Wings — 22 Active Divisions
                           </span>
-                          <span className="text-[8px] font-ui font-bold bg-amber-50 text-[#a16207] border border-amber-200 px-2 py-0.5 uppercase tracking-wider">తెలంగాణ జాగృతి</span>
+                          <span className="text-[8px] font-ui font-bold bg-amber-50 text-[#a16207] border border-amber-200 px-2 py-0.5 uppercase tracking-wider">టీఆర్ఎస్: తెలంగాణ రక్షణ సేన</span>
                         </div>
                         <div className="grid grid-cols-4 gap-0.5">
                           {item.wingsList.map((wing) => (

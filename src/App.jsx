@@ -16,18 +16,18 @@ import { ArrowUp } from 'lucide-react';
 
 // Per-view SEO metadata
 const PAGE_META = {
-  hero:          { title: 'Telangana Jagruthi | Official Website', desc: 'Telangana Jagruthi – Founded in 2006 by Smt. Kalvakuntla Kavitha. Upholding cultural heritage and empowering lives across Telangana and 18+ countries.' },
-  'about-founder': { title: 'Smt. Kalvakuntla Kavitha – Founder & President | Telangana Jagruthi', desc: 'Learn about Smt. Kalvakuntla Kavitha, founder and president of Telangana Jagruthi, her leadership in the statehood movement and ongoing social advocacy.' },
-  'about-vision':  { title: 'Vision & Mission | Telangana Jagruthi', desc: 'Explore the vision and mission of Telangana Jagruthi – building a progressive, self-reliant Telangana with social justice for all.' },
-  'about-history': { title: 'History & Milestones | Telangana Jagruthi', desc: 'A timeline of cultural resistance and social empowerment by Telangana Jagruthi from 2006 to present – statehood, Bathukamma, and beyond.' },
-  'about-org':     { title: 'State Leadership | Telangana Jagruthi', desc: 'Meet the core leadership, wing presidents and district office bearers of Telangana Jagruthi across 33 districts of Telangana.' },
-  programs:        { title: 'Programs & Activities | Telangana Jagruthi', desc: 'Discover Jagruthi Janam Baata, Bathukamma Renaissance, land struggle protests, Annadanam, and more official programs by Telangana Jagruthi.' },
-  wings:           { title: '22 Jagruthi Wings | Telangana Jagruthi', desc: 'Browse all 22 specialized wings of Telangana Jagruthi including BC, Student, IT, Farmer, Women, and more organizational divisions.' },
-  news:            { title: 'News & Articles | Telangana Jagruthi', desc: 'Stay updated with the latest news, protests, cultural events and welfare activities of Telangana Jagruthi and Smt. Kalvakuntla Kavitha.' },
-  videos:          { title: 'Video Broadcasts | Telangana Jagruthi', desc: 'Watch official video broadcasts, press conferences and public addresses by Smt. Kalvakuntla Kavitha and Telangana Jagruthi.' },
-  downloads:       { title: 'Media Downloads | Telangana Jagruthi', desc: 'Download official Telangana Jagruthi logos, flag assets and branding materials in high resolution.' },
-  contact:         { title: 'Contact Us | Telangana Jagruthi', desc: 'Contact Telangana Jagruthi central office in Banjara Hills, Hyderabad. Reach out for enquiries, collaboration or media queries.' },
-  membership:      { title: 'Official Membership Registration | Telangana Jagruthi', desc: 'Online membership registration form for Telangana Jagruthi. Join Kalvakuntla Kavitha in social development initiatives.' },
+  hero:          { title: 'TRS: Telangana Rakshana Sena | Official Website', desc: 'TRS: Telangana Rakshana Sena – Founded in 2006 by Smt. Kalvakuntla Kavitha. Upholding cultural heritage and empowering lives across Telangana and 18+ countries.' },
+  'about-founder': { title: 'Smt. Kalvakuntla Kavitha – Founder & President | TRS: Telangana Rakshana Sena', desc: 'Learn about Smt. Kalvakuntla Kavitha, founder and president of TRS: Telangana Rakshana Sena, her leadership in the statehood movement and ongoing social advocacy.' },
+  'about-vision':  { title: 'Vision & Mission | TRS: Telangana Rakshana Sena', desc: 'Explore the vision and mission of TRS: Telangana Rakshana Sena – building a progressive, self-reliant Telangana with social justice for all.' },
+  'about-history': { title: 'History & Milestones | TRS: Telangana Rakshana Sena', desc: 'A timeline of cultural resistance and social empowerment by TRS: Telangana Rakshana Sena from 2006 to present – statehood, Bathukamma, and beyond.' },
+  'about-org':     { title: 'State Leadership | TRS: Telangana Rakshana Sena', desc: 'Meet the core leadership, wing presidents and district office bearers of TRS: Telangana Rakshana Sena across 33 districts of Telangana.' },
+  programs:        { title: 'Programs & Activities | TRS: Telangana Rakshana Sena', desc: 'Discover TRS Janam Baata, Bathukamma Renaissance, land struggle protests, Annadanam, and more official programs by TRS: Telangana Rakshana Sena.' },
+  wings:           { title: '22 Rakshana Sena Wings | TRS: Telangana Rakshana Sena', desc: 'Browse all 22 specialized wings of TRS: Telangana Rakshana Sena including BC, Student, IT, Farmer, Women, and more organizational divisions.' },
+  news:            { title: 'News & Articles | TRS: Telangana Rakshana Sena', desc: 'Stay updated with the latest news, protests, cultural events and welfare activities of TRS: Telangana Rakshana Sena and Smt. Kalvakuntla Kavitha.' },
+  videos:          { title: 'Video Broadcasts | TRS: Telangana Rakshana Sena', desc: 'Watch official video broadcasts, press conferences and public addresses by Smt. Kalvakuntla Kavitha and TRS: Telangana Rakshana Sena.' },
+  downloads:       { title: 'Media Downloads | TRS: Telangana Rakshana Sena', desc: 'Download official TRS: Telangana Rakshana Sena logos, flag assets and branding materials in high resolution.' },
+  contact:         { title: 'Contact Us | TRS: Telangana Rakshana Sena', desc: 'Contact TRS: Telangana Rakshana Sena central office in Banjara Hills, Hyderabad. Reach out for enquiries, collaboration or media queries.' },
+  membership:      { title: 'Official Membership Registration | TRS: Telangana Rakshana Sena', desc: 'Online membership registration form for TRS: Telangana Rakshana Sena. Join Kalvakuntla Kavitha in social development initiatives.' },
 };
 
 function App() {
@@ -148,11 +148,11 @@ function App() {
             navigateTo('hero');
           }}
           className="block w-full overflow-hidden"
-          aria-label="Telangana Jagruthi – Official Website Home"
+          aria-label="TRS: Telangana Rakshana Sena – Official Website Home"
         >
           <img
             src="/tj-header-banner.jpg"
-            alt="Telangana Jagruthi – Smt. Kalvakuntla Kavitha and Prof. K. Jayashankar – Official Banner"
+            alt="TRS: Telangana Rakshana Sena – Smt. Kalvakuntla Kavitha and Prof. K. Jayashankar – Official Banner"
             className="w-full h-auto block"
             loading="eager"
             fetchPriority="high"
@@ -170,7 +170,7 @@ function App() {
             className="block w-full hover:opacity-95 transition-opacity duration-300"
           >
             <img
-              src="https://www.telanganajagruthi.org/wp-content/uploads/2024/03/telanaga-membership-party.jpg.jpeg"
+              src="https://www.telanganarakshanasena.org/wp-content/uploads/2024/03/telanaga-membership-party.jpg.jpeg"
               alt="Click Here to Register Party Membership"
               className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.01]"
             />

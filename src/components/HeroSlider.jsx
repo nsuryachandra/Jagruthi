@@ -18,12 +18,12 @@ const SLIDES = [
     stat: { value: '10K+', label: { en: 'Activists Joined', te: 'పాల్గొన్న ఉద్యమకారులు' } },
     icon: ShieldAlert,
     accentColor: '#b91c1c',
-    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg'
+    image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg'
   },
   {
     id: 'slide-2',
     eyebrow: { en: 'Janam Bata Campaign', te: 'జనం బాట యాత్ర' },
-    title: { en: 'Jagruthi Janam Bata — Karimnagar', te: 'జాగృతి జనం బాట — కరీంనగర్' },
+    title: { en: 'TRS Janam Bata — Karimnagar', te: 'టీఆర్ఎస్ జనం బాట — కరీంనగర్' },
     highlight: { en: 'Connecting with Citizens at the Grassroots', te: 'క్షేత్రస్థాయిలో ప్రజలతో మమేకం' },
     desc: {
       en: 'Travelling village to village to understand local grievances, advocate for solutions, and lead grassroots development.',
@@ -32,13 +32,13 @@ const SLIDES = [
     stat: { value: 'Karimnagar', label: { en: 'District Campaign', te: 'జిల్ల్లా ప్రచారం' } },
     icon: Users,
     accentColor: '#0f5132',
-    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg'
+    image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/slider-4.jpg'
   },
   {
     id: 'slide-3',
     eyebrow: { en: 'Public Outreach', te: 'ప్రజా బాట' },
     title: { en: 'A Journey to Listen and Lead', te: 'వినడం మరియు నడిపించే ప్రయాణం' },
-    highlight: { en: 'Jagruthi Janam Bata Statewide Movement', te: 'జాగృతి జనం బాట రాష్ట్రవ్యాప్త ఉద్యమం' },
+    highlight: { en: 'TRS Janam Bata Statewide Movement', te: 'టీఆర్ఎస్ జనం బాట రాష్ట్రవ్యాప్త ఉద్యమం' },
     desc: {
       en: 'Organising mass public meetings to raise awareness on agricultural rights, educational reforms, and heritage preservation.',
       te: 'వ్యవసాయ హక్కులు, విద్యా రంగ సంస్కరణలు మరియు సంస్కృతి సంరక్షణపై అవగాహన పెంచేందుకు భారీ బహిరంగ సభల నిర్వహణ.'
@@ -46,12 +46,12 @@ const SLIDES = [
     stat: { value: '2006', label: { en: 'Established', te: 'స్థాపితమైంది' } },
     icon: Award,
     accentColor: '#a16207',
-    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg'
+    image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-page-slider.jpg'
   },
   {
     id: 'slide-4',
     eyebrow: { en: 'Nizamabad Session', te: 'నిజామాబాద్ సదస్సు' },
-    title: { en: 'Jagruthi Janam Bata — Nizamabad', te: 'జాగృతి జనం బాట — నిజామాబాద్' },
+    title: { en: 'TRS Janam Bata — Nizamabad', te: 'టీఆర్ఎస్ జనం బాట — నిజామాబాద్' },
     highlight: { en: 'Resolving Grievances & Mobilising Youth', te: 'సమస్యల పరిష్కారం & యువత సమీకరణ' },
     desc: {
       en: 'Empowering local communities by assessing ground realities, holding town halls, and creating regional livelihood opportunities.',
@@ -60,7 +60,7 @@ const SLIDES = [
     stat: { value: 'Nizamabad', label: { en: 'District Campaign', te: 'జిల్లా ప్రచారం' } },
     icon: Users,
     accentColor: '#0f5132',
-    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg'
+    image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg'
   },
   {
     id: 'slide-5',
@@ -74,7 +74,7 @@ const SLIDES = [
     stat: { value: '33', label: { en: 'Districts Covered', te: 'కవర్ చేసిన జిల్లాలు' } },
     icon: Award,
     accentColor: '#a16207',
-    image: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg'
+    image: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg'
   }
 ];
 
@@ -210,7 +210,7 @@ const HeroSlider = ({ setActiveSection }) => {
                 <div className="w-px bg-gray-100" />
                 <div className="px-4 py-3.5 flex items-center">
                   <p className="text-[9px] uppercase tracking-widest text-gray-400 font-ui font-bold leading-relaxed max-w-[100px]">
-                    Telangana Jagruthi Achievement
+                    TRS: Telangana Rakshana Sena Achievement
                   </p>
                 </div>
               </motion.div>
@@ -292,7 +292,7 @@ const HeroSlider = ({ setActiveSection }) => {
               {/* Footer label */}
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap z-20 bg-[#0a361e]/70 px-3 py-1 border border-[#a16207]/30" style={{ borderRadius: '1px' }}>
                 <span className="text-[7px] tracking-[0.25em] uppercase text-white/90 font-display font-black">
-                  Telangana Jagruthi — Est. 2006
+                  TRS: Telangana Rakshana Sena — Est. 2006
                 </span>
               </div>
             </div>

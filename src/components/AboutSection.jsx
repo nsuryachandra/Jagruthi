@@ -64,7 +64,7 @@ const AboutSection = ({ section }) => {
                   <div className="relative mb-6 mt-2">
                     <div className="h-32 w-32 sm:h-36 sm:w-36 rounded-full overflow-hidden bg-gradient-to-br from-[#f0fdf4] to-[#dcfce7] border-4 border-[#0f5132]/15 flex items-center justify-center shadow-inner">
                       <img
-                        src="https://www.telanganajagruthi.org/wp-content/uploads/2025/10/about-us-kalvakuntla-kavitha.jpg"
+                        src="https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/about-us-kalvakuntla-kavitha.jpg"
                         alt="Smt. Kalvakuntla Kavitha"
                         className="w-full h-full object-cover select-none pointer-events-none"
                       />
@@ -80,7 +80,7 @@ const AboutSection = ({ section }) => {
                     {t('founder.subtitle')}
                   </h3>
                   <p className="text-xs text-[#a16207] font-bold uppercase tracking-widest mt-1 mb-5 font-ui">
-                    {language === 'en' ? 'Telangana Jagruthi' : 'తెలంగాణ జాగృతి'}
+                    {language === 'en' ? 'TRS: Telangana Rakshana Sena' : 'టీఆర్ఎస్: తెలంగాణ రక్షణ సేన'}
                   </p>
 
                   <div className="w-full h-px bg-gray-100 mb-5" />

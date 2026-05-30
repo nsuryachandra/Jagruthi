@@ -119,7 +119,7 @@ const VideoGallery = () => {
 
                 {/* Iframe */}
                 <iframe
-                  title="Telangana Jagruthi Video Player"
+                  title="TRS: Telangana Rakshana Sena Video Player"
                   src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=1`}
                   className="w-full h-full border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

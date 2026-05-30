@@ -27,22 +27,22 @@ const HomeView = ({ navigateTo }) => {
     }
   }, []);
 
-  // News On Jagruthi Press Clippings
+  // News On TRS Press Clippings
   const pressClippings = [
     {
       title: { en: "Kacheguda High School Visit: Status of Poor Students", te: "పేద విద్యార్థుల పట్ల ఇదేనా ప్రభుత్వ వైఖరి - కాచిగూడ స్కూల్ సందర్శన" },
       date: "2025-12-12",
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-kacheguda-high-school-visit-hyderabad-1-668x520.jpeg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-kacheguda-high-school-visit-hyderabad-1-668x520.jpeg"
     },
     {
-      title: { en: "Jagruthi Janam Baata – Mahabubnagar Day 1 yatra details", te: "జగృతి జనం బాట – మహబూబ్‌నగర్ మొదటి రోజు యాత్ర" },
+      title: { en: "TRS Janam Baata – Mahabubnagar Day 1 yatra details", te: "జగృతి జనం బాట – మహబూబ్‌నగర్ మొదటి రోజు యాత్ర" },
       date: "2025-11-20",
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/slider-4.jpg"
     },
     {
-      title: { en: "Jagruthi Janam Bata Nalgonda – Day 2 public meetings", te: "జగృతి జనం బాట నల్గొండ – రెండవ రోజు ప్రజా సభలు" },
+      title: { en: "TRS Janam Bata Nalgonda – Day 2 public meetings", te: "జగృతి జనం బాట నల్గొండ – రెండవ రోజు ప్రజా సభలు" },
       date: "2025-11-13",
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/11/jagruthi-janam-baata-nalgonda-day-2-24-668x520.jpg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2025/11/jagruthi-janam-baata-nalgonda-day-2-24-668x520.jpg"
     }
   ];
 
@@ -51,42 +51,42 @@ const HomeView = ({ navigateTo }) => {
     {
       title: { en: "Statewide Land Struggle Protests Lead by Kavitha in Manakondur", te: "అన్ని జిల్లాల్లో భూపోరాటం కొనసాగిస్తాం - మానకొండూరు నిరసన" },
       date: "2025-12-31",
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2025/12/kalvakuntla-kavitha-land-agitation-telangana-activists-manakondur-9.jpg"
     },
     {
       title: { en: "Kavitha Visits Bhadrachalam Ramayya Temple for Tributes & Blessings", te: "భద్రాద్రి రామయ్యను దర్శించుకున్న కవిత" },
       date: "2025-12-19",
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg"
     },
     {
       title: { en: "Tributes Offered to Mahatma Gandhi at Bapu Ghat", te: "బాపూజీ కి ఘన నివాళి - కార్వాన్ బాపు ఘాట్ వద్ద కవిత" },
       date: "2025-12-13",
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slider.jpg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-page-slider.jpg"
     },
     {
-      title: { en: "Jagruthi Janam Baata – Karimnagar Village Campaign", te: "జగృతి జనం బాట – కరీంనగర్ గ్రామీణ ప్రచారం" },
+      title: { en: "TRS Janam Baata – Karimnagar Village Campaign", te: "జగృతి జనం బాట – కరీంనగర్ గ్రామీణ ప్రచారం" },
       date: "2025-11-04",
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg"
     }
   ];
 
-  // Janam Jagruthi Baata grid items
+  // Janam TRS Baata grid items
   const gridEvents = [
     {
       title: { en: "100-Bed Hospital Construction Remains Pending in Tungaturthi", te: "కేసీఆర్ చేత శంకుస్థాపన-పనులింకా పెండింగే - తుంగతుర్తి ఆసుపత్రి" },
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kavitha-tungaturthi-chc-hospital-visit-1-600x400.jpeg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kavitha-tungaturthi-chc-hospital-visit-1-600x400.jpeg"
     },
     {
       title: { en: "Kavitha Demands Probe into Karla Rajesh Custodial Death", te: "రాజేశ్ మృతిపై విచారణ జరపాలి - కస్టోడియల్ డెత్ పై కవిత డిమాండ్" },
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-kodad-custodial-death-visit-600x400.jpeg"
     },
     {
       title: { en: "Suryapet Protests: Citizens Face Issues Due to Local Tyranny", te: "జగదీశ్ రెడ్డి దౌర్జన్యాలకు జనం బలి - సూర్యాపేట లో కవిత" },
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-press-meet-maoists-600x400.jpg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kalvakuntla-kavitha-suryapet-press-meet-maoists-600x400.jpg"
     },
     {
       title: { en: "Kavitha Rejects Upper Bhadra National Status Allocations", te: "ఆల్మట్టి ఎత్తు పెంపు, అప్పర్ భద్రకు జాతీయ హోదాను వ్యతిరేకిస్తూ తీర్మానం" },
-      image: "https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg"
+      image: "https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-page-slide-2.jpeg"
     }
   ];
 
@@ -101,7 +101,7 @@ const HomeView = ({ navigateTo }) => {
       }
     },
     {
-      title: { en: "Jagruthi Janambata — A Journey to Listen, Learn, and Lead", te: "జగృతి జనంబాట — వినడం, నేర్చుకోవడం మరియు నడిపించే ప్రయాణం" },
+      title: { en: "TRS Janambata — A Journey to Listen, Learn, and Lead", te: "జగృతి జనంబాట — వినడం, నేర్చుకోవడం మరియు నడిపించే ప్రయాణం" },
       date: "2025-10-24",
       desc: {
         en: "A comprehensive report on Kalvakuntla Kavitha's statewide outreach movement to reconnect with grassroots communities and assess local challenges.",
@@ -171,7 +171,7 @@ const HomeView = ({ navigateTo }) => {
                   Official Updates
                 </span>
                 <h3 className="text-xl sm:text-2xl font-display font-black mt-2 mb-4">
-                  {language === 'en' ? "TELANGANA JAGRUTHI - Press Release" : "తెలంగాణ జాగృతి - పత్రికా ప్రకటన"}
+                  {language === 'en' ? "TRS: TELANGANA RAKSHANA SENA - Press Release" : "టీఆర్ఎస్: తెలంగాణ రక్షణ సేన - పత్రికా ప్రకటన"}
                 </h3>
                 <p className="text-xs text-gray-200 leading-relaxed mb-6 font-sans">
                   {language === 'en' 
@@ -197,7 +197,7 @@ const HomeView = ({ navigateTo }) => {
                   Broadcast Stream
                 </span>
                 <h3 className="text-xl sm:text-2xl font-display font-black text-[#0f5132] mt-2 mb-4">
-                  {language === 'en' ? "TELANGANA JAGRUTHI - Watch Us Live" : "తెలంగాణ జాగృతి - లైవ్ ప్రసారాలు"}
+                  {language === 'en' ? "TRS: TELANGANA RAKSHANA SENA - Watch Us Live" : "టీఆర్ఎస్: తెలంగాణ రక్షణ సేన - లైవ్ ప్రసారాలు"}
                 </h3>
                 <p className="text-xs text-[#3a4a3f] leading-relaxed mb-6 font-sans">
                   {language === 'en'
@@ -207,7 +207,7 @@ const HomeView = ({ navigateTo }) => {
               </div>
               <button onClick={() => navigateTo('videos')} className="flex items-center gap-2.5 bg-[#dc2626] text-white px-5 py-2.5 text-xs font-bold w-fit hover:bg-red-700 transition-colors shadow-sm" style={{ borderRadius: '1px' }}>
                 <Play className="h-3.5 w-3.5 fill-current" />
-                Jagruthi Janam Baata Live
+                TRS Janam Baata Live
               </button>
             </div>
           </div>
@@ -228,8 +228,8 @@ const HomeView = ({ navigateTo }) => {
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-black mt-4 text-white">
               {language === 'en' 
-                ? "Founder K. Kavitha Announced Telangana Jagruthi's Ideals"
-                : "వ్యవస్థాపకురాలు కల్వకుంట్ల కవిత ప్రకటించిన తెలంగాణ జాగృతి సిద్ధాంతాలు"}
+                ? "Founder K. Kavitha Announced TRS: Telangana Rakshana Sena's Ideals"
+                : "వ్యవస్థాపకురాలు కల్వకుంట్ల కవిత ప్రకటించిన టీఆర్ఎస్: తెలంగాణ రక్షణ సేన సిద్ధాంతాలు"}
             </h2>
             <div className="h-0.5 w-24 bg-[#a16207] mx-auto mt-6" />
           </div>
@@ -286,7 +286,7 @@ const HomeView = ({ navigateTo }) => {
         </div>
       </section>
 
-      {/* 4. Latest Events Section (Janam Jagruthi Baata) */}
+      {/* 4. Latest Events Section (Janam TRS Baata) */}
       <section className="py-16 sm:py-20 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
@@ -296,17 +296,17 @@ const HomeView = ({ navigateTo }) => {
                 {language === 'en' ? "CAMPAIGN HIGHLIGHT" : "యాత్ర ముఖ్యాంశం"}
               </span>
               <h2 className="text-3xl sm:text-4xl font-display font-black text-[#0a361e] leading-tight">
-                {language === 'en' ? "Jagruthi Janam Baata" : "జాగృతి జనం బాట"}
+                {language === 'en' ? "TRS Janam Baata" : "టీఆర్ఎస్ జనం బాట"}
               </h2>
               <p className="text-sm text-[#a16207] font-bold uppercase tracking-widest font-ui">
                 {language === 'en' 
-                  ? "Kavitha to Embark on “Jagruthi Janambata” — A Journey to Listen, Learn, and Lead."
+                  ? "Kavitha to Embark on “TRS Janambata” — A Journey to Listen, Learn, and Lead."
                   : "కల్వకుంట్ల కవిత జనంబాట — వినడం, నేర్చుకోవడం మరియు నడిపించే ప్రయాణం."}
               </p>
               <div className="h-0.5 w-16 bg-[#0f5132]" />
               <p className="text-sm text-[#3d4f41] leading-relaxed font-sans font-medium">
                 {language === 'en'
-                  ? "Starting October 25, Kalvakuntla Kavitha launched a statewide outreach movement titled “Jagruthi Janambata” to reconnect with the roots of Telangana, assess ground realities, and advocate for community solutions."
+                  ? "Starting October 25, Kalvakuntla Kavitha launched a statewide outreach movement titled “TRS Janambata” to reconnect with the roots of Telangana, assess ground realities, and advocate for community solutions."
                   : "అక్టోబర్ 25 నుండి, కల్వకుంట్ల కవిత గారు రాష్ట్రవ్యాప్త ప్రజా బాట యాత్రకు శ్రీకారం చుట్టారు. గ్రామాల్లో పర్యటిస్తూ క్షేత్రస్థాయి సమస్యలను నేరుగా తెలుసుకుని, ప్రజలకు అండగా నిలిచేందుకు ఈ ఉద్యమాన్ని ప్రారంభించారు."}
               </p>
               <button onClick={() => navigateTo('programs')} className="btn-primary gap-2 text-[9px] px-5 py-3 w-fit" style={{ borderRadius: '2px' }}>
@@ -442,7 +442,7 @@ const HomeView = ({ navigateTo }) => {
         {/* Map outline background */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
-            backgroundImage: "url('https://www.telanganajagruthi.org/wp-content/uploads/2024/03/telanaga-membership-party.jpg.jpeg')",
+            backgroundImage: "url('https://www.telanganarakshanasena.org/wp-content/uploads/2024/03/telanaga-membership-party.jpg.jpeg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
@@ -451,7 +451,7 @@ const HomeView = ({ navigateTo }) => {
         <div className="max-w-4xl mx-auto px-5 sm:px-6 text-center relative z-10">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[8px] tracking-[0.25em] font-ui font-black uppercase text-[#facc15] border border-[#facc15]/30 bg-[#facc15]/5 mb-4" style={{ borderRadius: '1px' }}>
             <Play className="h-3 w-3 fill-current" />
-            {language === 'en' ? "TELANGANA JAGRUTHI LIVE VIDEO" : "తెలంగాణ जागृति లైవ్ వీడియో"}
+            {language === 'en' ? "TRS: TELANGANA RAKSHANA SENA LIVE VIDEO" : "తెలంగాణ जागृति లైవ్ వీడియో"}
           </span>
           <h2 className="text-2xl sm:text-3xl font-display font-black text-white mb-3">
             {language === 'en' ? "WATCH US LIVE" : "ప్రత్యక్ష ప్రసారాలు"}
@@ -467,7 +467,7 @@ const HomeView = ({ navigateTo }) => {
             <iframe
               className="absolute inset-0 w-full h-full"
               src="https://www.youtube.com/embed/h0RdKGW2WXA"
-              title="Telangana Jagruthi Live Video Broadcasts"
+              title="TRS: Telangana Rakshana Sena Live Video Broadcasts"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -501,12 +501,12 @@ const HomeView = ({ navigateTo }) => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-display font-black text-sm text-[#0a361e] uppercase tracking-wider">Bharat Jagruthi Facebook</h3>
-                    <p className="text-[10px] text-gray-400 font-bold">@BharatJagruthi</p>
+                    <h3 className="font-display font-black text-sm text-[#0a361e] uppercase tracking-wider">Bharat TRS Facebook</h3>
+                    <p className="text-[10px] text-gray-400 font-bold">@BharatTRS</p>
                   </div>
                 </div>
                 <a
-                  href="https://www.facebook.com/BharatJagruthi"
+                  href="https://www.facebook.com/BharatTRS"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-1.5 bg-[#1877F2] text-white font-ui font-black text-[9px] uppercase tracking-widest hover:bg-[#1565C0] transition-colors"
@@ -519,7 +519,7 @@ const HomeView = ({ navigateTo }) => {
               {/* Real Facebook Iframe Timeline Embed */}
               <div className="w-full h-[500px] bg-white flex items-center justify-center relative overflow-hidden border border-gray-100">
                 <iframe
-                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBharatJagruthi&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=1798293220578993"
+                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBharatTRS&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=1798293220578993"
                   width="100%"
                   height="100%"
                   style={{ border: 'none', overflow: 'hidden', maxWidth: '500px', width: '500px', height: '500px' }}
@@ -543,7 +543,7 @@ const HomeView = ({ navigateTo }) => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-display font-black text-sm text-[#0a361e] uppercase tracking-wider">Telangana Jagruthi Instagram</h3>
+                    <h3 className="font-display font-black text-sm text-[#0a361e] uppercase tracking-wider">TRS: Telangana Rakshana Sena Instagram</h3>
                     <p className="text-[10px] text-gray-400 font-bold">@telangana__jagruthi</p>
                   </div>
                 </div>

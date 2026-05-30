@@ -171,7 +171,7 @@ const MembershipFormView = () => {
         <div className="bg-gradient-to-r from-[#0a361e] to-[#0f5132] p-8 text-white text-center border-b-4 border-[#a16207] shadow-lg mb-8" style={{ borderRadius: '2px' }}>
           <Award className="h-10 w-10 text-[#facc15] mx-auto mb-3" />
           <h1 className="text-2xl sm:text-3xl font-display font-black tracking-wide">
-            {language === 'en' ? 'Telangana Jagruthi Membership Portal' : 'తెలంగాణ జాగృతి సభ్యత్వ నమోదు'}
+            {language === 'en' ? 'TRS: Telangana Rakshana Sena Membership Portal' : 'టీఆర్ఎస్: తెలంగాణ రక్షణ సేన సభ్యత్వ నమోదు'}
           </h1>
           <p className="text-xs text-gray-200 mt-2 font-sans tracking-wide">
             {language === 'en' 
@@ -499,7 +499,7 @@ const MembershipFormView = () => {
                 <div className="pb-4 border-b border-gray-100">
                   <h2 className="text-lg font-black text-[#0a361e] font-display flex items-center gap-2">
                     <CheckSquare className="h-5 w-5 text-[#a16207]" />
-                    {language === 'en' ? 'Step 3: Membership Pledge' : 'దశ 3: తెలంగాణ జాగృతి ప్రమాణ స్వీకారం'}
+                    {language === 'en' ? 'Step 3: Membership Pledge' : 'దశ 3: టీఆర్ఎస్: తెలంగాణ రక్షణ సేన ప్రమాణ స్వీకారం'}
                   </h2>
                 </div>
 
@@ -548,9 +548,9 @@ const MembershipFormView = () => {
                     {language === 'en' ? '— MEMBERSHIP PLEDGE —' : '— సభ్యత్వ ప్రమాణ స్వీకారం —'}
                   </p>
                   {language === 'en' ? (
-                    `"I hereby declare that I reside in Telangana, subscribe fully to the core values of Telangana Jagruthi, and will actively dedicate my time to the preservation of our cultural heritage, the promotion of youth education and development, and social empowerment programs. I vow to work selflessly towards the creation of a Samajika Telangana (Social Telangana) as envisioned by the founding leadership."`
+                    `"I hereby declare that I reside in Telangana, subscribe fully to the core values of TRS: Telangana Rakshana Sena, and will actively dedicate my time to the preservation of our cultural heritage, the promotion of youth education and development, and social empowerment programs. I vow to work selflessly towards the creation of a Samajika Telangana (Social Telangana) as envisioned by the founding leadership."`
                   ) : (
-                    `"తెలంగాణ జాగృతి యొక్క మూల సిద్ధాంతాలకు కట్టుబడి ఉంటూ, మన సంస్కృతి సంప్రదాయాల పరిరక్షణకు, యువత విద్యా ఉపాధి అవకాశాల సాధనకు, సామాజిక సాధికారతకు నిస్వార్థంగా కృషి చేస్తానని ప్రమాణం చేస్తున్నాను. కల్వకుంట్ల కవిత గారి నాయకత్వంలో సామాజిక తెలంగాణ నిర్మాణానికి నా వంతు బాధ్యతగా పనిచేస్తానని సగర్వంగా ప్రకటిస్తున్నాను."`
+                    `"టీఆర్ఎస్: తెలంగాణ రక్షణ సేన యొక్క మూల సిద్ధాంతాలకు కట్టుబడి ఉంటూ, మన సంస్కృతి సంప్రదాయాల పరిరక్షణకు, యువత విద్యా ఉపాధి అవకాశాల సాధనకు, సామాజిక సాధికారతకు నిస్వార్థంగా కృషి చేస్తానని ప్రమాణం చేస్తున్నాను. కల్వకుంట్ల కవిత గారి నాయకత్వంలో సామాజిక తెలంగాణ నిర్మాణానికి నా వంతు బాధ్యతగా పనిచేస్తానని సగర్వంగా ప్రకటిస్తున్నాను."`
                   )}
                 </div>
 
@@ -565,8 +565,8 @@ const MembershipFormView = () => {
                   />
                   <label htmlFor="pledge" className="text-xs text-gray-600 cursor-pointer select-none">
                     {language === 'en' 
-                      ? 'I agree and solemnly accept the membership pledge of Telangana Jagruthi.' 
-                      : 'నేను అంగీకరిస్తున్నాను మరియు తెలంగాణ జాగృతి సభ్యత్వ ప్రమాణ స్వీకారాన్ని మనస్ఫూర్తిగా స్వీకరిస్తున్నాను.'} *
+                      ? 'I agree and solemnly accept the membership pledge of TRS: Telangana Rakshana Sena.' 
+                      : 'నేను అంగీకరిస్తున్నాను మరియు టీఆర్ఎస్: తెలంగాణ రక్షణ సేన సభ్యత్వ ప్రమాణ స్వీకారాన్ని మనస్ఫూర్తిగా స్వీకరిస్తున్నాను.'} *
                   </label>
                 </div>
                 {errors.pledge && <p className={errorCls}>{errors.pledge}</p>}
@@ -623,8 +623,8 @@ const MembershipFormView = () => {
                   </h2>
                   <p className="text-xs text-gray-500 mt-2 max-w-md mx-auto">
                     {language === 'en' 
-                      ? 'Congratulations! You are now an official registered member of Telangana Jagruthi. Your digital membership card is generated below.'
-                      : 'అభినందనలు! మీరు ఇప్పుడు తెలంగాణ జాగృతిలో అధికారిక సభ్యులుగా చేరారు. మీ సభ్యత్వ డిజిటల్ కార్డు క్రింద సిద్ధంగా ఉంది.'}
+                      ? 'Congratulations! You are now an official registered member of TRS: Telangana Rakshana Sena. Your digital membership card is generated below.'
+                      : 'అభినందనలు! మీరు ఇప్పుడు టీఆర్ఎస్: తెలంగాణ రక్షణ సేనలో అధికారిక సభ్యులుగా చేరారు. మీ సభ్యత్వ డిజిటల్ కార్డు క్రింద సిద్ధంగా ఉంది.'}
                   </p>
                 </div>
 
@@ -633,7 +633,7 @@ const MembershipFormView = () => {
                   {/* Watermark map background */}
                   <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
                     style={{
-                      backgroundImage: "url('/tj-logo.png')",
+                      backgroundImage: "url('/trslogo.jpeg')",
                       backgroundSize: 'contain',
                       backgroundPosition: 'center',
                       backgroundRepeat: 'no-repeat'
@@ -646,10 +646,10 @@ const MembershipFormView = () => {
                   {/* Card Header */}
                   <div className="flex justify-between items-start pb-4 border-b border-white/10 relative z-10">
                     <div className="flex items-center gap-2.5">
-                      <img src="/tj-logo.png" alt="TJ Logo" className="h-10 w-10 object-contain bg-white/10 p-0.5 rounded-full" />
+                      <img src="/trslogo.jpeg" alt="TJ Logo" className="h-10 w-10 object-contain bg-white/10 p-0.5 rounded-full" />
                       <div>
                         <p className="text-xs font-black tracking-widest uppercase font-display text-[#facc15]">
-                          Telangana Jagruthi
+                          TRS: Telangana Rakshana Sena
                         </p>
                         <p className="text-[7px] text-[#a16207] tracking-[0.2em] font-ui font-bold uppercase">Official Member Card</p>
                       </div>

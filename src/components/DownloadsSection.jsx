@@ -38,26 +38,26 @@ const DownloadsSection = () => {
       langName: 'Telugu (తెలుగు)',
       title: { en: 'Official Telugu Logo', te: 'అధికారిక తెలుగు లోగో' },
       desc: { en: 'Main identity logo in Telugu script, optimized for state-level campaigns and local media.', te: 'రాష్ట్రవ్యాప్త ప్రచారాలు మరియు స్థానిక మీడియాకు అనువైన ప్రధాన తెలుగు అధికారిక లోగో.' },
-      imageUrl: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/11/jagruthi-telugu-logo-scaled.png',
-      downloadName: 'logo-telugu-jagruthi.png',
-      bgColor: 'bg-[#0a361e]'
+      imageUrl: '/trslogo.jpeg',
+      downloadName: 'trs-logo-telugu.jpeg',
+      bgColor: 'bg-white border border-gray-100'
     },
     {
       id: 'logo-en',
       langName: 'English Identity',
       title: { en: 'Official English Logo', te: 'అధికారిక ఇంగ్లీష్ లోగో' },
       desc: { en: 'International outreach logo in English script, designed for national and global releases.', te: 'జాతీయ మరియు అంతర్జాతీయ ప్రచారాల కోసం రూపొందించబడిన ఇంగ్లీష్ అధికారిక లోగో.' },
-      imageUrl: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/11/telangana-jagruthi-telaugu-logo-scaled.png',
-      downloadName: 'logo-english-jagruthi.png',
-      bgColor: 'bg-[#0a361e]'
+      imageUrl: '/trslogo.jpeg',
+      downloadName: 'trs-logo-english.jpeg',
+      bgColor: 'bg-white border border-gray-100'
     },
     {
       id: 'logo-ur',
       langName: 'Urdu (اردو)',
       title: { en: 'Official Urdu Logo', te: 'అధికారిక ఉర్దూ లోగో' },
       desc: { en: 'Identity logo in Urdu script, celebrating the syncretic culture and legacy of Telangana.', te: 'తెలంగాణ గంగా-జమునా తెహజీబ్ సంస్కృతిని ప్రతిబింబించే అధికారిక ఉర్దూ లోగో.' },
-      imageUrl: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/tj-oldloo-urdu-scaled.png',
-      downloadName: 'logo-urdu-jagruthi.png',
+      imageUrl: '/trslogo.jpeg',
+      downloadName: 'trs-logo-urdu.jpeg',
       bgColor: 'bg-white border border-gray-100'
     },
     {
@@ -65,8 +65,8 @@ const DownloadsSection = () => {
       langName: 'Hindi (हिंदी)',
       title: { en: 'Official Hindi Logo', te: 'అధికారిక హిందీ లోగో' },
       desc: { en: 'Identity logo in Hindi Devanagari script, optimized for national cultural forums.', te: 'జాతీయ సాంస్కృతిక వేదికలు మరియు సదస్సుల కొరకు రూపొందించిన అధికారిక హిందీ లోగో.' },
-      imageUrl: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/tj-old-logo-hindi-scaled.png',
-      downloadName: 'logo-hindi-jagruthi.png',
+      imageUrl: '/trslogo.jpeg',
+      downloadName: 'trs-logo-hindi.jpeg',
       bgColor: 'bg-white border border-gray-100'
     }
   ];
@@ -109,22 +109,22 @@ const DownloadsSection = () => {
               {/* Flag image preview */}
               <div className="h-56 sm:h-64 bg-[#0a361e]/5 flex items-center justify-center p-6 border-b border-gray-100 overflow-hidden relative">
                 <img 
-                  src="https://www.telanganajagruthi.org/wp-content/uploads/2025/11/jagruthi-flag.png" 
-                  alt="Telangana Jagruthi Official Flag" 
+                  src="/trslogo.jpeg" 
+                  alt="TRS: Telangana Rakshana Sena Official Logo" 
                   className="max-h-full max-w-full object-contain shadow-md transition-transform duration-300 hover:scale-105"
                 />
                 <span className="absolute bottom-3 right-3 bg-black/60 text-white text-[7px] font-black uppercase tracking-widest px-2.5 py-1" style={{ borderRadius: '1px' }}>
-                  PNG Format
+                  JPEG Format
                 </span>
               </div>
 
               <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
                   <h4 className="text-sm font-display font-display font-black text-[#0a361e]">
-                    {language === 'en' ? 'Telangana Jagruthi Flag (High-Res)' : 'తెలంగాణ జాగృతి జెండా (హై-రెజల్యూషన్)'}
+                    {language === 'en' ? 'TRS: Telangana Rakshana Sena Official Logo (High-Res)' : 'టీఆర్ఎస్: తెలంగాణ రక్షణ సేన అధికారిక లోగో (హై-రెజల్యూషన్)'}
                   </h4>
                   <p className="text-xs text-gray-500 leading-relaxed font-sans font-medium">
-                    {t('downloads.flagDesc')}
+                    {language === 'en' ? 'Official symbol representing the leadership and mission of TRS: Telangana Rakshana Sena.' : 'టీఆర్ఎస్: తెలంగాణ రక్షణ సేన యొక్క నాయకత్వం మరియు ఆశయాలకు ప్రతిబింబమైన అధికారిక లోగో.'}
                   </p>
                 </div>
                 
@@ -134,12 +134,12 @@ const DownloadsSection = () => {
                     {language === 'en' ? 'Verified Official Asset' : 'ధృవీకరించబడిన అధికారిక ఆస్తి'}
                   </div>
                   <button
-                    onClick={() => handleDownload('https://www.telanganajagruthi.org/wp-content/uploads/2025/11/jagruthi-flag.png', 'flag-telangana-jagruthi.png')}
+                    onClick={() => handleDownload('/trslogo.jpeg', 'trs-logo-official.jpeg')}
                     className="btn-primary btn-gold w-full justify-center py-3 text-[9px] uppercase tracking-widest font-ui"
                     style={{ borderRadius: '2px' }}
                   >
                     <Download className="h-4 w-4" />
-                    {t('common.download')} FLAG (PNG)
+                    {t('common.download')} LOGO (JPEG)
                   </button>
                 </div>
               </div>

@@ -10,16 +10,16 @@ const SocialFeeds = () => {
     {
       id: 'facebook',
       platform: 'Facebook',
-      handle: '@BharatJagruthi',
+      handle: '@BharatTRS',
       title: { en: 'Official Campaign Stream', te: 'అధికారిక ఫేస్బుక్ అప్‌డేట్స్' },
       desc: { en: 'Track daily grassroots activities, local statements, and public engagement notices.', te: 'రోజువారీ క్షేత్రస్థాయి కార్యక్రమాలు మరియు ప్రజలతో ముఖాముఖి సమాచారం.' },
-      link: 'https://www.facebook.com/BharatJagruthi/',
+      link: 'https://www.facebook.com/BharatTRS/',
       icon: (
         <svg className="h-6 w-6 fill-current text-[#1877F2]" viewBox="0 0 24 24">
           <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
         </svg>
       ),
-      banner: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/slider-4.jpg',
+      banner: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/slider-4.jpg',
       stat: '500K+ Followers',
       action: { en: 'Visit Page', te: 'పేజీని సందర్శించండి' }
     },
@@ -37,23 +37,23 @@ const SocialFeeds = () => {
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
         </svg>
       ),
-      banner: 'https://www.telanganajagruthi.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
+      banner: 'https://www.telanganarakshanasena.org/wp-content/uploads/2026/01/kavitha-janambata-public-meeting-tungaturthi-600x400.jpeg',
       stat: '150K+ Followers',
       action: { en: 'Follow Us', te: 'ఫాలో అవ్వండి' }
     },
     {
       id: 'youtube',
       platform: 'YouTube',
-      handle: 'Telangana Jagruthi TV',
+      handle: 'TRS: Telangana Rakshana Sena TV',
       title: { en: 'Official Videos & Speeches', te: 'యూట్యూబ్ వీడియో ప్రసంగాలు' },
       desc: { en: 'Watch press conferences, live speeches of Smt. Kavitha, and documentary archives.', te: 'పత్రికా సమావేశాలు, కవిత గారి ప్రసంగాలు మరియు అధికారిక డాక్యుమెంటరీలు.' },
-      link: 'https://youtube.com/user/TelanganaJagruthi',
+      link: 'https://youtube.com/user/TelanganaTRS',
       icon: (
         <svg className="h-6 w-6 fill-current text-[#FF0000]" viewBox="0 0 24 24">
           <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.002 3.002 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
         </svg>
       ),
-      banner: 'https://www.telanganajagruthi.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
+      banner: 'https://www.telanganarakshanasena.org/wp-content/uploads/2025/10/home-jagruthi-janam-baata.jpg',
       stat: '100K+ Subscribers',
       action: { en: 'Subscribe', te: 'సబ్‌స్క్రయిబ్ చేయండి' }
     }
@@ -70,7 +70,7 @@ const SocialFeeds = () => {
             <span>{language === 'en' ? 'Social Channels' : 'సామాజిక మాధ్యమాలు'}</span>
           </div>
           <h2 className="section-title text-[#0a361e] font-display font-black uppercase tracking-tight">
-            {language === 'en' ? 'Connect with Jagruthi' : 'జాగృతితో కనెక్ట్ అవ్వండి'}
+            {language === 'en' ? 'Connect with TRS' : 'టీఆర్ఎస్ తో కనెక్ట్ అవ్వండి'}
           </h2>
           <div className="h-1 w-14 bg-[#a16207]" />
         </div>
